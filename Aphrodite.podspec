@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "Aphrodite"
-  s.version      = "1.0.0"
-  s.summary      = "A lightweight and pure Swift implemented library for downloading and cacheing image from the web."
+  s.version      = "1.0.2"
+  s.summary      = "Aphrodite . It is a regular expression used on iOS, which implement by Swift"
 
   s.description  = <<-DESC
                 Aphrodite . It is a regular expression used on iOS, which implement by Swift
@@ -29,8 +29,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "Aphrodite/Aphrodite.h"
 
   s.requires_arc = true
-  s.frameworks = 'UIKit'
-  s.frameworks = 'Foundation'
+
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 end
 
