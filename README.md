@@ -1,6 +1,9 @@
 # Aphrodite
 
 ![Aphrodite](http://on9ek9f89.bkt.clouddn.com/Aphrodite_logo.png)
+[![Swift](https://img.shields.io/badge/Swift-3.2-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-8.3-blue.svg)](https://developer.apple.com/xcode)
+[![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 
 **I hope that every person who uses it can harvest love**
@@ -8,7 +11,7 @@
 ## Requirements
 
 - iOS 8.0+
-- Swift 3
+- Swift 3+
 
 ### CocoaPods
 
@@ -16,7 +19,7 @@ Aphrodite is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Aphrodite"  , '~> 1.0.3’
+pod "Aphrodite"  , '~> 1.1.1’
 ```
 
 **e.g:**
@@ -28,7 +31,7 @@ use_frameworks!
 
 target : ’Project’ do
 
-pod 'Aphrodite', '~> 1.0.3’
+pod 'Aphrodite', '~> 1.1.1’
 
 end
 ```
