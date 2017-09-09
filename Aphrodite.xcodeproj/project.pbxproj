@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04339E61F619FBE0040B32D /* AphroditeTests.swift */; };
-		C04339E91F619FBE0040B32D /* Aphrodite.h in Headers */ = {isa = PBXBuildFile; fileRef = C04339DB1F619FBE0040B32D /* Aphrodite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06BE38F1F62BAE900EDC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */; };
+		C06BE3911F62BAE900EDC7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE3901F62BAE900EDC7A3 /* ViewController.swift */; };
+		C06BE3941F62BAE900EDC7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06BE3921F62BAE900EDC7A3 /* Main.storyboard */; };
+		C06BE3961F62BAE900EDC7A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06BE3951F62BAE900EDC7A3 /* Assets.xcassets */; };
+		C06BE3991F62BAE900EDC7A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06BE3971F62BAE900EDC7A3 /* LaunchScreen.storyboard */; };
+		C06BE3FA1F62D64000EDC7A3 /* Aphrodite.h in Headers */ = {isa = PBXBuildFile; fileRef = C04339DB1F619FBE0040B32D /* Aphrodite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C06BE3FB1F638B3E00EDC7A3 /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
 		C08B599D1F61B63C00563444 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599C1F61B63C00563444 /* test.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +28,13 @@
 			remoteGlobalIDString = C04339D71F619FBE0040B32D;
 			remoteInfo = Aphrodite;
 		};
+		C06BE3A01F62BAE900EDC7A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C04339CF1F619FBE0040B32D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C06BE38B1F62BAE900EDC7A3;
+			remoteInfo = "Aphrodite-Demo";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +44,14 @@
 		C04339E11F619FBE0040B32D /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04339E61F619FBE0040B32D /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
 		C04339E81F619FBE0040B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C06BE38C1F62BAE900EDC7A3 /* Aphrodite-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aphrodite-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C06BE3901F62BAE900EDC7A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C06BE3931F62BAE900EDC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C06BE3951F62BAE900EDC7A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C06BE3981F62BAE900EDC7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C06BE39A1F62BAE900EDC7A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C06BE39F1F62BAE900EDC7A3 /* Aphrodite-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aphrodite-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
 		C08B599C1F61B63C00563444 /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +72,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C06BE3891F62BAE900EDC7A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06BE3FB1F638B3E00EDC7A3 /* Aphrodite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06BE39C1F62BAE900EDC7A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +95,7 @@
 			children = (
 				C04339DA1F619FBE0040B32D /* Aphrodite */,
 				C04339E51F619FBE0040B32D /* AphroditeTests */,
+				C06BE38D1F62BAE900EDC7A3 /* Aphrodite-Demo */,
 				C04339D91F619FBE0040B32D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +105,8 @@
 			children = (
 				C04339D81F619FBE0040B32D /* Aphrodite.framework */,
 				C04339E11F619FBE0040B32D /* AphroditeTests.xctest */,
+				C06BE38C1F62BAE900EDC7A3 /* Aphrodite-Demo.app */,
+				C06BE39F1F62BAE900EDC7A3 /* Aphrodite-DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +131,19 @@
 			path = AphroditeTests;
 			sourceTree = "<group>";
 		};
+		C06BE38D1F62BAE900EDC7A3 /* Aphrodite-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */,
+				C06BE3901F62BAE900EDC7A3 /* ViewController.swift */,
+				C06BE3921F62BAE900EDC7A3 /* Main.storyboard */,
+				C06BE3951F62BAE900EDC7A3 /* Assets.xcassets */,
+				C06BE3971F62BAE900EDC7A3 /* LaunchScreen.storyboard */,
+				C06BE39A1F62BAE900EDC7A3 /* Info.plist */,
+			);
+			path = "Aphrodite-Demo";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -99,7 +151,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04339E91F619FBE0040B32D /* Aphrodite.h in Headers */,
+				C06BE3FA1F62D64000EDC7A3 /* Aphrodite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +194,41 @@
 			productReference = C04339E11F619FBE0040B32D /* AphroditeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C06BE38B1F62BAE900EDC7A3 /* Aphrodite-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06BE3AA1F62BAE900EDC7A3 /* Build configuration list for PBXNativeTarget "Aphrodite-Demo" */;
+			buildPhases = (
+				C06BE3881F62BAE900EDC7A3 /* Sources */,
+				C06BE3891F62BAE900EDC7A3 /* Frameworks */,
+				C06BE38A1F62BAE900EDC7A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aphrodite-Demo";
+			productName = "Aphrodite-Demo";
+			productReference = C06BE38C1F62BAE900EDC7A3 /* Aphrodite-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C06BE39E1F62BAE900EDC7A3 /* Aphrodite-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06BE3AB1F62BAE900EDC7A3 /* Build configuration list for PBXNativeTarget "Aphrodite-DemoTests" */;
+			buildPhases = (
+				C06BE39B1F62BAE900EDC7A3 /* Sources */,
+				C06BE39C1F62BAE900EDC7A3 /* Frameworks */,
+				C06BE39D1F62BAE900EDC7A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C06BE3A11F62BAE900EDC7A3 /* PBXTargetDependency */,
+			);
+			name = "Aphrodite-DemoTests";
+			productName = "Aphrodite-DemoTests";
+			productReference = C06BE39F1F62BAE900EDC7A3 /* Aphrodite-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +248,16 @@
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
+					C06BE38B1F62BAE900EDC7A3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7N3VV24S6U;
+						ProvisioningStyle = Automatic;
+					};
+					C06BE39E1F62BAE900EDC7A3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C06BE38B1F62BAE900EDC7A3;
+					};
 				};
 			};
 			buildConfigurationList = C04339D21F619FBE0040B32D /* Build configuration list for PBXProject "Aphrodite" */;
@@ -169,6 +266,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C04339CE1F619FBE0040B32D;
 			productRefGroup = C04339D91F619FBE0040B32D /* Products */;
@@ -177,6 +275,8 @@
 			targets = (
 				C04339D71F619FBE0040B32D /* Aphrodite */,
 				C04339E01F619FBE0040B32D /* AphroditeTests */,
+				C06BE38B1F62BAE900EDC7A3 /* Aphrodite-Demo */,
+				C06BE39E1F62BAE900EDC7A3 /* Aphrodite-DemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +290,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C04339DF1F619FBE0040B32D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06BE38A1F62BAE900EDC7A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06BE3991F62BAE900EDC7A3 /* LaunchScreen.storyboard in Resources */,
+				C06BE3961F62BAE900EDC7A3 /* Assets.xcassets in Resources */,
+				C06BE3941F62BAE900EDC7A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06BE39D1F62BAE900EDC7A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,6 +333,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C06BE3881F62BAE900EDC7A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06BE3911F62BAE900EDC7A3 /* ViewController.swift in Sources */,
+				C06BE38F1F62BAE900EDC7A3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06BE39B1F62BAE900EDC7A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -224,7 +357,31 @@
 			target = C04339D71F619FBE0040B32D /* Aphrodite */;
 			targetProxy = C04339E31F619FBE0040B32D /* PBXContainerItemProxy */;
 		};
+		C06BE3A11F62BAE900EDC7A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C06BE38B1F62BAE900EDC7A3 /* Aphrodite-Demo */;
+			targetProxy = C06BE3A01F62BAE900EDC7A3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C06BE3921F62BAE900EDC7A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C06BE3931F62BAE900EDC7A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C06BE3971F62BAE900EDC7A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C06BE3981F62BAE900EDC7A3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C04339EA1F619FBE0040B32D /* Debug */ = {
@@ -395,6 +552,66 @@
 			};
 			name = Release;
 		};
+		C06BE3A61F62BAE900EDC7A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7N3VV24S6U;
+				INFOPLIST_FILE = "Aphrodite-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "blog.aiyinyu.com.Aphrodite-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C06BE3A71F62BAE900EDC7A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7N3VV24S6U;
+				INFOPLIST_FILE = "Aphrodite-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "blog.aiyinyu.com.Aphrodite-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C06BE3A81F62BAE900EDC7A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Aphrodite-DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "blog.aiyinyu.com.Aphrodite-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aphrodite-Demo.app/Aphrodite-Demo";
+			};
+			name = Debug;
+		};
+		C06BE3A91F62BAE900EDC7A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Aphrodite-DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "blog.aiyinyu.com.Aphrodite-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aphrodite-Demo.app/Aphrodite-Demo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +641,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C06BE3AA1F62BAE900EDC7A3 /* Build configuration list for PBXNativeTarget "Aphrodite-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06BE3A61F62BAE900EDC7A3 /* Debug */,
+				C06BE3A71F62BAE900EDC7A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C06BE3AB1F62BAE900EDC7A3 /* Build configuration list for PBXNativeTarget "Aphrodite-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06BE3A81F62BAE900EDC7A3 /* Debug */,
+				C06BE3A91F62BAE900EDC7A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
