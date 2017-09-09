@@ -1,4 +1,8 @@
 # Aphrodite
+
+![Aphrodite](http://on9ek9f89.bkt.clouddn.com/Aphrodite_logo.png)
+
+
 **I hope that every person who uses it can harvest love**
 
 ## Requirements
