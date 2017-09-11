@@ -27,7 +27,9 @@
 		C06BE40E1F63DA7100EDC7A3 /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE40D1F63DA7100EDC7A3 /* ArrayDataSource.swift */; };
 		C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE40F1F63DC4100EDC7A3 /* ExtensionSegue.swift */; };
 		C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE4111F63DCBB00EDC7A3 /* ActionStore.swift */; };
+		C06BE4141F64F6E900EDC7A3 /* ToolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */; };
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
+		C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAEAA1F6503F800590CA7 /* RegularTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +75,9 @@
 		C06BE40D1F63DA7100EDC7A3 /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		C06BE40F1F63DC4100EDC7A3 /* ExtensionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionSegue.swift; sourceTree = "<group>"; };
 		C06BE4111F63DCBB00EDC7A3 /* ActionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStore.swift; sourceTree = "<group>"; };
+		C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTest.swift; sourceTree = "<group>"; };
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
+		C08BAEAA1F6503F800590CA7 /* RegularTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 			children = (
 				C04339E61F619FBE0040B32D /* AphroditeTests.swift */,
 				C04339E81F619FBE0040B32D /* Info.plist */,
+				C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */,
+				C08BAEAA1F6503F800590CA7 /* RegularTest.swift */,
 			);
 			path = AphroditeTests;
 			sourceTree = "<group>";
@@ -378,6 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */,
+				C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */,
+				C06BE4141F64F6E900EDC7A3 /* ToolTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +705,7 @@
 				C06BE3A71F62BAE900EDC7A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C06BE3AB1F62BAE900EDC7A3 /* Build configuration list for PBXNativeTarget "Aphrodite-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -705,6 +714,7 @@
 				C06BE3A91F62BAE900EDC7A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

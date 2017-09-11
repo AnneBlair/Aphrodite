@@ -47,10 +47,10 @@ public func =~(object: String, template: String) -> Bool {
 /// 邮箱匹配
 public let mail: String = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
 
-/// 匹配用户名 字面或者数字组合 4到16位
+/// 匹配用户名 字母或者数字组合 4到16位
 public let Username: String = "^[a-z0-9_-]{4,16}$"
 
-/// 匹配密码 字面加下划线，6到18位
+/// 匹配密码 字母加下划线，6到18位
 public let Password: String = "^[a-z0-9_-]{6,18}$"
 
 /// 匹配16进制
@@ -59,7 +59,7 @@ public let HexValue: String = "^#?([a-f0-9]{6}|[a-f0-9]{3})$"
 ///内容带分割符号 “Anne-Blair”
 public let Slug: String = "^[a-z0-9-]+$"
 
-/// 匹配URL
+/// 匹配 HTPPS URL
 public let isURL: String = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$"
 
 /// 匹配IP地址
