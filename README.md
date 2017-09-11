@@ -8,6 +8,8 @@
 
 **I hope that every person who uses it can harvest love**
 
+ **It provides you a chance to use a pure-Swift alternative in your next app.**
+
 ## Requirements
 
 - iOS 8.0+
@@ -19,7 +21,7 @@ Aphrodite is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Aphrodite"  , '~> 1.1.1’
+pod "Aphrodite"  , '~> 1.1.2’
 ```
 
 **e.g:**
@@ -31,7 +33,7 @@ use_frameworks!
 
 target : ’Project’ do
 
-pod 'Aphrodite', '~> 1.1.1’
+pod 'Aphrodite', '~> 1.1.2’
 
 end
 ```
@@ -42,4 +44,8 @@ YinYu
 - [Twitter](https://twitter.com/291181204)
 - [weibo](http://weibo.com/anneblair)
 - Gmail: sirbliar@gmail.com
+
+## License
+**Aphrodite is released under the MIT license. See LICENSE for details.**
+
 
