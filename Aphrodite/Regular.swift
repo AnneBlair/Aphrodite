@@ -74,34 +74,13 @@ public let isDate1: String = "(\\d{4}|\\d{2})-((1[0-2])|(0?[1-9]))-(([12][0-9])|
 /// 日期(月/日/年)
 public let isDate2: String = "((1[0-2])|(0?[1-9]))/(([12][0-9])|(3[01])|(0?[1-9]))/(\\d{4}|\\d{2})"
 
-/// 时间(小时:分钟, 24小时制)
-public let TimeFormat: String = "((1|0?)[0-9]|2[0-3]):([0-5][0-9])"
-
 /// 是汉字
 public let isChinese: String = "[\\u4e00-\\u9fa5]"
 
 /// 中文及全角标点符号(字符)
 public let ChineseParagraph: String = "[\\u3000-\\u301e\\ufe10-\\ufe19\\ufe30-\\ufe44\\ufe50-\\ufe6b\\uff01-\\uffee]"
 
-/// 中国大陆固定电话号码
-public let fixedLineTelephone: String = "(\\d{4}-|\\d{3}-)?(\\d{8}|\\d{7})"
-
-/// 中国大陆身份证号(15位或18位)
-public let IdNum: String = "\\d{15}(\\d\\d[0-9xX])?"
-
-/// 手机号
-public let isIphoneNum: String = "1\\d{10}"
-
-/// 邮政编码
-public let zipCode: String = "[1-9]\\d{5}"
-
-/// 大于0的整数
-public let integer = "[1-9]\\d"
-
-/// 字母
-public let letter  = "^[A-Z]+$"
-
-/// 小数
-public let decimal = "(-?\\d+)(\\.\\d+)?"
+/// 手机号 ps:因为大陆手机号分联通移动等等没法用一个表示出来
+public let isPhoneNum: String = "^1[0-9]{10}$"
 
 

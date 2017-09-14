@@ -80,7 +80,46 @@ class RegularTest: XCTestCase {
     
     func testHtmlTag() {
         XCTAssertTrue("<tbody>ss</tbody>" =~ HTMLTag)
-        XCTAssertTrue("<center>ss</center>" =~ HTMLTag)
+        XCTAssertTrue("<center> </center>" =~ HTMLTag)
+        XCTAssertTrue("<title></title>" =~ HTMLTag)
+        XCTAssertFalse("<title><title>" =~ HTMLTag)
+        XCTAssertFalse("<title> <\title>" =~ HTMLTag)
+        XCTAssertFalse("title" =~ HTMLTag)
+    }
+    
+    func testIsDate() {
+        XCTAssertTrue("2017-09-14" =~ isDate1)
+        XCTAssertFalse("2017.09.14" =~ isDate1)
+        XCTAssertFalse("20170914" =~ isDate1)
+        
+        XCTAssertTrue("2017/09/14" =~ isDate2)
+        XCTAssertFalse("2017.09.14" =~ isDate2)
+        XCTAssertFalse("20170914" =~ isDate2)
+    }
+    
+    func testIsChinese() {
+        XCTAssertTrue("语歌" =~ isChinese)
+        XCTAssertFalse("yuge" =~ isChinese)
+        XCTAssertFalse("124" =~ isChinese)
+        XCTAssertFalse("_+!@" =~ isChinese)
+    }
+    
+    func testChineseParagraph() {
+        XCTAssertTrue("，。、’；、" =~ ChineseParagraph)
+        
+        XCTAssertFalse(",.';\\+_" =~ ChineseParagraph)
+        XCTAssertFalse("as" =~ ChineseParagraph)
+        XCTAssertFalse("语歌" =~ ChineseParagraph)
+        XCTAssertFalse("12" =~ ChineseParagraph)
+    }
+    
+    func testPhoneNum() {
+        XCTAssertTrue("13146666666" =~ isPhoneNum)
+        XCTAssertFalse("1111111111111" =~ isPhoneNum)
+        XCTAssertFalse("abcdefghijklmnopqrstuvwxyz" =~ isPhoneNum)
+        XCTAssertFalse("111111111" =~ isPhoneNum)
+        XCTAssertFalse("}}{}|}||" =~ isPhoneNum)
+        XCTAssertFalse("13wewewewew" =~ isPhoneNum)
     }
     
     func testRegular() {
