@@ -99,4 +99,3 @@ public func setNavigationColor(nav: UINavigationController,color: Color) {
     nav.navigationBar.setBackgroundImage(image, for: .default)
     nav.navigationBar.shadowImage = Image()
 }
-

@@ -76,5 +76,4 @@ import Foundation
     public func cancel(_ task: TaskBlock?) {
         task?(true)
     }
-    
 #endif

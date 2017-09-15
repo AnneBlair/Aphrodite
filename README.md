@@ -38,6 +38,12 @@ pod 'Aphrodite', '~> 1.1.2’
 end
 ```
 
+## Developments and Tests
+Any contributing and pull requests are warmly welcome. However, before you plan to implement some features or try to fix an uncertain issue, it is recommended to open a discussion first.
+
+It would be appreciated if your pull requests could build and with all tests green. :)
+
+
 ## <a name="author"> Author
 YinYu
 - [GitHub](https://github.com/AnneBlair)

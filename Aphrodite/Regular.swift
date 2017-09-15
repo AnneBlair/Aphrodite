@@ -22,18 +22,13 @@ public struct RegexHelper {
     }
 }
 
-
-//swift 中新加操作符的时候需要先对其进行声明，告诉编译器这个符合其实是一个操作符合
-//precedencegroup 定义了一个操作符的优先级别
 precedencegroup MatchPrecedence {
-    //associativity 定义了结合定律，多个同类操作符顺序出现的计算顺序
+
     associativity: none
-    //higherThan 运算的优先级
+
     higherThan: DefaultPrecedence
 }
 
-//infix 表示定位的是一个中位操作符，意思是前后都是输入；
-//其他的修饰子还包括prefix和postfix
 infix operator =~: MatchPrecedence
 
 public func =~(object: String, template: String) -> Bool {

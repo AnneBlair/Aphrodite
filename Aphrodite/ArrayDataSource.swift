@@ -27,9 +27,11 @@ open class ArrayDataSource: NSObject,UITableViewDataSource {
     func itemAtIndexPath(indexpath: Int) -> [Any] {
         return items[indexpath]
     }
+    
     public func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (itemAtIndexPath(indexpath: section) as AnyObject).count
     }
