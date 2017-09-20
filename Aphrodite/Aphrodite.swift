@@ -26,6 +26,13 @@
     public typealias ImageView = UIImageView
     public typealias Color = UIColor
     public typealias View = UIView
+    
+    public final class Aphrodite<Base> {
+        public let base: Base
+        public init(_ base: Base) {
+            self.base = base
+        }
+    }
 #endif
 
 

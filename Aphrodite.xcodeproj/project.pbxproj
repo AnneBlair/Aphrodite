@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680401F725C2F00594894 /* ExtensionDate.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04339E61F619FBE0040B32D /* AphroditeTests.swift */; };
 		C06BE38F1F62BAE900EDC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C03680401F725C2F00594894 /* ExtensionDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		C04339D81F619FBE0040B32D /* Aphrodite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aphrodite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04339DB1F619FBE0040B32D /* Aphrodite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Aphrodite.h; sourceTree = "<group>"; };
 		C04339DC1F619FBE0040B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C036803F1F725C1600594894 /* ExtensionDate */ = {
+			isa = PBXGroup;
+			children = (
+				C03680401F725C2F00594894 /* ExtensionDate.swift */,
+			);
+			name = ExtensionDate;
+			sourceTree = "<group>";
+		};
 		C04339CE1F619FBE0040B32D = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		C06BE3FC1F63C7CA00EDC7A3 /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
+				C036803F1F725C1600594894 /* ExtensionDate */,
 				C06BE3FD1F63C80300EDC7A3 /* Tool.swift */,
 				C06BE3FF1F63C97000EDC7A3 /* ExtensionUIView.swift */,
 				C06BE4011F63CF2400EDC7A3 /* UIViewAttribute.swift */,
@@ -376,6 +387,7 @@
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
+				C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

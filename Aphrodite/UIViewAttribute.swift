@@ -11,8 +11,8 @@ import Foundation
 /// 加载 xib 内的 UIView
 ///
 /// - Parameters:
-///   - name: StoryName 的名字
-///   - indentifier: 故事本的  Indentifier
+///   - name: the UIStoryboard Name
+///   - indentifier: UIStoryboard  Indentifier
 /// - Returns: UIViewController
 func xibLoad(name: String) -> View? {
     let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.last as? UIView
@@ -29,7 +29,7 @@ func screenSize() -> CGSize {
 /// 加载 StoryBoard 内的 UIViewController
 ///
 /// - Parameters:
-///   - name: StoryName 的名字
+///   - name: UIStoryboard Name
 ///   - indentifier: StoryBoard Indentifier
 /// - Returns: UIViewController
 func storyBoard(name: String, indentifier: String) -> UIViewController {

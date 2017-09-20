@@ -49,15 +49,6 @@ extension NSNumber {
     }
 }
 
-public let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    formatter.timeStyle = .short
-    formatter.doesRelativeDateFormatting = true
-    formatter.formattingContext = .standalone
-    return formatter
-}()
-
 
 extension String {
     /// 截取第一个到第任意位置
