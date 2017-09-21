@@ -17,7 +17,7 @@ public let dateFormatter: DateFormatter = {
     return formatter
 }()
 
-extension Date {
+public extension Date {
     
     public func judgeSomeMinute(date: Date) -> Bool {
         return judge(format: "yyyyMMyyhhmm", date: date)
@@ -31,7 +31,11 @@ extension Date {
         return judge(format: "yyyyMMdd", date: date)
     }
     
-    public func judgeSomeMoon(date: Date) -> Bool {
+    public func judgeSomeWeek(date: Date) -> Bool {
+        return self.week == date.week
+    }
+    
+    public func judgeSomeMonth(date: Date) -> Bool {
         return judge(format: "yyMM", date: date)
     }
     
@@ -43,5 +47,79 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: self) == formatter.string(from: date)
+    }
+}
+
+public extension Date {
+    public var minute: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .minute, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.minute, from: self)
+        }
+    }
+    
+    public var hour: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .hour, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.hour, from: self)
+        }
+    }
+    
+    public var day: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .day, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.day, from: self)
+        }
+    }
+    
+    public var week: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .weekday, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.weekday, from: self)
+        }
+    }
+    
+    public var month: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .month, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.month, from: self)
+        }
+    }
+    
+    public var year: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .year, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.year, from: self)
+        }
     }
 }
