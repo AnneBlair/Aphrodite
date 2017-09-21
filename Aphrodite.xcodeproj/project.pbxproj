@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680401F725C2F00594894 /* ExtensionDate.swift */; };
+		C03680441F736EE000594894 /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680431F736EE000594894 /* DateTest.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04339E61F619FBE0040B32D /* AphroditeTests.swift */; };
 		C06BE38F1F62BAE900EDC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		C03680401F725C2F00594894 /* ExtensionDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
+		C03680431F736EE000594894 /* DateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTest.swift; sourceTree = "<group>"; };
 		C04339D81F619FBE0040B32D /* Aphrodite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aphrodite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04339DB1F619FBE0040B32D /* Aphrodite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Aphrodite.h; sourceTree = "<group>"; };
 		C04339DC1F619FBE0040B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				C04339E81F619FBE0040B32D /* Info.plist */,
 				C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */,
 				C08BAEAA1F6503F800590CA7 /* RegularTest.swift */,
+				C03680431F736EE000594894 /* DateTest.swift */,
 			);
 			path = AphroditeTests;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */,
+				C03680441F736EE000594894 /* DateTest.swift in Sources */,
 				C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */,
 				C06BE4141F64F6E900EDC7A3 /* ToolTest.swift in Sources */,
 			);
