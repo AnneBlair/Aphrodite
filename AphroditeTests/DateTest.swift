@@ -49,7 +49,42 @@ class DateTest: XCTestCase {
         XCTAssertTrue(Date(timeIntervalSince1970: 1502960000).judgeSomeYear(date: Date(timeIntervalSince1970: 1502960000)))
         XCTAssertFalse(Date(timeIntervalSince1970: 1300960000).judgeSomeYear(date: Date()))
     }
+    
+    func testToday() {
+        XCTAssertTrue(Date().isToday)
+        XCTAssertFalse(Date(timeIntervalSince1970: 0).isToday)
+    }
+    
+    func testTomorrow() {
+        var date = Date()
+        date.add(.day, value: 1)
+        XCTAssertTrue(date.isTomorrow)
+        XCTAssertFalse(Date(timeIntervalSince1970: 0).isTomorrow)
+    }
+    
+    func testYesterday() {
+        var date = Date()
+        date.add(.day, value: -1)
+        XCTAssertTrue(date.isYesterday)
+        XCTAssertFalse(Date(timeIntervalSince1970: 0).isYesterday)
+    }
+    
+    func testWeekend() {
+        /// 1506132061 是周末  2017-09-23 10:1:1
+        let date = Date(timeIntervalSince1970: 1506132061)
+        XCTAssertTrue(date.isWeekend)
+        XCTAssertFalse(Date(timeIntervalSince1970: 0).isWeekend)
+    }
+    
+    func testAdd() {
+        var date = Date()
+        date.add(.day, value: 1)
+        XCTAssertTrue(date.isTomorrow)
+        date.add(.year, value: 1)
+        XCTAssertEqual(date.year, Date().year + 1)
+    }
 
+    /// Jan 1, 1970, 8:00 AM
     func testMinute() {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.minute, 0)
@@ -57,12 +92,11 @@ class DateTest: XCTestCase {
         XCTAssertFalse(date.minute != 1)
     }
     
-    /// "Jan 1, 1970, 8:00 AM"
     func testHour() {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.hour, 8)
         date.hour = 1
-        XCTAssertFalse(date.hour != 1)
+        XCTAssertNotEqual(date.week, 7)
     }
     
     func testDay() {
@@ -76,14 +110,21 @@ class DateTest: XCTestCase {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.week, 5)
         date.week = 6
-        XCTAssertFalse(date.week != 6)
+        XCTAssertNotEqual(date.week, 7)
+    }
+    
+    func testWeekForYear() {
+        var date = Date(timeIntervalSince1970: 0)
+        XCTAssertEqual(date.weekForYear, 1)
+        date.weekForYear = 40
+        XCTAssertNotEqual(date.weekForYear, 41)
     }
     
     func testMonth() {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.month, 1)
         date.month = 2
-        XCTAssertFalse(date.month != 2)
+        XCTAssertNotEqual(date.week, 7)
     }
     
     func testYear() {
@@ -93,17 +134,3 @@ class DateTest: XCTestCase {
         XCTAssertFalse(date.year != 2017)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
