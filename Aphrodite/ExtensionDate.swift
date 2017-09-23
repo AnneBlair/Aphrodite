@@ -32,7 +32,7 @@ public extension Date {
     }
     
     public func judgeSomeWeek(date: Date) -> Bool {
-        return self.year == date.year && self.week == date.week && self.month == date.month
+        return self.year == date.year && self.weekForYear == date.weekForYear
     }
     
     public func judgeSomeMonth(date: Date) -> Bool {
