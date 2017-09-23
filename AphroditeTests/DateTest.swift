@@ -106,6 +106,13 @@ class DateTest: XCTestCase {
         XCTAssertFalse(date.day != 2)
     }
     
+    func testWeekDay() {
+        // 1506823261 2017年10月1日 星期日 是 1
+        let date = Date(timeIntervalSince1970: 1506823261)
+        XCTAssertEqual(date.weekDay, 1)
+        XCTAssertNotEqual(date.weekDay, 2)
+    }
+    
     func testWeek() {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.week, 5)

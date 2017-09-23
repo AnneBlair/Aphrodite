@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Aphrodite"
-  s.version      = "1.1.5"
+  s.version      = "1.1.7"
   s.summary      = "Aphrodite . It is a regular expression used on iOS, which implement by Swift"
 
   s.description  = <<-DESC

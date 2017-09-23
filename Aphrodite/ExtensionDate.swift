@@ -110,6 +110,18 @@ public extension Date {
         }
     }
     
+    public var weekDay: Int {
+        set {
+            let date = Calendar.current.date(bySetting: .weekday, value: newValue, of: self)
+            if let date = date {
+                self = date
+            }
+        }
+        get {
+            return Calendar.current.component(.weekday, from: self)
+        }
+    }
+    
     /// Week In The Month
     public var week: Int {
         set {
