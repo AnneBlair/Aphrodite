@@ -51,6 +51,15 @@ YinYu
 - [weibo](http://weibo.com/anneblair)
 - Gmail: sirbliar@gmail.com
 
+## Code of Conduct
+
+The Aphrodite team welcomes people of all ethnicities, nationalities, ages, gender, disability, levels of experience, and religious beliefs to use and contribute to the Aphrodite project. We pledge to foster and enforce a harassment-free environment of openness, respect, and cooperation for everyone in all project and public spaces online or offline.
+
+Please report any behaviour that violates our Code of Conduct to sirbliar@gmail.com. The Aphrodite team is committed to enforcing this Code of Conduct to ensure everyone who wishes to use, contribute to, and comment on the Aphrodite project may do so freely and openly and without fear of reprisal.
+
+The Aphrodite team maintains the right to remove, edit, or reject any comments, code, edits, or issues that do not align with our Code of Conduct.
+
+
 ## License
 **Aphrodite is released under the MIT license. See LICENSE for details.**
 
