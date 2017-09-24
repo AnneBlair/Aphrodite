@@ -49,7 +49,7 @@ YinYu
 - [GitHub](https://github.com/AnneBlair)
 - [Twitter](https://twitter.com/291181204)
 - [weibo](http://weibo.com/anneblair)
-- Gmail: sirbliar@gmail.com
+- sirbliar@gmail.com
 
 ## Code of Conduct
 
