@@ -171,4 +171,22 @@ public extension Date {
             return Calendar.current.component(.year, from: self)
         }
     }
+    
+    /// The first day of the month
+    public var dayForMonth: Date {
+        get {
+            guard var date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: self) else { fatalError("date Calendar Error") }
+            date.add(.day, value: -date.day)
+            return date
+        }
+    }
+    
+    /// The first day of the Week
+    public var dayForWeek: Date {
+        get {
+            guard var date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date()) else { fatalError("date Calendar Error") }
+            date.add(.day, value: -date.weekDay)
+            return date
+        }
+    }
 }
