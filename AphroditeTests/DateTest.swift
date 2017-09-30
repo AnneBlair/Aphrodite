@@ -84,7 +84,7 @@ class DateTest: XCTestCase {
         XCTAssertEqual(date.year, Date().year + 1)
     }
 
-    /// Jan 1, 1970, 8:00 AM
+    /// Jan 1, 1970, 00:00 AM
     func testMinute() {
         var date = Date(timeIntervalSince1970: 0)
         XCTAssertEqual(date.minute, 0)
@@ -94,7 +94,7 @@ class DateTest: XCTestCase {
     
     func testHour() {
         var date = Date(timeIntervalSince1970: 0)
-        XCTAssertEqual(date.hour, 8)
+        XCTAssertEqual(date.hour, 0)
         date.hour = 1
         XCTAssertNotEqual(date.week, 7)
     }
@@ -140,4 +140,25 @@ class DateTest: XCTestCase {
         date.year = 2017
         XCTAssertFalse(date.year != 2017)
     }
+    
+    func testDayForMonth() {
+        let date = Date().dayForMonth
+        XCTAssertEqual(date.month, Date().month - 1)
+        XCTAssertEqual(date.hour, 23)
+        XCTAssertEqual(date.minute, 59)
+    }
+    
+    func testDayForWeek() {
+        let date = Date().dayForWeek
+        XCTAssertEqual(date.week, Date().week)
+        XCTAssertEqual(date.hour, 23)
+        XCTAssertEqual(date.minute, 59)
+    }
 }
+
+
+
+
+
+
+
