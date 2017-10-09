@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02211211F81DBC200AAB0F6 /* ExtensionPredicate.swift */; };
 		C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680401F725C2F00594894 /* ExtensionDate.swift */; };
 		C03680441F736EE000594894 /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680431F736EE000594894 /* DateTest.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C02211211F81DBC200AAB0F6 /* ExtensionPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionPredicate.swift; sourceTree = "<group>"; };
 		C03680401F725C2F00594894 /* ExtensionDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		C03680431F736EE000594894 /* DateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTest.swift; sourceTree = "<group>"; };
 		C04339D81F619FBE0040B32D /* Aphrodite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aphrodite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C02211201F81DBA000AAB0F6 /* ExtensionNSPredicate */ = {
+			isa = PBXGroup;
+			children = (
+				C02211211F81DBC200AAB0F6 /* ExtensionPredicate.swift */,
+			);
+			name = ExtensionNSPredicate;
+			sourceTree = "<group>";
+		};
 		C036803F1F725C1600594894 /* ExtensionDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		C06BE3FC1F63C7CA00EDC7A3 /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
+				C02211201F81DBA000AAB0F6 /* ExtensionNSPredicate */,
 				C036803F1F725C1600594894 /* ExtensionDate */,
 				C06BE3FD1F63C80300EDC7A3 /* Tool.swift */,
 				C06BE3FF1F63C97000EDC7A3 /* ExtensionUIView.swift */,
@@ -383,6 +394,7 @@
 				C06BE4021F63CF2400EDC7A3 /* UIViewAttribute.swift in Sources */,
 				C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */,
 				C06BE40C1F63D80B00EDC7A3 /* ExtensionText.swift in Sources */,
+				C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */,
 				C06BE4081F63D6DB00EDC7A3 /* Regular.swift in Sources */,
 				C06BE40A1F63D76300EDC7A3 /* Effect.swift in Sources */,
 				C06BE3FE1F63C80300EDC7A3 /* Tool.swift in Sources */,
