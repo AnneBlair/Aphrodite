@@ -20,6 +20,18 @@ class ArrayTest: XCTestCase {
         super.tearDown()
     }
     
+    func testAccumlate() {
+        let arrs: [Int] = [1,2,3,5]
+        XCTAssertEqual(arrs.accumulate(0, +), [1,3,6,11])
+    }
+    
+    func testAll() {
+        let nums = [1,2,3,4,5,6,7,8,9]
+        XCTAssertEqual(nums.all { $0 % 2 == 0 }, false)
+        let filNums = nums.filter { $0 % 2 == 0 }
+        XCTAssertEqual(filNums.all { $0 % 2 == 0 }, true)
+    }
+    
     func testLast() {
         let arrs = ["swift","oc","c++","Java","aa"]
         XCTAssertEqual(arrs.last { $0.hasSuffix("a") }, arrs.last)

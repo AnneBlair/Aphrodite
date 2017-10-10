@@ -9,6 +9,23 @@
 import Foundation
 public extension Array {
     
+    /// This function creates an intermediate variable to store the values of each step, and then uses map to gradually create the result array from this intermediate value
+    ///
+    /// e.g let accumulate = [1,2,3,5].accumulate(0, +)
+    /// print(accumulate)   "[1, 3, 6, 11]"
+    /// - Parameters:
+    ///   - initialResult: Result
+    ///   - nextPartialResult: (Result, Element) -> Result
+    /// - Returns: [Result]
+    func accumulate<Result>(_ initialResult: Result,
+                            _ nextPartialResult: (Result, Element) -> Result) -> [Result]
+    {
+        var running = initialResult
+        return map { next in
+            running = nextPartialResult(running, next)
+            return running
+        }
+    }
 }
 
 public extension Sequence {
@@ -24,5 +41,17 @@ public extension Sequence {
             return element
         }
         return nil
+    }
+    
+    /// Check whether all elements in a sequence satisfy a certain condition
+    /// For a condition, if no element does not satisfy it, it means that all elements satisfy it
+    ///
+    /// e.g： let nums = [1,2,3,4,5,6,7,8,9]
+    ///       evenNums.all { $0 % 2 == 0 }   "false"
+    ///
+    /// - Parameter predicate: Iterator.Element
+    /// - Returns: True or False
+    public func all(matching predicate: (Iterator.Element) -> Bool) -> Bool {
+        return !contains { !predicate($0) }
     }
 }
