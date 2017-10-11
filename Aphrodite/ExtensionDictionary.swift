@@ -37,8 +37,8 @@ public extension Dictionary {
             self.merge(sequence)
     }
     
-    
-    /// As a result, the dictionary structure is maintained and mapped only to its values
+    /// As a result, the dictionary structure is maintained and mapped only to its values.
+    /// You can combine one dictionary into another. In addition, the method parameters can also be key values, arrays, or any of the same arbitrary sequence, rather than having to be a dictionary.
     /// e.g： var dics = ["Yin": 66,"Yu": 99]
     ///       let tranDic = dics.mapValues { str in
     ///           return String(str)

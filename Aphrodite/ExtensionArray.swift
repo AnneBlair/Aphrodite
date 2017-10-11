@@ -55,3 +55,36 @@ public extension Sequence {
         return !contains { !predicate($0) }
     }
 }
+
+public extension Sequence where Iterator.Element: Hashable {
+    /// Gets all the unique elements in the sequence
+    /// e.g: let unique = [1,2,3,4,5,6,1,1,1,1,1].unique()
+    ///          print(unique)     "[1, 2, 3, 4, 5, 6]"
+    ///
+    /// - Returns: All the unique elements are placed in a Set, and then returned to the contents of the collection
+    public func unique() -> [Iterator.Element] {
+        var seen: Set<Iterator.Element> = []
+        return filter {
+            if seen.contains($0) {
+                return false
+            } else {
+                seen.insert($0)
+                return true
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

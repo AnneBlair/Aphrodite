@@ -39,4 +39,10 @@ class ArrayTest: XCTestCase {
         XCTAssertEqual(arrs.last { $0.hasPrefix("o") }, "oc")
         XCTAssertEqual(arrs.last { $0.hasPrefix("f") }, nil)
     }
+    
+    func testUnique() {
+        let unique = [1,2,3,9,5,6,1,1,4,1,1].unique()
+        XCTAssertEqual(unique, [1, 2, 3, 9, 5, 6, 4])
+    }
+    
 }
