@@ -6,9 +6,7 @@
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 
-**I hope that every person who uses it can harvest love**
-
- **It provides you a chance to use a pure-Swift alternative in your next app.**
+**I hope that every person who uses it can harvest love. It provides you a chance to use a pure-Swift alternative in your next app.**
 
 ## Requirements
 

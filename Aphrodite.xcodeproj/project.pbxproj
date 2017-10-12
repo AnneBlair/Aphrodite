@@ -37,6 +37,7 @@
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
 		C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAEAA1F6503F800590CA7 /* RegularTest.swift */; };
 		C0D18F221F8CC99100C61CBB /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */; };
+		C0F4F8461F8F4D6F00967073 /* FExtensionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F4F8451F8F4D6F00967073 /* FExtensionRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
 		C08BAEAA1F6503F800590CA7 /* RegularTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTest.swift; sourceTree = "<group>"; };
 		C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDictionary.swift; sourceTree = "<group>"; };
+		C0F4F8451F8F4D6F00967073 /* FExtensionRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FExtensionRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		C06BE3FC1F63C7CA00EDC7A3 /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
+				C0F4F8441F8F4D5100967073 /* ExtensionRange */,
 				C0D18F201F8CC96C00C61CBB /* ExtensionDictionary */,
 				C07B62F21F8B64980037BFF9 /* ExtensionArry */,
 				C02211201F81DBA000AAB0F6 /* ExtensionNSPredicate */,
@@ -239,6 +242,14 @@
 				C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */,
 			);
 			name = ExtensionDictionary;
+			sourceTree = "<group>";
+		};
+		C0F4F8441F8F4D5100967073 /* ExtensionRange */ = {
+			isa = PBXGroup;
+			children = (
+				C0F4F8451F8F4D6F00967073 /* FExtensionRange.swift */,
+			);
+			name = ExtensionRange;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
+				C0F4F8461F8F4D6F00967073 /* FExtensionRange.swift in Sources */,
 				C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
