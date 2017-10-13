@@ -53,11 +53,20 @@ extension NSNumber {
 extension String {
     
     /// Converting an array of strings by iterator
+    /// e.g: "YinYu".stringToArr()   "["Y", "i", "n", "Y", "u"]"
     ///
-    /// - Returns: <#return value description#>
-//    func stringToArr() -> [String] {
-//        return PrefixSequence(string: self).map { $0.uppercased() }
-//    }
+    /// - Returns: [String]
+    public func stringToArr() -> [String] {
+        return PrefixSequence(string: self).map { $0 }
+    }
+    
+    /// Converts an array of uppercase strings into iterators
+    /// e.g: "YinYu".uppercasedArr()   "["Y", "I", "N", "Y", "U"]"
+    ///
+    /// - Returns: [String]
+    public func uppercasedArr() -> [String] {
+        return PrefixSequence(string: self).map { $0.uppercased() }
+    }
     
     /// 截取第一个到第任意位置
     ///
@@ -102,20 +111,6 @@ extension String {
         let width = ceil(size.width) + 5
         let height = ceil(size.height)
         return CGSize(width: width, height: height)
-    }
-    
-    /// 输入字符串 输出数组
-    /// e.g  "qwert" -> ["q","w","e","r","t"]
-    /// - Returns: ["q","w","e","r","t"]
-    public func stringToArr() -> [String] {
-        let num = self.endIndex.encodedOffset
-        if !(num > 0) { return [""] }
-        var arr: [String] = []
-        for i in 0..<num {
-            let tempStr: String = self[self.index(self.startIndex, offsetBy: i)].description
-            arr.append(tempStr)
-        }
-        return arr
     }
     
     /// 字符串截取         3  6
@@ -186,8 +181,9 @@ public struct PrefixIterator: IteratorProtocol {
     }
     mutating public func next() -> String? {
         guard offset < string.endIndex else { return nil }
+        let previous = offset
         offset = string.index(after: offset)
-        return String(string[string.startIndex..<offset])
+        return String(string[previous..<offset])
     }
 }
 
