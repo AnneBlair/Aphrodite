@@ -51,13 +51,20 @@ extension NSNumber {
 
 
 extension String {
+    
+    /// Converting an array of strings by iterator
+    ///
+    /// - Returns: <#return value description#>
+//    func stringToArr() -> [String] {
+//        return PrefixSequence(string: self).map { $0.uppercased() }
+//    }
+    
     /// 截取第一个到第任意位置
     ///
     /// - Parameter end: 结束的位值
     /// - Returns: 截取后的字符串
     public func stringCut(end: Int) ->String{
-        printDebug(self.characters.count)
-        if !(end < characters.count) { return "截取超出范围" }
+        guard self.startIndex < self.endIndex else { return "截取超出范围" }
         let sInde = index(startIndex, offsetBy: end)
         return substring(to: sInde)
     }
@@ -67,7 +74,7 @@ extension String {
     /// - Parameter end:
     /// - Returns: 截取后的字符串
     public func stringCutToEnd(star: Int) -> String {
-        if !(star < characters.count) { return "截取超出范围" }
+        guard self.startIndex < self.endIndex else { return "截取超出范围" }
         let sRang = index(startIndex, offsetBy: star)..<endIndex
         return substring(with: sRang)
     }
@@ -79,7 +86,7 @@ extension String {
     ///   - locat: 插入的位置
     /// - Returns: 添加后的字符串
     public func stringInsert(content: String,locat: Int) -> String {
-        if !(locat < characters.count) { return "截取超出范围" }
+        guard self.startIndex < self.endIndex else { return "截取超出范围" }
         let str1 = stringCut(end: locat)
         let str2 = stringCutToEnd(star: locat)
         return str1 + content + str2
@@ -101,7 +108,7 @@ extension String {
     /// e.g  "qwert" -> ["q","w","e","r","t"]
     /// - Returns: ["q","w","e","r","t"]
     public func stringToArr() -> [String] {
-        let num = characters.count
+        let num = self.endIndex.encodedOffset
         if !(num > 0) { return [""] }
         var arr: [String] = []
         for i in 0..<num {
@@ -118,7 +125,7 @@ extension String {
     ///   - end: 结束位置 6
     /// - Returns: 截取后的字符串 "cdef"
     public func startToEnd(start: Int,end: Int) -> String {
-        if !(end < characters.count) || start > end { return "取值范围错误" }
+        if !(end < self.endIndex.encodedOffset) || start > end { return "取值范围错误" }
         var tempStr: String = ""
         for i in start...end {
             let temp: String = self[self.index(self.startIndex, offsetBy: i - 1)].description
@@ -168,3 +175,26 @@ extension String {
         return titleSize.width
     }
 }
+
+//MARK:            ________________IteratorProtocol________________
+public struct PrefixIterator: IteratorProtocol {
+    let string: String
+    var offset: String.Index
+    init(string: String) {
+        self.string = string
+        offset = string.startIndex
+    }
+    mutating public func next() -> String? {
+        guard offset < string.endIndex else { return nil }
+        offset = string.index(after: offset)
+        return String(string[string.startIndex..<offset])
+    }
+}
+
+public struct PrefixSequence: Sequence {
+    let string: String
+    public func makeIterator() -> PrefixIterator {
+        return PrefixIterator(string: string)
+    }
+}
+
