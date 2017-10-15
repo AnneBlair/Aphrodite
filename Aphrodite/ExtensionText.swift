@@ -49,7 +49,6 @@ extension NSNumber {
     }
 }
 
-
 extension String {
     
     /// Converting an array of strings by iterator

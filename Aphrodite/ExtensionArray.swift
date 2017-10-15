@@ -28,6 +28,18 @@ public extension Array {
     }
 }
 
+/// Fibonacci number
+public let fibonacci = AnySequence(fibsIterator)
+
+public func fibsIterator() -> AnyIterator<Int> {
+    var state = (0,1)
+    return AnyIterator {
+        let upcomingNumber = state.0
+        state = (state.1,state.0 + state.1)
+        return upcomingNumber
+    }
+}
+
 public extension Sequence {
 
     /// In the inverted array, find the first element satisfying the specified condition
@@ -53,6 +65,22 @@ public extension Sequence {
     /// - Returns: True or False
     public func all(matching predicate: (Iterator.Element) -> Bool) -> Bool {
         return !contains { !predicate($0) }
+    }
+}
+
+public extension Sequence
+    where Iterator.Element: Equatable,
+    SubSequence: Sequence,
+    SubSequence.Iterator.Element == Iterator.Element
+{
+    /// Check whether the beginning and end of a sequence begin with the same N element
+    ///
+    /// - Parameter n: elements
+    /// - Returns: true or false
+    public func headMirrorsTail(_ n: Int) -> Bool {
+        let head = prefix(n)
+        let tail = suffix(n).reversed()
+        return head.elementsEqual(tail)
     }
 }
 

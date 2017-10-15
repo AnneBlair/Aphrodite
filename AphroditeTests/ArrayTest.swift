@@ -45,4 +45,22 @@ class ArrayTest: XCTestCase {
         XCTAssertEqual(unique, [1, 2, 3, 9, 5, 6, 4])
     }
     
+    func testFibonacci() {
+//        let fibs = Array(fibonacci.prefix(10))
+//        XCTAssertEqual(fibs, [0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+    }
+    
+    func testHeadMirrorsTail() {
+        let state = [1,2,3,2,1].headMirrorsTail(2)
+        XCTAssertEqual(state, true)
+    }
 }
+
+
+
+
+
+
+
+
+
