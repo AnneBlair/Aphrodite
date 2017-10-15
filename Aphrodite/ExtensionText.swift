@@ -19,7 +19,7 @@ public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMu
     
     let str = NSMutableAttributedString()
     for i in 0..<color.count {
-        str.append(NSAttributedString(string: content[i], attributes: [NSForegroundColorAttributeName: UIColor(hex: color[i][0]), NSFontAttributeName:UIFont.systemFont(ofSize: size[i])]))
+        str.append(NSAttributedString(string: content[i], attributes: [NSAttributedStringKey.foregroundColor: UIColor(hex: color[i][0]), NSAttributedStringKey.font:UIFont.systemFont(ofSize: size[i])]))
     }
     return str
 }
@@ -106,7 +106,7 @@ extension String {
     /// - Returns: CGSize
     public func getStringSzie(size: CGFloat = 10) -> CGSize {
         let baseFont = UIFont.systemFont(ofSize: size)
-        let size = self.size(attributes: [NSFontAttributeName: baseFont])
+        let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
         let width = ceil(size.width) + 5
         let height = ceil(size.height)
         return CGSize(width: width, height: height)
@@ -134,39 +134,6 @@ extension String {
     public func stringEncoding() -> String {
         let url = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         return url!
-    }
-    
-    public func caleStringSize(_ maxSize: CGSize, font: UIFont, lineSpace: CGFloat, lineBreakMode: NSLineBreakMode) -> CGSize {
-        var properSize = CGSize();
-        let text: NSString = self as NSString
-        
-        if text.length > 0 {
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineBreakMode = lineBreakMode
-            paragraphStyle.lineSpacing = lineSpace
-            let attributes = [NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle] as NSDictionary
-            let options = NSStringDrawingOptions.init(rawValue: 1)
-            properSize = text.boundingRect(with: maxSize, options: options, attributes: attributes as? [String : Any], context: nil).size
-        }
-        return properSize
-    }
-    
-    public func caleFontSize(_ font: UIFont, width: CGFloat, lineBreakMode: NSLineBreakMode) -> CGSize {
-        
-        var titleSize = self.caleStringSize(CGSize(width: width, height: CGFloat(MAXFLOAT)), font: font, lineSpace: 0, lineBreakMode: lineBreakMode)
-        if(titleSize.height > 0){
-            titleSize.height += 1;
-        }
-        return titleSize
-    }
-    
-    public func caleFontSize(_ font: UIFont, height: CGFloat, lineBreakMode: NSLineBreakMode) -> CGFloat {
-        
-        var titleSize = self.caleStringSize(CGSize(width: CGFloat(MAXFLOAT), height: height), font: font, lineSpace: 0, lineBreakMode: lineBreakMode)
-        if(titleSize.width > 0){
-            titleSize.width += 1;
-        }
-        return titleSize.width
     }
 }
 
