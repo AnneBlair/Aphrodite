@@ -119,7 +119,7 @@ extension String {
     ///   - end: 结束位置 6
     /// - Returns: 截取后的字符串 "cdef"
     public func startToEnd(start: Int,end: Int) -> String {
-        if !(end < self.endIndex.encodedOffset) || start > end { return "取值范围错误" }
+        if !(end < self.characters.count) || start > end { return "取值范围错误" }
         var tempStr: String = ""
         for i in start...end {
             let temp: String = self[self.index(self.startIndex, offsetBy: i - 1)].description
