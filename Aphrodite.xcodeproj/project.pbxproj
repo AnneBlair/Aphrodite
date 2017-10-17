@@ -32,6 +32,7 @@
 		C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE40F1F63DC4100EDC7A3 /* ExtensionSegue.swift */; };
 		C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE4111F63DCBB00EDC7A3 /* ActionStore.swift */; };
 		C06BE4141F64F6E900EDC7A3 /* ToolTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */; };
+		C07827C51F95DD4D00DB3450 /* AKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07827C41F95DD4D00DB3450 /* AKView.swift */; };
 		C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B62F31F8B64C30037BFF9 /* ExtensionArray.swift */; };
 		C07B62F61F8BC68E0037BFF9 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */; };
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
@@ -88,6 +89,7 @@
 		C06BE40F1F63DC4100EDC7A3 /* ExtensionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionSegue.swift; sourceTree = "<group>"; };
 		C06BE4111F63DCBB00EDC7A3 /* ActionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionStore.swift; sourceTree = "<group>"; };
 		C06BE4131F64F6E900EDC7A3 /* ToolTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTest.swift; sourceTree = "<group>"; };
+		C07827C41F95DD4D00DB3450 /* AKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKView.swift; sourceTree = "<group>"; };
 		C07B62F31F8B64C30037BFF9 /* ExtensionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
 		C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		C04339DA1F619FBE0040B32D /* Aphrodite */ = {
 			isa = PBXGroup;
 			children = (
+				C07827C01F95D6FF00DB3450 /* KLineView */,
 				C06BE3FC1F63C7CA00EDC7A3 /* BaseTool */,
 				C04339DB1F619FBE0040B32D /* Aphrodite.h */,
 				C04339DC1F619FBE0040B32D /* Info.plist */,
@@ -226,6 +229,22 @@
 				C06BE4111F63DCBB00EDC7A3 /* ActionStore.swift */,
 			);
 			name = BaseTool;
+			sourceTree = "<group>";
+		};
+		C07827C01F95D6FF00DB3450 /* KLineView */ = {
+			isa = PBXGroup;
+			children = (
+				C07827C11F95D91B00DB3450 /* ViewBase */,
+			);
+			path = KLineView;
+			sourceTree = "<group>";
+		};
+		C07827C11F95D91B00DB3450 /* ViewBase */ = {
+			isa = PBXGroup;
+			children = (
+				C07827C41F95DD4D00DB3450 /* AKView.swift */,
+			);
+			path = ViewBase;
 			sourceTree = "<group>";
 		};
 		C07B62F21F8B64980037BFF9 /* ExtensionArry */ = {
@@ -441,6 +460,7 @@
 				C06BE3FE1F63C80300EDC7A3 /* Tool.swift in Sources */,
 				C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */,
 				C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */,
+				C07827C51F95DD4D00DB3450 /* AKView.swift in Sources */,
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,

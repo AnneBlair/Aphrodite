@@ -159,4 +159,3 @@ public struct PrefixSequence: Sequence {
         return PrefixIterator(string: string)
     }
 }
-
