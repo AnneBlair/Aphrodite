@@ -67,6 +67,31 @@ public extension View {
 
 //MARK:            ________________Extension AKLineView________________
 #if os(iOS)
+    extension TapGesture {
+        final func aNumberOfTouches() -> Int {
+            return numberOfTouches
+        }
+        
+        final var aNumberOfTapsRequired: Int {
+            get {
+                return self.numberOfTapsRequired
+            }
+            set {
+                self.numberOfTapsRequired = newValue
+            }
+        }
+    }
+    
+    extension PanGesture {
+        final func aNumberOfTouches() -> Int {
+            return numberOfTouches
+        }
+        
+        final func aLocationOfTouch(_ touch: Int, inView: UIView?) -> CGPoint {
+            return super.location(ofTouch: touch, in: inView)
+        }
+    }
+    
     extension PinchGesture {
         final var aScale: CGFloat {
             get {
@@ -75,6 +100,10 @@ public extension View {
             set {
                 scale = newValue
             }
+        }
+        
+        final func aLocationOfTouch(_ touch: Int, inView: UIView?) -> CGPoint {
+            return super.location(ofTouch: touch, in: inView)
         }
     }
     
@@ -102,7 +131,6 @@ public extension View {
             get {
                 return isScrollEnabled
             }
-            
             set {
                 isScrollEnabled = newValue
             }
@@ -110,7 +138,6 @@ public extension View {
     }
     
     extension Screen {
-        
         final var aScale: CGFloat {
             return self.scale
         }
