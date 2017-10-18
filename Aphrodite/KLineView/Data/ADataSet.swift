@@ -156,7 +156,7 @@ public protocol ADataSet {
     var label: String? { get }
     
     /// The axis this DataSet should be plotted against.
-//    var axisDependency: YAxis.AxisDependency { get }
+    var axisDependency: YAxis.AxisDependency { get }
     
     /// List representing all colors that are used for drawing the actual values for this DataSet
     var valueColors: [Color] { get }
@@ -182,7 +182,7 @@ public protocol ADataSet {
     var isHighlightEnabled: Bool { get }
     
     /// Custom formatter that is used instead of the auto-formatter if set
-//    var valueFormatter: IValueFormatter? { get set }
+    var valueFormatter: AValueFormatter? { get set }
     
     /// - returns: `true` if the valueFormatter object of this DataSet is null.
     var needsFormatter: Bool { get }

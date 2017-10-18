@@ -12,6 +12,14 @@
 		C03680441F736EE000594894 /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680431F736EE000594894 /* DateTest.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04339E61F619FBE0040B32D /* AphroditeTests.swift */; };
+		C05080F61F97283B000DC13F /* AData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080F51F97283B000DC13F /* AData.swift */; };
+		C05080F91F972B77000DC13F /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080F81F972B77000DC13F /* YAxis.swift */; };
+		C05080FB1F972BBB000DC13F /* AxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080FA1F972BBB000DC13F /* AxisBase.swift */; };
+		C05080FD1F973013000DC13F /* ComponentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080FC1F973013000DC13F /* ComponentBase.swift */; };
+		C05080FF1F9730CF000DC13F /* AxisValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080FE1F9730CF000DC13F /* AxisValue.swift */; };
+		C05081011F973485000DC13F /* ALimitLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05081001F973485000DC13F /* ALimitLine.swift */; };
+		C05081031F973645000DC13F /* DefaultAxisValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05081021F973645000DC13F /* DefaultAxisValue.swift */; };
+		C05081051F973C7A000DC13F /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05081041F973C7A000DC13F /* Highlight.swift */; };
 		C06183A21F8CF262009AC93B /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06183A11F8CF262009AC93B /* DictionaryTest.swift */; };
 		C06BE38F1F62BAE900EDC7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */; };
 		C06BE3911F62BAE900EDC7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BE3901F62BAE900EDC7A3 /* ViewController.swift */; };
@@ -38,6 +46,7 @@
 		C07827CE1F96ECCE00DB3450 /* ASetRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07827CD1F96ECCE00DB3450 /* ASetRounding.swift */; };
 		C07827D01F96EDB900DB3450 /* ADataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07827CF1F96EDB900DB3450 /* ADataEntry.swift */; };
 		C07827D21F96FBDE00DB3450 /* PortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07827D11F96FBDE00DB3450 /* PortHandler.swift */; };
+		C07827D51F9704C800DB3450 /* AValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07827D41F9704C800DB3450 /* AValue.swift */; };
 		C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B62F31F8B64C30037BFF9 /* ExtensionArray.swift */; };
 		C07B62F61F8BC68E0037BFF9 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */; };
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
@@ -73,6 +82,14 @@
 		C04339E11F619FBE0040B32D /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04339E61F619FBE0040B32D /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
 		C04339E81F619FBE0040B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05080F51F97283B000DC13F /* AData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AData.swift; sourceTree = "<group>"; };
+		C05080F81F972B77000DC13F /* YAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxis.swift; sourceTree = "<group>"; };
+		C05080FA1F972BBB000DC13F /* AxisBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisBase.swift; sourceTree = "<group>"; };
+		C05080FC1F973013000DC13F /* ComponentBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentBase.swift; sourceTree = "<group>"; };
+		C05080FE1F9730CF000DC13F /* AxisValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisValue.swift; sourceTree = "<group>"; };
+		C05081001F973485000DC13F /* ALimitLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALimitLine.swift; sourceTree = "<group>"; };
+		C05081021F973645000DC13F /* DefaultAxisValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAxisValue.swift; sourceTree = "<group>"; };
+		C05081041F973C7A000DC13F /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		C06183A11F8CF262009AC93B /* DictionaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTest.swift; sourceTree = "<group>"; };
 		C06BE38C1F62BAE900EDC7A3 /* Aphrodite-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aphrodite-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06BE38E1F62BAE900EDC7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +117,7 @@
 		C07827CD1F96ECCE00DB3450 /* ASetRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASetRounding.swift; sourceTree = "<group>"; };
 		C07827CF1F96EDB900DB3450 /* ADataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADataEntry.swift; sourceTree = "<group>"; };
 		C07827D11F96FBDE00DB3450 /* PortHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortHandler.swift; sourceTree = "<group>"; };
+		C07827D41F9704C800DB3450 /* AValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AValue.swift; sourceTree = "<group>"; };
 		C07B62F31F8B64C30037BFF9 /* ExtensionArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
 		C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
@@ -205,6 +223,18 @@
 			path = AphroditeTests;
 			sourceTree = "<group>";
 		};
+		C05080F71F972B60000DC13F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C05080F81F972B77000DC13F /* YAxis.swift */,
+				C05080FA1F972BBB000DC13F /* AxisBase.swift */,
+				C05080FC1F973013000DC13F /* ComponentBase.swift */,
+				C05081001F973485000DC13F /* ALimitLine.swift */,
+				C05081041F973C7A000DC13F /* Highlight.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		C06BE38D1F62BAE900EDC7A3 /* Aphrodite-Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +274,10 @@
 		C07827C01F95D6FF00DB3450 /* KLineView */ = {
 			isa = PBXGroup;
 			children = (
+				C05080F71F972B60000DC13F /* Classes */,
 				C07827C61F9663E700DB3450 /* Data */,
 				C07827C11F95D91B00DB3450 /* ViewBase */,
+				C07827D31F97049800DB3450 /* Formatters */,
 			);
 			path = KLineView;
 			sourceTree = "<group>";
@@ -266,8 +298,19 @@
 				C07827C91F96642200DB3450 /* ADataSet.swift */,
 				C07827CB1F96683000DB3450 /* AEntryBase.swift */,
 				C07827CD1F96ECCE00DB3450 /* ASetRounding.swift */,
+				C05080F51F97283B000DC13F /* AData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C07827D31F97049800DB3450 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				C07827D41F9704C800DB3450 /* AValue.swift */,
+				C05080FE1F9730CF000DC13F /* AxisValue.swift */,
+				C05081021F973645000DC13F /* DefaultAxisValue.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		C07B62F21F8B64980037BFF9 /* ExtensionArry */ = {
@@ -473,26 +516,35 @@
 			files = (
 				C06BE40E1F63DA7100EDC7A3 /* ArrayDataSource.swift in Sources */,
 				C06BE4001F63C97000EDC7A3 /* ExtensionUIView.swift in Sources */,
+				C05081051F973C7A000DC13F /* Highlight.swift in Sources */,
 				C06BE4021F63CF2400EDC7A3 /* UIViewAttribute.swift in Sources */,
 				C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */,
 				C07827CE1F96ECCE00DB3450 /* ASetRounding.swift in Sources */,
+				C07827D51F9704C800DB3450 /* AValue.swift in Sources */,
 				C06BE40C1F63D80B00EDC7A3 /* ExtensionText.swift in Sources */,
 				C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */,
+				C05080FD1F973013000DC13F /* ComponentBase.swift in Sources */,
 				C06BE4081F63D6DB00EDC7A3 /* Regular.swift in Sources */,
 				C07827D01F96EDB900DB3450 /* ADataEntry.swift in Sources */,
 				C0D18F221F8CC99100C61CBB /* ExtensionDictionary.swift in Sources */,
+				C05080FB1F972BBB000DC13F /* AxisBase.swift in Sources */,
+				C05080FF1F9730CF000DC13F /* AxisValue.swift in Sources */,
 				C06BE40A1F63D76300EDC7A3 /* Effect.swift in Sources */,
+				C05080F91F972B77000DC13F /* YAxis.swift in Sources */,
 				C07827CC1F96683000DB3450 /* AEntryBase.swift in Sources */,
 				C06BE3FE1F63C80300EDC7A3 /* Tool.swift in Sources */,
 				C07827CA1F96642200DB3450 /* ADataSet.swift in Sources */,
 				C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */,
 				C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */,
+				C05081031F973645000DC13F /* DefaultAxisValue.swift in Sources */,
+				C05081011F973485000DC13F /* ALimitLine.swift in Sources */,
 				C07827C51F95DD4D00DB3450 /* AKView.swift in Sources */,
 				C07827D21F96FBDE00DB3450 /* PortHandler.swift in Sources */,
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
 				C0F4F8461F8F4D6F00967073 /* FExtensionRange.swift in Sources */,
+				C05080F61F97283B000DC13F /* AData.swift in Sources */,
 				C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,12 +52,12 @@ open class PortHandler: NSObject {
     fileprivate var _transOffsetY = CGFloat(0.0)
     
     public override init() {
+        
     }
     
     /// Constructor - don't forget calling setChartDimens(...)
     public init(width: CGFloat, height: CGFloat) {
         super.init()
-        
         setChartDimens(width: width, height: height)
     }
     
@@ -70,7 +70,10 @@ open class PortHandler: NSObject {
         _chartHeight = height
         _chartWidth = width
         
-        restrainViewPort(offsetLeft: offsetLeft, offsetTop: offsetTop, offsetRight: offsetRight, offsetBottom: offsetBottom)
+        restrainViewPort(offsetLeft: offsetLeft,
+                         offsetTop: offsetTop,
+                         offsetRight: offsetRight,
+                         offsetBottom: offsetBottom)
     }
     
     open var hasChartDimens: Bool {
