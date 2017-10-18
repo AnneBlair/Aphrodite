@@ -201,7 +201,7 @@ public protocol ADataSet {
     /// The form to draw for this dataset in the legend.
     ///
     /// Return `.Default` to use the default legend form.
-//    var form: Legend.Form { get }
+    var form: Legend.Form { get }
     
     /// The form size to draw for this dataset in the legend.
     ///

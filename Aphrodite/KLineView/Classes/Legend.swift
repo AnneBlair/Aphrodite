@@ -32,8 +32,7 @@ open class Legend: ComponentBase {
     }
     
     @objc(ALegendForm)
-    public enum Form: Int
-    {
+    public enum Form: Int {
         /// Avoid drawing a form
         case none
         
@@ -54,31 +53,27 @@ open class Legend: ComponentBase {
     }
     
     @objc(ALegendHorizontalAlignment)
-    public enum HorizontalAlignment: Int
-    {
+    public enum HorizontalAlignment: Int {
         case left
         case center
         case right
     }
     
     @objc(ALegendVerticalAlignment)
-    public enum VerticalAlignment: Int
-    {
+    public enum VerticalAlignment: Int {
         case top
         case center
         case bottom
     }
     
     @objc(ALegendOrientation)
-    public enum Orientation: Int
-    {
+    public enum Orientation: Int {
         case horizontal
         case vertical
     }
     
     @objc(ALegendDirection)
-    public enum Direction: Int
-    {
+    public enum Direction: Int {
         case leftToRight
         case rightToLeft
     }
@@ -97,41 +92,27 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `horizontalAlignment`, `verticalAlignment`, `orientation`, `drawInside`, `direction`.
     @available(*, deprecated: 1.0, message: "Use `horizontalAlignment`, `verticalAlignment`, `orientation`, `drawInside`, `direction`.")
-    open var position: Position
-        {
-        get
-        {
-            if orientation == .vertical && horizontalAlignment == .center && verticalAlignment == .center
-            {
+    open var position: Position {
+        get {
+            if orientation == .vertical && horizontalAlignment == .center && verticalAlignment == .center {
                 return .piechartCenter
             }
-            else if orientation == .horizontal
-            {
-                if verticalAlignment == .top
-                {
+            else if orientation == .horizontal {
+                if verticalAlignment == .top {
                     return horizontalAlignment == .left ? .aboveChartLeft : (horizontalAlignment == .right ? .aboveChartRight : .aboveChartCenter)
-                }
-                else
-                {
+                } else {
                     return horizontalAlignment == .left ? .belowChartLeft : (horizontalAlignment == .right ? .belowChartRight : .belowChartCenter)
                 }
-            }
-            else
-            {
-                if horizontalAlignment == .left
-                {
+            } else {
+                if horizontalAlignment == .left {
                     return verticalAlignment == .top && drawInside ? .leftOfChartInside : (verticalAlignment == .center ? .leftOfChartCenter : .leftOfChart)
-                }
-                else
-                {
+                } else {
                     return verticalAlignment == .top && drawInside ? .rightOfChartInside : (verticalAlignment == .center ? .rightOfChartCenter : .rightOfChart)
                 }
             }
         }
-        set
-        {
-            switch newValue
-            {
+        set {
+            switch newValue {
             case .leftOfChart: fallthrough
             case .leftOfChartInside: fallthrough
             case .leftOfChartCenter:
@@ -165,7 +146,6 @@ open class Legend: ComponentBase {
                 verticalAlignment = .center
                 orientation = .vertical
             }
-            
             drawInside = newValue == .leftOfChartInside || newValue == .rightOfChartInside
         }
     }
@@ -221,47 +201,39 @@ open class Legend: ComponentBase {
     open var calculatedLabelBreakPoints = [Bool]()
     open var calculatedLineSizes = [CGSize]()
     
-    public override init()
-    {
+    public override init() {
         super.init()
         
         self.xOffset = 5.0
         self.yOffset = 3.0
     }
     
-    public init(entries: [LegendEntry])
-    {
+    public init(entries: [LegendEntry]) {
         super.init()
         
         self.entries = entries
     }
     
-    open func getMaximumEntrySize(withFont font: Font) -> CGSize
-    {
+    open func getMaximumEntrySize(withFont font: Font) -> CGSize {
         var maxW = CGFloat(0.0)
         var maxH = CGFloat(0.0)
         
         var maxFormSize: CGFloat = 0.0
         
-        for entry in entries
-        {
+        for entry in entries {
             let formSize = entry.formSize.isNaN ? self.formSize : entry.formSize
-            if formSize > maxFormSize
-            {
+            if formSize > maxFormSize {
                 maxFormSize = formSize
             }
             
-            guard let label = entry.label
-                else { continue }
+            guard let label = entry.label else { continue }
             
             let size = (label as NSString!).size(withAttributes: [NSAttributedStringKey.font: font])
             
-            if size.width > maxW
-            {
+            if size.width > maxW {
                 maxW = size.width
             }
-            if size.height > maxH
-            {
+            if size.height > maxH {
                 maxH = size.height
             }
         }
@@ -294,8 +266,7 @@ open class Legend: ComponentBase {
     /// **default**: 0.95 (95%)
     open var maxSizePercent: CGFloat = 0.95
     
-    open func calculateDimensions(labelFont: Font, viewPortHandler: PortHandler)
-    {
+    open func calculateDimensions(labelFont: Font, viewPortHandler: PortHandler) {
         let maxEntrySize = getMaximumEntrySize(withFont: labelFont)
         let defaultFormSize = self.formSize
         let stackSpace = self.stackSpace
@@ -309,10 +280,8 @@ open class Legend: ComponentBase {
         textWidthMax = maxEntrySize.width
         textHeightMax = maxEntrySize.height
         
-        switch orientation
-        {
+        switch orientation {
         case .vertical:
-            
             var maxWidth = CGFloat(0.0)
             var width = CGFloat(0.0)
             var maxHeight = CGFloat(0.0)
@@ -320,37 +289,29 @@ open class Legend: ComponentBase {
             
             var wasStacked = false
             
-            for i in 0 ..< entryCount
-            {
+            for i in 0 ..< entryCount {
                 let e = entries[i]
                 let drawingForm = e.form != .none
                 let formSize = e.formSize.isNaN ? defaultFormSize : e.formSize
                 let label = e.label
                 
-                if !wasStacked
-                {
+                if !wasStacked {
                     width = 0.0
                 }
                 
-                if drawingForm
-                {
-                    if wasStacked
-                    {
+                if drawingForm {
+                    if wasStacked {
                         width += stackSpace
                     }
                     width += formSize
                 }
                 
-                if label != nil
-                {
+                if label != nil {
                     let size = (label as NSString!).size(withAttributes: [NSAttributedStringKey.font: labelFont])
                     
-                    if drawingForm && !wasStacked
-                    {
+                    if drawingForm && !wasStacked {
                         width += formToTextSpace
-                    }
-                    else if wasStacked
-                    {
+                    } else if wasStacked {
                         maxWidth = max(maxWidth, width)
                         maxHeight += labelLineHeight + yEntrySpace
                         width = 0.0
@@ -359,18 +320,14 @@ open class Legend: ComponentBase {
                     
                     width += size.width
                     
-                    if i < entryCount - 1
-                    {
+                    if i < entryCount - 1 {
                         maxHeight += labelLineHeight + yEntrySpace
                     }
-                }
-                else
-                {
+                } else {
                     wasStacked = true
                     width += formSize
                     
-                    if i < entryCount - 1
-                    {
+                    if i < entryCount - 1 {
                         width += stackSpace
                     }
                 }
@@ -388,13 +345,11 @@ open class Legend: ComponentBase {
             let contentWidth: CGFloat = viewPortHandler.contentWidth * maxSizePercent
             
             // Prepare arrays for calculated layout
-            if calculatedLabelSizes.count != entryCount
-            {
+            if calculatedLabelSizes.count != entryCount {
                 calculatedLabelSizes = [CGSize](repeating: CGSize(), count: entryCount)
             }
             
-            if calculatedLabelBreakPoints.count != entryCount
-            {
+            if calculatedLabelBreakPoints.count != entryCount {
                 calculatedLabelBreakPoints = [Bool](repeating: false, count: entryCount)
             }
             
@@ -408,57 +363,46 @@ open class Legend: ComponentBase {
             var requiredWidth: CGFloat = 0.0
             var stackedStartIndex: Int = -1
             
-            for i in 0 ..< entryCount
-            {
+            for i in 0 ..< entryCount {
                 let e = entries[i]
                 let drawingForm = e.form != .none
                 let label = e.label
                 
                 calculatedLabelBreakPoints[i] = false
                 
-                if stackedStartIndex == -1
-                {
+                if stackedStartIndex == -1 {
                     // we are not stacking, so required width is for this label only
                     requiredWidth = 0.0
-                }
-                else
-                {
+                } else {
                     // add the spacing appropriate for stacked labels/forms
                     requiredWidth += stackSpace
                 }
                 
                 // grouped forms have null labels
-                if label != nil
-                {
+                if label != nil {
                     calculatedLabelSizes[i] = (label as NSString!).size(withAttributes: labelAttrs)
                     requiredWidth += drawingForm ? formToTextSpace + formSize : 0.0
                     requiredWidth += calculatedLabelSizes[i].width
-                }
-                else
-                {
+                } else {
                     calculatedLabelSizes[i] = CGSize()
                     requiredWidth += drawingForm ? formSize : 0.0
                     
-                    if stackedStartIndex == -1
-                    {
+                    if stackedStartIndex == -1 {
                         // mark this index as we might want to break here later
                         stackedStartIndex = i
                     }
                 }
                 
-                if label != nil || i == entryCount - 1
-                {
+                if label != nil || i == entryCount - 1 {
                     let requiredSpacing = currentLineWidth == 0.0 ? 0.0 : xEntrySpace
                     
                     if (!wordWrapEnabled || // No word wrapping, it must fit.
                         currentLineWidth == 0.0 || // The line is empty, it must fit.
-                        (contentWidth - currentLineWidth >= requiredSpacing + requiredWidth)) // It simply fits
-                    {
+                        (contentWidth - currentLineWidth >= requiredSpacing + requiredWidth)) {
+                        // It simply fits
                         // Expand current line
                         currentLineWidth += requiredSpacing + requiredWidth
-                    }
-                    else
-                    { // It doesn't fit, we need to wrap a line
+                    } else { // It doesn't fit, we need to wrap a line
                         
                         // Add current line size to array
                         calculatedLineSizes.append(CGSize(width: currentLineWidth, height: labelLineHeight))
@@ -469,8 +413,8 @@ open class Legend: ComponentBase {
                         currentLineWidth = requiredWidth
                     }
                     
-                    if i == entryCount - 1
-                    { // Add last line size to array
+                    if i == entryCount - 1 {
+                        // Add last line size to array
                         calculatedLineSizes.append(CGSize(width: currentLineWidth, height: labelLineHeight))
                         maxLineWidth = max(maxLineWidth, currentLineWidth)
                     }
@@ -494,22 +438,19 @@ open class Legend: ComponentBase {
     /// * A nil label will start a group.
     /// This will disable the feature that automatically calculates the legend entries from the datasets.
     /// Call `resetCustom(...)` to re-enable automatic calculation (and then `notifyDataSetChanged()` is needed).
-    open func setCustom(entries: [LegendEntry])
-    {
+    open func setCustom(entries: [LegendEntry]) {
         self.entries = entries
         _isLegendCustom = true
     }
     
     /// Calling this will disable the custom legend entries (set by `setLegend(...)`). Instead, the entries will again be calculated automatically (after `notifyDataSetChanged()` is called).
-    open func resetCustom()
-    {
+    open func resetCustom() {
         _isLegendCustom = false
     }
     
     /// **default**: false (automatic legend)
     /// - returns: `true` if a custom legend entries has been set
-    open var isLegendCustom: Bool
-    {
+    open var isLegendCustom: Bool {
         return _isLegendCustom
     }
     
@@ -517,13 +458,10 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `entries`.
     @available(*, deprecated: 1.0, message: "Use `entries`.")
-    open var colors: [Color?]
-        {
-        get
-        {
+    open var colors: [Color?] {
+        get {
             var old = [Color?]()
-            for e in entries
-            {
+            for e in entries {
                 old.append(
                     e.form == .none ? nil :
                         (e.form == .empty ? Color.clear :
@@ -531,22 +469,16 @@ open class Legend: ComponentBase {
             }
             return old
         }
-        set
-        {
-            for i in 0 ..< newValue.count
-            {
-                if entries.count <= i
-                {
+        set {
+            for i in 0 ..< newValue.count {
+                if entries.count <= i {
                     entries.append(LegendEntry())
                 }
                 entries[i].formColor = newValue[i]
                 
-                if newValue[i] == nil
-                {
+                if newValue[i] == nil {
                     entries[i].form = .none
-                }
-                else if newValue[i] == Color.clear
-                {
+                } else if newValue[i] == Color.clear {
                     entries[i].form = .empty
                 }
             }
@@ -555,23 +487,17 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `entries`.
     @available(*, deprecated: 1.0, message: "Use `entries`.")
-    open var labels: [String?]
-        {
-        get
-        {
+    open var labels: [String?] {
+        get {
             var old = [String?]()
-            for e in entries
-            {
+            for e in entries {
                 old.append(e.label)
             }
             return old
         }
-        set
-        {
-            for i in 0 ..< newValue.count
-            {
-                if entries.count <= i
-                {
+        set {
+            for i in 0 ..< newValue.count {
+                if entries.count <= i {
                     entries.append(LegendEntry())
                 }
                 entries[i].label = newValue[i]
@@ -582,13 +508,10 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `extraEntries`.
     @available(*, deprecated: 1.0, message: "Use `extraEntries`.")
-    open var extraColors: [Color?]
-        {
-        get
-        {
+    open var extraColors: [Color?] {
+        get {
             var old = [Color?]()
-            for e in extraEntries
-            {
+            for e in extraEntries {
                 old.append(
                     e.form == .none ? nil :
                         (e.form == .empty ? Color.clear :
@@ -596,23 +519,16 @@ open class Legend: ComponentBase {
             }
             return old
         }
-        set
-        {
-            if extraEntries.count > newValue.count
-            {
+        set {
+            if extraEntries.count > newValue.count {
                 extraEntries.removeSubrange(newValue.count ..< extraEntries.count)
             }
             
-            for i in 0 ..< newValue.count
-            {
+            for i in 0 ..< newValue.count {
                 extraEntries[i].formColor = newValue[i]
-                
-                if newValue[i] == nil
-                {
+                if newValue[i] == nil {
                     extraEntries[i].form = .none
-                }
-                else if newValue[i] == Color.clear
-                {
+                } else if newValue[i] == Color.clear {
                     extraEntries[i].form = .empty
                 }
             }
@@ -621,26 +537,20 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `extraEntries`.
     @available(*, deprecated: 1.0, message: "Use `extraEntries`.")
-    open var extraLabels: [String?]
-        {
-        get
-        {
+    open var extraLabels: [String?] {
+        get {
             var old = [String?]()
-            for e in extraEntries
-            {
+            for e in extraEntries {
                 old.append(e.label)
             }
             return old
         }
-        set
-        {
-            if extraEntries.count > newValue.count
-            {
+        set {
+            if extraEntries.count > newValue.count {
                 extraEntries.removeSubrange(newValue.count ..< extraEntries.count)
             }
             
-            for i in 0 ..< newValue.count
-            {
+            for i in 0 ..< newValue.count {
                 extraEntries[i].label = newValue[i]
             }
         }
@@ -648,24 +558,19 @@ open class Legend: ComponentBase {
     
     /// This constructor is deprecated - Use `init(entries:)`
     @available(*, deprecated: 1.0, message: "Use `init(entries:)`")
-    public init(colors: [Color?], labels: [String?])
-    {
+    public init(colors: [Color?], labels: [String?]) {
         super.init()
         
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i]
             entry.label = labels[i]
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
@@ -677,24 +582,19 @@ open class Legend: ComponentBase {
     
     /// This constructor is deprecated - Use `init(entries:)`
     @available(*, deprecated: 1.0, message: "Use `init(entries:)`")
-    public init(colors: [NSObject], labels: [NSObject])
-    {
+    public init(colors: [NSObject], labels: [NSObject]) {
         super.init()
         
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i] as? Color
             entry.label = labels[i] as? String
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
@@ -706,59 +606,49 @@ open class Legend: ComponentBase {
     
     /// This property is deprecated - Use `extraEntries`
     @available(*, deprecated: 1.0, message: "Use `extraEntries`")
-    open var extraColorsObjc: [NSObject]
-    {
+    open var extraColorsObjc: [NSObject] {
         return AUtils.bridgedObjCGetColorArray(objc: extraColors as! [NSObject]) as! [NSObject]
     }
     
     /// This property is deprecated - Use `extraLabels`
     @available(*, deprecated: 1.0, message: "Use `extraLabels`")
-    open var extraLabelsObjc: [NSObject]
-    {
+    open var extraLabelsObjc: [NSObject] {
         return AUtils.bridgedObjCGetStringArray(swift: extraLabels)
     }
     
     /// This property is deprecated - Use `colors`
     @available(*, deprecated: 1.0, message: "Use `colors`")
-    open var colorsObjc: [NSObject]
-        {
+    open var colorsObjc: [NSObject] {
         get { return AUtils.bridgedObjCGetColorArray(objc: colors as! [NSObject]) as! [NSObject] }
         set { self.colors = AUtils.bridgedObjCGetColorArray(objc: newValue) }
     }
     
     /// This property is deprecated - Use `labels`
     @available(*, deprecated: 1.0, message: "Use `labels`")
-    open var labelsObjc: [NSObject]
-        {
+    open var labelsObjc: [NSObject] {
         get { return AUtils.bridgedObjCGetStringArray(swift: labels) }
         set { self.labels = AUtils.bridgedObjCGetStringArray(objc: newValue) }
     }
     
     /// This function is deprecated - Use `entries`
     @available(*, deprecated: 1.0, message: "Use `entries`")
-    open func getLabel(_ index: Int) -> String?
-    {
+    open func getLabel(_ index: Int) -> String? {
         return entries[index].label
     }
     
     /// This function is deprecated - Use `Use `extra(entries:)`
     @available(*, deprecated: 1.0, message: "Use `extra(entries:)`")
-    open func setExtra(colors: [Color?], labels: [String?])
-    {
+    open func setExtra(colors: [Color?], labels: [String?]) {
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i]
             entry.label = labels[i]
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
@@ -770,22 +660,17 @@ open class Legend: ComponentBase {
     
     /// This function is deprecated - Use `Use `extra(entries:)`
     @available(*, deprecated: 1.0, message: "Use `extra(entries:)`")
-    open func setExtra(colors: [NSObject], labels: [NSObject])
-    {
+    open func setExtra(colors: [NSObject], labels: [NSObject]) {
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i] as? Color
             entry.label = labels[i] as? String
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
@@ -797,22 +682,17 @@ open class Legend: ComponentBase {
     
     /// This function is deprecated - Use `Use `setCustom(entries:)`
     @available(*, deprecated: 1.0, message: "Use `setCustom(entries:)`")
-    open func setCustom(colors: [Color?], labels: [String?])
-    {
+    open func setCustom(colors: [Color?], labels: [String?]) {
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i]
             entry.label = labels[i]
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
@@ -824,22 +704,17 @@ open class Legend: ComponentBase {
     
     /// This function is deprecated - Use `Use `setCustom(entries:)`
     @available(*, deprecated: 1.0, message: "Use `setCustom(entries:)`")
-    open func setCustom(colors: [NSObject], labels: [NSObject])
-    {
+    open func setCustom(colors: [NSObject], labels: [NSObject]) {
         var entries = [LegendEntry]()
         
-        for i in 0 ..< min(colors.count, labels.count)
-        {
+        for i in 0 ..< min(colors.count, labels.count) {
             let entry = LegendEntry()
             entry.formColor = colors[i] as? Color
             entry.label = labels[i] as? String
             
-            if entry.formColor == nil
-            {
+            if entry.formColor == nil {
                 entry.form = .none
-            }
-            else if entry.formColor == Color.clear
-            {
+            } else if entry.formColor == Color.clear {
                 entry.form = .empty
             }
             
