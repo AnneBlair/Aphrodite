@@ -88,7 +88,7 @@ open class AEntryBase: NSObject {
     // MARK: NSObject
     
     open override var description: String {
-        return "ChartDataEntryBase, y \(y)"
+        return "AEntryBase, y \(y)"
     }
 }
 

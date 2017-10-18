@@ -40,7 +40,7 @@ public protocol ADataSet {
     /// - returns: The entry object found at the given index (not x-value!)
     /// - throws: out of bounds
     /// if `i` is out of bounds, it may throw an out-of-bounds exception
-//    func entryForIndex(_ i: Int) -> ChartDataEntry?
+    func entryForIndex(_ i: Int) -> ADataEntry?
     
     /// - returns: The first Entry object found at the given x-value with binary search.
     /// If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value according to the rounding.
@@ -48,23 +48,23 @@ public protocol ADataSet {
     /// - parameter xValue: the x-value
     /// - parameter closestToY: If there are multiple y-values for the specified x-value,
     /// - parameter rounding: determine whether to round up/down/closest if there is no Entry matching the provided x-value
-//    func entryForXValue(
-//        _ xValue: Double,
-//        closestToY yValue: Double,
-//        rounding: ChartDataSetRounding) -> ChartDataEntry?
+    func entryForXValue(
+        _ xValue: Double,
+        closestToY yValue: Double,
+        rounding: ASetRounding) -> ADataEntry?
     
     /// - returns: The first Entry object found at the given x-value with binary search.
     /// If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value.
     /// nil if no Entry object at that x-value.
     /// - parameter xValue: the x-value
     /// - parameter closestToY: If there are multiple y-values for the specified x-value,
-//    func entryForXValue(
-//        _ xValue: Double,
-//        closestToY yValue: Double) -> ChartDataEntry?
+    func entryForXValue(
+        _ xValue: Double,
+        closestToY yValue: Double) -> ADataEntry?
     
     /// - returns: All Entry objects found at the given x-value with binary search.
     /// An empty array if no Entry object at that x-value.
-//    func entriesForXValue(_ xValue: Double) -> [ChartDataEntry]
+    func entriesForXValue(_ xValue: Double) -> [ADataEntry]
     
     /// - returns: The array-index of the specified entry.
     /// If the no Entry at the specified x-value is found, this method returns the index of the Entry at the closest x-value according to the rounding.
@@ -72,15 +72,15 @@ public protocol ADataSet {
     /// - parameter xValue: x-value of the entry to search for
     /// - parameter closestToY: If there are multiple y-values for the specified x-value,
     /// - parameter rounding: Rounding method if exact value was not found
-//    func entryIndex(
-//        x xValue: Double,
-//        closestToY yValue: Double,
-//        rounding: ChartDataSetRounding) -> Int
+    func entryIndex(
+        x xValue: Double,
+        closestToY yValue: Double,
+        rounding: ASetRounding) -> Int
     
     /// - returns: The array-index of the specified entry
     ///
     /// - parameter e: the entry to search for
-//    func entryIndex(entry e: ChartDataEntry) -> Int
+    func entryIndex(entry e: ADataEntry) -> Int
     
     /// Adds an Entry to the DataSet dynamically.
     ///
@@ -89,7 +89,7 @@ public protocol ADataSet {
     /// Entries are added to the end of the list.
     /// - parameter e: the entry to add
     /// - returns: `true` if the entry was added successfully, `false` ifthis feature is not supported
-//    func addEntry(_ e: ChartDataEntry) -> Bool
+    func addEntry(_ e: ADataEntry) -> Bool
     
     /// Adds an Entry to the DataSet dynamically.
     /// Entries are added to their appropriate index in the values array respective to their x-position.
@@ -100,7 +100,7 @@ public protocol ADataSet {
     /// Entries are added to the end of the list.
     /// - parameter e: the entry to add
     /// - returns: `true` if the entry was added successfully, `false` ifthis feature is not supported
-//    func addEntryOrdered(_ e: ChartDataEntry) -> Bool
+    func addEntryOrdered(_ e: ADataEntry) -> Bool
     
     /// Removes an Entry from the DataSet dynamically.
     ///
@@ -108,7 +108,7 @@ public protocol ADataSet {
     ///
     /// - parameter entry: the entry to remove
     /// - returns: `true` if the entry was removed successfully, `false` ifthe entry does not exist or if this feature is not supported
-//    func removeEntry(_ entry: ChartDataEntry) -> Bool
+    func removeEntry(_ entry: ADataEntry) -> Bool
     
     /// Removes the Entry object at the given index in the values array from the DataSet.
     ///
@@ -143,7 +143,7 @@ public protocol ADataSet {
     /// Checks if this DataSet contains the specified Entry.
     ///
     /// - returns: `true` if contains the entry, `false` ifnot.
-//    func contains(_ e: ChartDataEntry) -> Bool
+    func contains(_ e: ADataEntry) -> Bool
     
     /// Removes all values from this DataSet and does all necessary recalculations.
     ///
