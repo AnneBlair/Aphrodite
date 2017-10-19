@@ -71,6 +71,7 @@ open class Animator: NSObject {
                 if delegate != nil {
                     delegate!.animatorUpdated(self)
                 }
+                
                 if updateBlock != nil {
                     updateBlock!()
                 }
@@ -90,6 +91,7 @@ open class Animator: NSObject {
             let elapsedTime: TimeInterval = currentTime - _startTimeX
             let duration: TimeInterval = _durationX
             var elapsed: TimeInterval = elapsedTime
+            
             if elapsed > duration {
                 elapsed = duration
             }
@@ -118,6 +120,7 @@ open class Animator: NSObject {
     }
     
     @objc fileprivate func animationLoop() {
+        
         let currentTime: TimeInterval = CACurrentMediaTime()
         
         updateAnimationPhases(currentTime)

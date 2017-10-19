@@ -11,8 +11,7 @@ import CoreGraphics
 
 
 @objc
-public enum AEasingOption: Int
-{
+public enum AEasingOption: Int {
     case linear
     case easeInQuad
     case easeOutQuad
@@ -130,8 +129,7 @@ internal struct EasingFunctions {
     
     internal static let EaseInOutQuad = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         var position = Double(elapsed / (duration / 2.0))
-        if position < 1.0
-        {
+        if position < 1.0 {
             return 0.5 * position * position
         }
         
@@ -151,8 +149,7 @@ internal struct EasingFunctions {
     
     internal static let EaseInOutCubic = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         var position = Double(elapsed / (duration / 2.0))
-        if position < 1.0
-        {
+        if position < 1.0 {
             return 0.5 * position * position * position
         }
         position -= 2.0
@@ -172,8 +169,7 @@ internal struct EasingFunctions {
     
     internal static let EaseInOutQuart = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         var position = Double(elapsed / (duration / 2.0))
-        if position < 1.0
-        {
+        if position < 1.0 {
             return 0.5 * position * position * position * position
         }
         position -= 2.0
@@ -193,12 +189,9 @@ internal struct EasingFunctions {
     
     internal static let EaseInOutQuint = { (elapsed: TimeInterval, duration: TimeInterval) -> Double in
         var position = Double(elapsed / (duration / 2.0))
-        if position < 1.0
-        {
+        if position < 1.0 {
             return 0.5 * position * position * position * position * position
-        }
-        else
-        {
+        } else {
             position -= 2.0
             return 0.5 * (position * position * position * position * position + 2.0)
         }

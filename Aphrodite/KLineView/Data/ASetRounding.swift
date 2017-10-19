@@ -8,9 +8,10 @@
 
 import Foundation
 
+/// ChartDataSetRounding
 @objc
 public enum ASetRounding: Int {
     case up = 0
-    case dow = 1
+    case down = 1
     case closest = 2
 }
