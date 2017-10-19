@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ChartUtils
 open class AUtils {
     
     fileprivate static var _defaultValueFormatter: AValueFormatter = AUtils.generateDefaultValueFormatter()

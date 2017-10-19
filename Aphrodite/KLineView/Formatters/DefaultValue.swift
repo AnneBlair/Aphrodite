@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// DefaultValueFormatter
 @objc(ADefaultValue)
 open class DefaultValue: NSObject, AValueFormatter {
     public typealias Block = (

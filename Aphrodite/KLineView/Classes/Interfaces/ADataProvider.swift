@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ChartDataProvider
 @objc
 public protocol ADataProvider
 {

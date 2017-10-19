@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ChartDataEntry
 open class ADataEntry: AEntryBase {
     
     @objc open var x = Double(0.0)

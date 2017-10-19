@@ -13,6 +13,7 @@ import Foundation
 /// Simply create your own formatting class and let it implement ValueFormatter.
 ///
 /// Then override the getFormattedValue(...) method and return whatever you want.
+/// IValueFormatter
 @objc(AValueFormatter)
 public protocol AValueFormatter : NSObjectProtocol
 {

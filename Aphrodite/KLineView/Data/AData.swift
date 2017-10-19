@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ChartData
 open class AData: NSObject {
     
     internal var _yMax: Double = -Double.greatestFiniteMagnitude
