@@ -12,6 +12,14 @@
 		C02A10631F985649003224DB /* LineBubbleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10621F985649003224DB /* LineBubbleDataProvider.swift */; };
 		C02A10651F987775003224DB /* ADataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10641F987775003224DB /* ADataProvider.swift */; };
 		C02A10681F988496003224DB /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10671F988496003224DB /* DataSet.swift */; };
+		C02A106A1F989F47003224DB /* ALineCandleRadar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10691F989F47003224DB /* ALineCandleRadar.swift */; };
+		C02A106C1F98A4E9003224DB /* ALineScatterDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A106B1F98A4E9003224DB /* ALineScatterDataSet.swift */; };
+		C02A106E1F98AE6C003224DB /* CandleStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A106D1F98AE6C003224DB /* CandleStick.swift */; };
+		C02A10701F98B118003224DB /* ACandleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A106F1F98B118003224DB /* ACandleChartData.swift */; };
+		C02A10721F98D442003224DB /* ACandleDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10711F98D442003224DB /* ACandleDataSet.swift */; };
+		C02A10741F98D6C0003224DB /* CandleDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10731F98D6C0003224DB /* CandleDataEntry.swift */; };
+		C02A10761F98DC35003224DB /* CandleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10751F98DC35003224DB /* CandleData.swift */; };
+		C02A10781F98DD6F003224DB /* CandleBubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10771F98DD6F003224DB /* CandleBubbleData.swift */; };
 		C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680401F725C2F00594894 /* ExtensionDate.swift */; };
 		C03680441F736EE000594894 /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680431F736EE000594894 /* DateTest.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
@@ -92,6 +100,14 @@
 		C02A10621F985649003224DB /* LineBubbleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBubbleDataProvider.swift; sourceTree = "<group>"; };
 		C02A10641F987775003224DB /* ADataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADataProvider.swift; sourceTree = "<group>"; };
 		C02A10671F988496003224DB /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		C02A10691F989F47003224DB /* ALineCandleRadar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALineCandleRadar.swift; sourceTree = "<group>"; };
+		C02A106B1F98A4E9003224DB /* ALineScatterDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALineScatterDataSet.swift; sourceTree = "<group>"; };
+		C02A106D1F98AE6C003224DB /* CandleStick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStick.swift; sourceTree = "<group>"; };
+		C02A106F1F98B118003224DB /* ACandleChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACandleChartData.swift; sourceTree = "<group>"; };
+		C02A10711F98D442003224DB /* ACandleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACandleDataSet.swift; sourceTree = "<group>"; };
+		C02A10731F98D6C0003224DB /* CandleDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleDataEntry.swift; sourceTree = "<group>"; };
+		C02A10751F98DC35003224DB /* CandleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleData.swift; sourceTree = "<group>"; };
+		C02A10771F98DD6F003224DB /* CandleBubbleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleBubbleData.swift; sourceTree = "<group>"; };
 		C03680401F725C2F00594894 /* ExtensionDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
 		C03680431F736EE000594894 /* DateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTest.swift; sourceTree = "<group>"; };
 		C04339D81F619FBE0040B32D /* Aphrodite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aphrodite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				C02A10671F988496003224DB /* DataSet.swift */,
+				C02A10731F98D6C0003224DB /* CandleDataEntry.swift */,
+				C02A10751F98DC35003224DB /* CandleData.swift */,
+				C02A10771F98DD6F003224DB /* CandleBubbleData.swift */,
 			);
 			path = Standard;
 			sourceTree = "<group>";
@@ -302,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				C059BBCC1F98427C00DAE06E /* ALineBubble.swift */,
+				C02A10691F989F47003224DB /* ALineCandleRadar.swift */,
+				C02A106D1F98AE6C003224DB /* CandleStick.swift */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -312,6 +333,9 @@
 				C059BBCF1F98452200DAE06E /* LineBubbleDataSet.swift */,
 				C02A10621F985649003224DB /* LineBubbleDataProvider.swift */,
 				C02A10641F987775003224DB /* ADataProvider.swift */,
+				C02A106B1F98A4E9003224DB /* ALineScatterDataSet.swift */,
+				C02A106F1F98B118003224DB /* ACandleChartData.swift */,
+				C02A10711F98D442003224DB /* ACandleDataSet.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -599,6 +623,7 @@
 			files = (
 				C059BBCA1F97BC1B00DAE06E /* AnimationUtils.swift in Sources */,
 				C06BE40E1F63DA7100EDC7A3 /* ArrayDataSource.swift in Sources */,
+				C02A10721F98D442003224DB /* ACandleDataSet.swift in Sources */,
 				C06BE4001F63C97000EDC7A3 /* ExtensionUIView.swift in Sources */,
 				C05081051F973C7A000DC13F /* Highlight.swift in Sources */,
 				C05081091F974921000DC13F /* LegendEntry.swift in Sources */,
@@ -607,8 +632,11 @@
 				C06BE4021F63CF2400EDC7A3 /* UIViewAttribute.swift in Sources */,
 				C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */,
 				C07827CE1F96ECCE00DB3450 /* ASetRounding.swift in Sources */,
+				C02A106A1F989F47003224DB /* ALineCandleRadar.swift in Sources */,
 				C07827D51F9704C800DB3450 /* AValue.swift in Sources */,
+				C02A106E1F98AE6C003224DB /* CandleStick.swift in Sources */,
 				C06BE40C1F63D80B00EDC7A3 /* ExtensionText.swift in Sources */,
+				C02A10741F98D6C0003224DB /* CandleDataEntry.swift in Sources */,
 				C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */,
 				C059BBD01F98452200DAE06E /* LineBubbleDataSet.swift in Sources */,
 				C05080FD1F973013000DC13F /* ComponentBase.swift in Sources */,
@@ -625,7 +653,9 @@
 				C07827CC1F96683000DB3450 /* AEntryBase.swift in Sources */,
 				C06BE3FE1F63C80300EDC7A3 /* Tool.swift in Sources */,
 				C07827CA1F96642200DB3450 /* ADataSet.swift in Sources */,
+				C02A10781F98DD6F003224DB /* CandleBubbleData.swift in Sources */,
 				C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */,
+				C02A10701F98B118003224DB /* ACandleChartData.swift in Sources */,
 				C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */,
 				C05081071F974866000DC13F /* Legend.swift in Sources */,
 				C05081031F973645000DC13F /* DefaultAxisValue.swift in Sources */,
@@ -633,10 +663,12 @@
 				C07827C51F95DD4D00DB3450 /* AKView.swift in Sources */,
 				C07827D21F96FBDE00DB3450 /* PortHandler.swift in Sources */,
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
+				C02A10761F98DC35003224DB /* CandleData.swift in Sources */,
 				C02A10681F988496003224DB /* DataSet.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C059BBC11F975BD500DAE06E /* DefaultValue.swift in Sources */,
 				C059BBC81F97BB3C00DAE06E /* Animator.swift in Sources */,
+				C02A106C1F98A4E9003224DB /* ALineScatterDataSet.swift in Sources */,
 				C059BBC31F97B9B300DAE06E /* Renderer.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
 				C02A10631F985649003224DB /* LineBubbleDataProvider.swift in Sources */,

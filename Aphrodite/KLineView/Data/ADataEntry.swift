@@ -92,3 +92,27 @@ open class ADataEntry: AEntryBase {
         return copy
     }
 }
+
+public func ==(lhs: ADataEntry, rhs: ADataEntry) -> Bool {
+    if lhs === rhs {
+        return true
+    }
+    
+    if !lhs.isKind(of: type(of: rhs)) {
+        return false
+    }
+    
+    if lhs.data !== rhs.data && !lhs.data!.isEqual(rhs.data) {
+        return false
+    }
+    
+    if fabs(lhs.x - rhs.x) > Double.ulpOfOne {
+        return false
+    }
+    
+    if fabs(lhs.y - rhs.y) > Double.ulpOfOne {
+        return false
+    }
+    
+    return true
+}

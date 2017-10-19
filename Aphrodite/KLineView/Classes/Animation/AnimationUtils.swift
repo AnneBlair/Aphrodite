@@ -9,7 +9,6 @@
 import Foundation
 import CoreGraphics
 
-
 @objc
 public enum AEasingOption: Int {
     case linear

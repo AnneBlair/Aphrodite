@@ -11,26 +11,21 @@ import CoreGraphics
 
 ///   BarLineScatterCandleBubbleRenderer
 @objc(ALineBubbleRenderer)
-open class ALineBubble: DataRenderer
-{
+open class ALineBubble: DataRenderer {
+    
     internal var _xBounds = XBounds() // Reusable XBounds object
     
-    public override init(animator: Animator?, viewPortHandler: PortHandler?)
-    {
+    public override init(animator: Animator?, viewPortHandler: PortHandler?) {
         super.init(animator: animator, viewPortHandler: viewPortHandler)
     }
     
     /// Checks if the provided entry object is in bounds for drawing considering the current animation phase.
-    internal func isInBoundsX(entry e: ADataEntry, dataSet: LineBubbleDataSet) -> Bool
-    {
+    internal func isInBoundsX(entry e: ADataEntry, dataSet: LineBubbleDataSet) -> Bool {
         let entryIndex = dataSet.entryIndex(entry: e)
         
-        if Double(entryIndex) >= Double(dataSet.entryCount) * (animator?.phaseX ?? 1.0)
-        {
+        if Double(entryIndex) >= Double(dataSet.entryCount) * (animator?.phaseX ?? 1.0) {
             return false
-        }
-        else
-        {
+        } else {
             return true
         }
     }
@@ -39,20 +34,17 @@ open class ALineBubble: DataRenderer
     /// This includes minimum and maximum visible x, as well as range.
     internal func xBounds(chart: LineBubbleDataProvider,
                           dataSet: LineBubbleDataSet,
-                          animator: Animator?) -> XBounds
-    {
+                          animator: Animator?) -> XBounds {
         return XBounds(chart: chart, dataSet: dataSet, animator: animator)
     }
     
     /// - returns: `true` if the DataSet values should be drawn, `false` if not.
-    internal func shouldDrawValues(forDataSet set: ADataSet) -> Bool
-    {
+    internal func shouldDrawValues(forDataSet set: ADataSet) -> Bool {
         return set.isVisible && (set.isDrawValuesEnabled || set.isDrawIconsEnabled)
     }
     
     /// Class representing the bounds of the current viewport in terms of indices in the values array of a DataSet.
-    open class XBounds
-    {
+    open class XBounds {
         /// minimum visible entry index
         open var min: Int = 0
         
@@ -62,23 +54,20 @@ open class ALineBubble: DataRenderer
         /// range of visible entry indices
         open var range: Int = 0
         
-        public init()
-        {
+        public init()  {
             
         }
         
         public init(chart: LineBubbleDataProvider,
                     dataSet: LineBubbleDataSet,
-                    animator: Animator?)
-        {
+                    animator: Animator?) {
             self.set(chart: chart, dataSet: dataSet, animator: animator)
         }
         
         /// Calculates the minimum and maximum x values as well as the range between them.
         open func set(chart: LineBubbleDataProvider,
                       dataSet: LineBubbleDataSet,
-                      animator: Animator?)
-        {
+                      animator: Animator?) {
             let phaseX = Swift.max(0.0, Swift.min(1.0, animator?.phaseX ?? 1.0))
             
             let low = chart.lowestVisibleX
@@ -92,6 +81,5 @@ open class ALineBubble: DataRenderer
             range = Int(Double(self.max - self.min) * phaseX)
         }
     }
-    
 }
 
