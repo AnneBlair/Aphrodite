@@ -80,15 +80,15 @@ open class LegendRenderer: Renderer
                         )
                     }
                 }
-                else if dataSet is IPieChartDataSet
+                else if dataSet is AIPieDataSet
                 {
-                    let pds = dataSet as! IPieChartDataSet
+                    let pds = dataSet as! AIPieDataSet
                     
                     for j in 0..<min(clrs.count, entryCount)
                     {
                         entries.append(
                             LegendEntry(
-                                label: (pds.entryForIndex(j) as? PieChartDataEntry)?.label,
+                                label: (pds.entryForIndex(j) as? PieDataEntry)?.label,
                                 form: dataSet.form,
                                 formSize: dataSet.formSize,
                                 formLineWidth: dataSet.formLineWidth,
@@ -116,10 +116,10 @@ open class LegendRenderer: Renderer
                         )
                     }
                 }
-                else if dataSet is ICandleChartDataSet &&
-                    (dataSet as! ICandleChartDataSet).decreasingColor != nil
+                else if dataSet is ACandleDataSet &&
+                    (dataSet as! ACandleDataSet).decreasingColor != nil
                 {
-                    let candleDataSet = dataSet as! ICandleChartDataSet
+                    let candleDataSet = dataSet as! ACandleDataSet
                     
                     entries.append(
                         LegendEntry(
@@ -460,7 +460,7 @@ open class LegendRenderer: Renderer
                     
                     if direction == .rightToLeft
                     {
-                        posX -= (e.label as NSString!).size(attributes: [NSFontAttributeName: labelFont]).width
+                        posX -= (e.label as NSString!).size(withAttributes: [NSAttributedStringKey.font: labelFont]).width
                     }
                     
                     if !wasStacked
@@ -498,7 +498,7 @@ open class LegendRenderer: Renderer
     {
         guard
             let formColor = entry.formColor,
-            formColor != NSUIColor.clear
+            formColor != Color.clear
             else { return }
         
         var form = entry.form
@@ -561,8 +561,8 @@ open class LegendRenderer: Renderer
     }
     
     /// Draws the provided label at the given position.
-    open func drawLabel(context: CGContext, x: CGFloat, y: CGFloat, label: String, font: NSUIFont, textColor: NSUIColor)
+    open func drawLabel(context: CGContext, x: CGFloat, y: CGFloat, label: String, font: Font, textColor: Color)
     {
-        ChartUtils.drawText(context: context, text: label, point: CGPoint(x: x, y: y), align: .left, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: textColor])
+        AUtils.drawText(context: context, text: label, point: CGPoint(x: x, y: y), align: .left, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: textColor])
     }
 }

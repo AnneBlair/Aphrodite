@@ -8,9 +8,10 @@
 
 import Foundation
 
-open class PieChartDataSet: ChartDataSet, AIPieDataSet
+/// PieChartDataSet
+open class APieDataSet: DataSet, AIPieDataSet
 {
-    @objc(PieChartValuePosition)
+    @objc(AChartValuePosition)
     public enum ValuePosition: Int
     {
         case insideSlice
@@ -29,13 +30,13 @@ open class PieChartDataSet: ChartDataSet, AIPieDataSet
         initialize()
     }
     
-    public override init(values: [ChartDataEntry]?, label: String?)
+    public override init(values: [ADataEntry]?, label: String?)
     {
         super.init(values: values, label: label)
         initialize()
     }
     
-    internal override func calcMinMax(entry e: ChartDataEntry)
+    internal override func calcMinMax(entry e: ADataEntry)
     {
         calcMinMaxY(entry: e)
     }
@@ -105,7 +106,7 @@ open class PieChartDataSet: ChartDataSet, AIPieDataSet
     
     open override func copyWithZone(_ zone: NSZone?) -> AnyObject
     {
-        let copy = super.copyWithZone(zone) as! PieChartDataSet
+        let copy = super.copyWithZone(zone) as! APieDataSet
         copy._sliceSpace = _sliceSpace
         copy.selectionShift = selectionShift
         return copy

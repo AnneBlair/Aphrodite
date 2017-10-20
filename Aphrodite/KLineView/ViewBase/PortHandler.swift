@@ -9,6 +9,7 @@
 import Foundation
 import CoreGraphics
 
+/// ViewPortHandler
 @objc(APortHandler)
 open class PortHandler: NSObject {
     
@@ -217,28 +218,28 @@ open class PortHandler: NSObject {
     /// Centers the viewport around the specified position (x-index and y-value) in the chart.
     /// Centering the viewport outside the bounds of the chart is not possible.
     /// Makes most sense in combination with the setScaleMinima(...) method.
-//    open func centerViewPort(pt: CGPoint, chart: ChartViewBase)
-//    {
-//        let translateX = pt.x - offsetLeft
-//        let translateY = pt.y - offsetTop
-//
-//        let matrix = _touchMatrix.concatenating(CGAffineTransform(translationX: -translateX, y: -translateY))
-//
-//        let _ = refresh(newMatrix: matrix, chart: chart, invalidate: true)
-//    }
+    open func centerViewPort(pt: CGPoint, chart: CandleViewBase)
+    {
+        let translateX = pt.x - offsetLeft
+        let translateY = pt.y - offsetTop
+
+        let matrix = _touchMatrix.concatenating(CGAffineTransform(translationX: -translateX, y: -translateY))
+
+        let _ = refresh(newMatrix: matrix, chart: chart, invalidate: true)
+    }
     
     /// call this method to refresh the graph with a given matrix
-//    open func refresh(newMatrix: CGAffineTransform, chart: ChartViewBase, invalidate: Bool) -> CGAffineTransform
-//    {
-//        _touchMatrix = newMatrix
-//
-//        // make sure scale and translation are within their bounds
-//        limitTransAndScale(matrix: &_touchMatrix, content: _contentRect)
-//
-//        chart.setNeedsDisplay()
-//
-//        return _touchMatrix
-//    }
+    open func refresh(newMatrix: CGAffineTransform, chart: CandleViewBase, invalidate: Bool) -> CGAffineTransform
+    {
+        _touchMatrix = newMatrix
+
+        // make sure scale and translation are within their bounds
+        limitTransAndScale(matrix: &_touchMatrix, content: _contentRect)
+
+        chart.setNeedsDisplay()
+
+        return _touchMatrix
+    }
     
     /// limits the maximum scale and X translation of the given matrix
     fileprivate func limitTransAndScale(matrix: inout CGAffineTransform, content: CGRect?) {

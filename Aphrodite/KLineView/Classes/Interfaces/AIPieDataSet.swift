@@ -25,8 +25,8 @@ public protocol AIPieDataSet: ADataSet
     /// indicates the selection distance of a pie slice
     var selectionShift: CGFloat { get set }
     
-    var xValuePosition: PieChartDataSet.ValuePosition { get set }
-    var yValuePosition: PieChartDataSet.ValuePosition { get set }
+    var xValuePosition: APieDataSet.ValuePosition { get set }
+    var yValuePosition: APieDataSet.ValuePosition { get set }
     
     /// When valuePosition is OutsideSlice, indicates line color
     var valueLineColor: Color? { get set }
@@ -47,8 +47,8 @@ public protocol AIPieDataSet: ADataSet
     var valueLineVariableLength: Bool { get set }
     
     /// the font for the slice-text labels
-    var entryLabelFont: NSUIFont? { get set }
+    var entryLabelFont: Font? { get set }
     
     /// the color for the slice-text labels
-    var entryLabelColor: NSUIColor? { get set }
+    var entryLabelColor: Color? { get set }
 }

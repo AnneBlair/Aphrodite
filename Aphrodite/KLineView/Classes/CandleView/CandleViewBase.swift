@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 /// Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
-open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataProvider, NSUIGestureRecognizerDelegate
+open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, GestureDelegate
 {
     /// the maximum number of entries to which values will be drawn
     /// (entry numbers greater than this value will cause value-labels to disappear)
@@ -27,9 +27,9 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     fileprivate var _scaleYEnabled = true
     
     /// the color for the background of the chart-drawing area (everything behind the grid lines).
-    open var gridBackgroundColor = NSUIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+    open var gridBackgroundColor = Color(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
     
-    open var borderColor = NSUIColor.black
+    open var borderColor = Color.black
     open var borderLineWidth: CGFloat = 1.0
     
     /// flag indicating if the grid background should be drawn or not
@@ -63,12 +63,12 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     
     internal var _xAxisRenderer: XAxisRenderer!
     
-    internal var _tapGestureRecognizer: NSUITapGestureRecognizer!
-    internal var _doubleTapGestureRecognizer: NSUITapGestureRecognizer!
+    internal var _tapGestureRecognizer: TapGesture!
+    internal var _doubleTapGestureRecognizer: TapGesture!
     #if !os(tvOS)
-    internal var _pinchGestureRecognizer: NSUIPinchGestureRecognizer!
+    internal var _pinchGestureRecognizer: PinchGesture!
     #endif
-    internal var _panGestureRecognizer: NSUIPanGestureRecognizer!
+    internal var _panGestureRecognizer: PanGesture!
     
     /// flag that indicates if a custom viewport offset has been set
     fileprivate var _customViewPortEnabled = false
@@ -103,12 +103,12 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         
         _xAxisRenderer = XAxisRenderer(viewPortHandler: _viewPortHandler, xAxis: _xAxis, transformer: _leftAxisTransformer)
         
-        self.highlighter = ChartHighlighter(chart: self)
+        self.highlighter = CandleHighlighter(chart: self)
         
-        _tapGestureRecognizer = NSUITapGestureRecognizer(target: self, action: #selector(tapGestureRecognized(_:)))
-        _doubleTapGestureRecognizer = NSUITapGestureRecognizer(target: self, action: #selector(doubleTapGestureRecognized(_:)))
-        _doubleTapGestureRecognizer.nsuiNumberOfTapsRequired = 2
-        _panGestureRecognizer = NSUIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized(_:)))
+        _tapGestureRecognizer = TapGesture(target: self, action: #selector(tapGestureRecognized(_:)))
+        _doubleTapGestureRecognizer = TapGesture(target: self, action: #selector(doubleTapGestureRecognized(_:)))
+        _doubleTapGestureRecognizer.aNumberOfTapsRequired = 2
+        _panGestureRecognizer = PanGesture(target: self, action: #selector(panGestureRecognized(_:)))
         
         _panGestureRecognizer.delegate = self
         
@@ -120,7 +120,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         _panGestureRecognizer.isEnabled = _dragEnabled
         
         #if !os(tvOS)
-            _pinchGestureRecognizer = NSUIPinchGestureRecognizer(target: self, action: #selector(BarLineChartViewBase.pinchGestureRecognized(_:)))
+            _pinchGestureRecognizer = PinchGesture(target: self, action: #selector(BarLineChartViewBase.pinchGestureRecognized(_:)))
             _pinchGestureRecognizer.delegate = self
             self.addGestureRecognizer(_pinchGestureRecognizer)
             _pinchGestureRecognizer.isEnabled = _pinchZoomEnabled || _scaleXEnabled || _scaleYEnabled
@@ -161,7 +161,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
             return
         }
         
-        let optionalContext = NSUIGraphicsGetCurrentContext()
+        let optionalContext = AGraphicsContext()
         guard let context = optionalContext else { return }
         
         // execute all drawing commands
@@ -502,24 +502,24 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     fileprivate var _isDragging = false
     fileprivate var _isScaling = false
     fileprivate var _gestureScaleAxis = GestureScaleAxis.both
-    fileprivate var _closestDataSetToTouch: IChartDataSet!
+    fileprivate var _closestDataSetToTouch: ADataSet!
     fileprivate var _panGestureReachedEdge: Bool = false
-    fileprivate weak var _outerScrollView: NSUIScrollView?
+    fileprivate weak var _outerScrollView: ScrollView?
     
     fileprivate var _lastPanPoint = CGPoint() /// This is to prevent using setTranslation which resets velocity
     
     fileprivate var _decelerationLastTime: TimeInterval = 0.0
-    fileprivate var _decelerationDisplayLink: NSUIDisplayLink!
+    fileprivate var _decelerationDisplayLink: DisplayLink!
     fileprivate var _decelerationVelocity = CGPoint()
     
-    @objc fileprivate func tapGestureRecognized(_ recognizer: NSUITapGestureRecognizer)
+    @objc fileprivate func tapGestureRecognized(_ recognizer: TapGesture)
     {
         if _data === nil
         {
             return
         }
         
-        if recognizer.state == NSUIGestureRecognizerState.ended
+        if recognizer.state == GestureState.ended
         {
             if !self.isHighLightPerTapEnabled { return }
             
@@ -538,14 +538,14 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         }
     }
     
-    @objc fileprivate func doubleTapGestureRecognized(_ recognizer: NSUITapGestureRecognizer)
+    @objc fileprivate func doubleTapGestureRecognized(_ recognizer: TapGesture)
     {
         if _data === nil
         {
             return
         }
         
-        if recognizer.state == NSUIGestureRecognizerState.ended
+        if recognizer.state == GestureState.ended
         {
             if _data !== nil && _doubleTapToZoomEnabled && (data?.entryCount ?? 0) > 0
             {
@@ -567,9 +567,9 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     }
     
     #if !os(tvOS)
-    @objc fileprivate func pinchGestureRecognized(_ recognizer: NSUIPinchGestureRecognizer)
+    @objc fileprivate func pinchGestureRecognized(_ recognizer: PinchGesture)
     {
-        if recognizer.state == NSUIGestureRecognizerState.began
+        if recognizer.state == GestureState.began
         {
             stopDeceleration()
             
@@ -584,8 +584,8 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                 }
                 else
                 {
-                    let x = abs(recognizer.location(in: self).x - recognizer.nsuiLocationOfTouch(1, inView: self).x)
-                    let y = abs(recognizer.location(in: self).y - recognizer.nsuiLocationOfTouch(1, inView: self).y)
+                    let x = abs(recognizer.location(in: self).x - recognizer.aLocationOfTouch(1, inView: self).x)
+                    let y = abs(recognizer.location(in: self).y - recognizer.aLocationOfTouch(1, inView: self).y)
                     
                     if _scaleXEnabled != _scaleYEnabled
                     {
@@ -598,8 +598,8 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                 }
             }
         }
-        else if recognizer.state == NSUIGestureRecognizerState.ended ||
-            recognizer.state == NSUIGestureRecognizerState.cancelled
+        else if recognizer.state == GestureState.ended ||
+            recognizer.state == GestureState.cancelled
         {
             if _isScaling
             {
@@ -610,9 +610,9 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                 setNeedsDisplay()
             }
         }
-        else if recognizer.state == NSUIGestureRecognizerState.changed
+        else if recognizer.state == GestureState.changed
         {
-            let isZoomingOut = (recognizer.nsuiScale < 1)
+            let isZoomingOut = (recognizer.aScale < 1)
             var canZoomMoreX = isZoomingOut ? _viewPortHandler.canZoomOutMoreX : _viewPortHandler.canZoomInMoreX
             var canZoomMoreY = isZoomingOut ? _viewPortHandler.canZoomOutMoreY : _viewPortHandler.canZoomInMoreY
             
@@ -634,8 +634,8 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                         location.y = -(_viewPortHandler.chartHeight - location.y - _viewPortHandler.offsetBottom)
                     }
                     
-                    let scaleX = canZoomMoreX ? recognizer.nsuiScale : 1.0
-                    let scaleY = canZoomMoreY ? recognizer.nsuiScale : 1.0
+                    let scaleX = canZoomMoreX ? recognizer.aScale : 1.0
+                    let scaleY = canZoomMoreY ? recognizer.aScale : 1.0
                     
                     var matrix = CGAffineTransform(translationX: location.x, y: location.y)
                     matrix = matrix.scaledBy(x: scaleX, y: scaleY)
@@ -651,15 +651,15 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                     }
                 }
                 
-                recognizer.nsuiScale = 1.0
+                recognizer.aScale = 1.0
             }
         }
     }
     #endif
     
-    @objc fileprivate func panGestureRecognized(_ recognizer: NSUIPanGestureRecognizer)
+    @objc fileprivate func panGestureRecognized(_ recognizer: PanGesture)
     {
-        if recognizer.state == NSUIGestureRecognizerState.began && recognizer.nsuiNumberOfTouches() > 0
+        if recognizer.state == GestureState.began && recognizer.aNumberOfTouches() > 0
         {
             stopDeceleration()
             
@@ -696,7 +696,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                     if _outerScrollView !== nil
                     {
                         // Prevent the parent scroll view from scrolling
-                        _outerScrollView?.nsuiIsScrollEnabled = false
+                        _outerScrollView?.aIsScrollEnabled = false
                     }
                 }
                 
@@ -704,12 +704,12 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
             }
             else if self.isHighlightPerDragEnabled
             {
-                // We will only handle highlights on NSUIGestureRecognizerState.Changed
+                // We will only handle highlights on GestureState.Changed
                 
                 _isDragging = false
             }
         }
-        else if recognizer.state == NSUIGestureRecognizerState.changed
+        else if recognizer.state == GestureState.changed
         {
             if _isDragging
             {
@@ -735,18 +735,18 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
                 }
             }
         }
-        else if recognizer.state == NSUIGestureRecognizerState.ended || recognizer.state == NSUIGestureRecognizerState.cancelled
+        else if recognizer.state == GestureState.ended || recognizer.state == GestureState.cancelled
         {
             if _isDragging
             {
-                if recognizer.state == NSUIGestureRecognizerState.ended && isDragDecelerationEnabled
+                if recognizer.state == GestureState.ended && isDragDecelerationEnabled
                 {
                     stopDeceleration()
                     
                     _decelerationLastTime = CACurrentMediaTime()
                     _decelerationVelocity = recognizer.velocity(in: self)
                     
-                    _decelerationDisplayLink = NSUIDisplayLink(target: self, selector: #selector(BarLineChartViewBase.decelerationLoop))
+                    _decelerationDisplayLink = DisplayLink(target: self, selector: #selector(BarLineChartViewBase.decelerationLoop))
                     _decelerationDisplayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
                 }
                 
@@ -755,7 +755,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
             
             if _outerScrollView !== nil
             {
-                _outerScrollView?.nsuiIsScrollEnabled = true
+                _outerScrollView?.aIsScrollEnabled = true
                 _outerScrollView = nil
             }
         }
@@ -842,7 +842,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         }
     }
     
-    fileprivate func nsuiGestureRecognizerShouldBegin(_ gestureRecognizer: NSUIGestureRecognizer) -> Bool
+    fileprivate func nsuiGestureRecognizerShouldBegin(_ gestureRecognizer: Gesture) -> Bool
     {
         if gestureRecognizer == _panGestureRecognizer
         {
@@ -887,25 +887,25 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     }
     #endif
     
-    open func gestureRecognizer(_ gestureRecognizer: NSUIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: NSUIGestureRecognizer) -> Bool
+    open func gestureRecognizer(_ gestureRecognizer: Gesture, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: Gesture) -> Bool
     {
         #if !os(tvOS)
-            if ((gestureRecognizer.isKind(of: NSUIPinchGestureRecognizer.self) &&
-                otherGestureRecognizer.isKind(of: NSUIPanGestureRecognizer.self)) ||
-                (gestureRecognizer.isKind(of: NSUIPanGestureRecognizer.self) &&
-                    otherGestureRecognizer.isKind(of: NSUIPinchGestureRecognizer.self)))
+            if ((gestureRecognizer.isKind(of: PinchGesture.self) &&
+                otherGestureRecognizer.isKind(of: PanGesture.self)) ||
+                (gestureRecognizer.isKind(of: PanGesture.self) &&
+                    otherGestureRecognizer.isKind(of: PinchGesture.self)))
             {
                 return true
             }
         #endif
         
-        if (gestureRecognizer.isKind(of: NSUIPanGestureRecognizer.self) &&
-            otherGestureRecognizer.isKind(of: NSUIPanGestureRecognizer.self) && (
+        if (gestureRecognizer.isKind(of: PanGesture.self) &&
+            otherGestureRecognizer.isKind(of: PanGesture.self) && (
                 gestureRecognizer == _panGestureRecognizer
             ))
         {
             var scrollView = self.superview
-            while (scrollView !== nil && !scrollView!.isKind(of: NSUIScrollView.self))
+            while (scrollView !== nil && !scrollView!.isKind(of: ScrollView.self))
             {
                 scrollView = scrollView?.superview
             }
@@ -913,27 +913,27 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
             // If there is two scrollview together, we pick the superview of the inner scrollview.
             // In the case of UITableViewWrepperView, the superview will be UITableView
             if let superViewOfScrollView = scrollView?.superview
-                , superViewOfScrollView.isKind(of: NSUIScrollView.self)
+                , superViewOfScrollView.isKind(of: ScrollView.self)
             {
                 scrollView = superViewOfScrollView
             }
             
-            var foundScrollView = scrollView as? NSUIScrollView
+            var foundScrollView = scrollView as? ScrollView
             
-            if foundScrollView !== nil && !foundScrollView!.nsuiIsScrollEnabled
+            if foundScrollView !== nil && !foundScrollView!.aIsScrollEnabled
             {
                 foundScrollView = nil
             }
             
-            var scrollViewPanGestureRecognizer: NSUIGestureRecognizer!
+            var scrollViewPanGestureRecognizer: Gesture!
             
             if foundScrollView !== nil
             {
-                for scrollRecognizer in foundScrollView!.nsuiGestureRecognizers!
+                for scrollRecognizer in foundScrollView!.aGestures!
                 {
-                    if scrollRecognizer.isKind(of: NSUIPanGestureRecognizer.self)
+                    if scrollRecognizer.isKind(of: PanGesture.self)
                     {
-                        scrollViewPanGestureRecognizer = scrollRecognizer as! NSUIPanGestureRecognizer
+                        scrollViewPanGestureRecognizer = scrollRecognizer as! PanGesture
                         break
                     }
                 }
@@ -1073,7 +1073,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easing: ChartEasingFunctionBlock?)
+        easing: AEasingFunctionBlock?)
     {
         let origin = valueForTouchPoint(
             point: CGPoint(x: viewPortHandler.contentLeft, y: viewPortHandler.contentTop),
@@ -1115,7 +1115,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easingOption: ChartEasingOption)
+        easingOption: AEasingOption)
     {
         zoomAndCenterViewAnimated(scaleX: scaleX, scaleY: scaleY, xValue: xValue, yValue: yValue, axis: axis, duration: duration, easing: easingFunctionFromOption(easingOption))
     }
@@ -1600,7 +1600,7 @@ open class BarLineChartViewBase: AViewBase, BarLineScatterCandleBubbleChartDataP
     open var highlightPerDragEnabled = true
     
     /// If set to true, highlighting per dragging over a fully zoomed out chart is enabled
-    /// You might want to disable this when using inside a `NSUIScrollView`
+    /// You might want to disable this when using inside a `ScrollView`
     ///
     /// **default**: true
     open var isHighlightPerDragEnabled: Bool

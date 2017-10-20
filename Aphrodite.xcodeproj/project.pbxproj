@@ -74,7 +74,31 @@
 		C07B62F61F8BC68E0037BFF9 /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */; };
 		C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B599A1F61A4F600563444 /* Aphrodite.swift */; };
 		C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BAEAA1F6503F800590CA7 /* RegularTest.swift */; };
+		C08C4AD01F999B81002F02B6 /* PieDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C4ACF1F999B81002F02B6 /* PieDataEntry.swift */; };
+		C08C4AD31F99A05F002F02B6 /* AHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C4AD21F99A05F002F02B6 /* AHighlighter.swift */; };
+		C08C4AD51F99A3C1002F02B6 /* AMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C4AD41F99A3C1002F02B6 /* AMarker.swift */; };
+		C08C4AD81F99AF16002F02B6 /* ViewPortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08C4AD71F99AF16002F02B6 /* ViewPortJob.swift */; };
+		C09266431F9A059E007BDAD1 /* HorizontalBarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09266421F9A059E007BDAD1 /* HorizontalBarRenderer.swift */; };
+		C09266451F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09266441F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift */; };
+		C09266471F9A4BD8007BDAD1 /* XAxisRendererHorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09266461F9A4BD8007BDAD1 /* XAxisRendererHorizontalBar.swift */; };
+		C09266491F9A4F28007BDAD1 /* AHorizontalHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09266481F9A4F28007BDAD1 /* AHorizontalHighlighter.swift */; };
+		C092664B1F9A543F007BDAD1 /* ZoomViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092664A1F9A543F007BDAD1 /* ZoomViewJob.swift */; };
+		C092664D1F9A5658007BDAD1 /* AnimatedViewPortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092664C1F9A5658007BDAD1 /* AnimatedViewPortJob.swift */; };
+		C092664F1F9A56B1007BDAD1 /* AnimatedZoomViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092664E1F9A56B1007BDAD1 /* AnimatedZoomViewJob.swift */; };
+		C0A776171F99CCB400365C2D /* AxisRendererBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A776161F99CCB400365C2D /* AxisRendererBase.swift */; };
+		C0A776191F99CD3F00365C2D /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A776181F99CD3F00365C2D /* YAxisRenderer.swift */; };
+		C0A7761B1F99D00B00365C2D /* XAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A7761A1F99D00B00365C2D /* XAxisRenderer.swift */; };
+		C0A7761D1F99D80C00365C2D /* CandleHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A7761C1F99D80C00365C2D /* CandleHighlighter.swift */; };
 		C0D18F221F8CC99100C61CBB /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */; };
+		C0D1C4951F99EA750015A088 /* BarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4941F99EA750015A088 /* BarChartData.swift */; };
+		C0D1C4971F99EC290015A088 /* ABarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4961F99EC290015A088 /* ABarDataProvider.swift */; };
+		C0D1C4991F99ED780015A088 /* ABarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4981F99ED780015A088 /* ABarView.swift */; };
+		C0D1C49B1F99EEC30015A088 /* ABarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C49A1F99EEC30015A088 /* ABarRenderer.swift */; };
+		C0D1C49D1F99F2B80015A088 /* ABarDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C49C1F99F2B80015A088 /* ABarDataEntry.swift */; };
+		C0D1C49F1F99F51C0015A088 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C49E1F99F51C0015A088 /* Range.swift */; };
+		C0D1C4A11F99FBDE0015A088 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */; };
+		C0D1C4A31F99FEA50015A088 /* BarHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A21F99FEA50015A088 /* BarHighlighter.swift */; };
+		C0D1C4A51F9A038F0015A088 /* TransformerHorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A41F9A038F0015A088 /* TransformerHorizontalBar.swift */; };
 		C0E5FFDA1F9902510039F301 /* CandleViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFD91F9902510039F301 /* CandleViewBase.swift */; };
 		C0E5FFDD1F9903970039F301 /* XAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFDC1F9903970039F301 /* XAxis.swift */; };
 		C0E5FFDF1F9905D50039F301 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFDE1F9905D50039F301 /* Description.swift */; };
@@ -176,7 +200,31 @@
 		C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
 		C08B599A1F61A4F600563444 /* Aphrodite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aphrodite.swift; sourceTree = "<group>"; };
 		C08BAEAA1F6503F800590CA7 /* RegularTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTest.swift; sourceTree = "<group>"; };
+		C08C4ACF1F999B81002F02B6 /* PieDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieDataEntry.swift; sourceTree = "<group>"; };
+		C08C4AD21F99A05F002F02B6 /* AHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHighlighter.swift; sourceTree = "<group>"; };
+		C08C4AD41F99A3C1002F02B6 /* AMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMarker.swift; sourceTree = "<group>"; };
+		C08C4AD71F99AF16002F02B6 /* ViewPortJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPortJob.swift; sourceTree = "<group>"; };
+		C09266421F9A059E007BDAD1 /* HorizontalBarRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarRenderer.swift; sourceTree = "<group>"; };
+		C09266441F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisRendererHorizontalBar.swift; sourceTree = "<group>"; };
+		C09266461F9A4BD8007BDAD1 /* XAxisRendererHorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisRendererHorizontalBar.swift; sourceTree = "<group>"; };
+		C09266481F9A4F28007BDAD1 /* AHorizontalHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHorizontalHighlighter.swift; sourceTree = "<group>"; };
+		C092664A1F9A543F007BDAD1 /* ZoomViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewJob.swift; sourceTree = "<group>"; };
+		C092664C1F9A5658007BDAD1 /* AnimatedViewPortJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedViewPortJob.swift; sourceTree = "<group>"; };
+		C092664E1F9A56B1007BDAD1 /* AnimatedZoomViewJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedZoomViewJob.swift; sourceTree = "<group>"; };
+		C0A776161F99CCB400365C2D /* AxisRendererBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisRendererBase.swift; sourceTree = "<group>"; };
+		C0A776181F99CD3F00365C2D /* YAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisRenderer.swift; sourceTree = "<group>"; };
+		C0A7761A1F99D00B00365C2D /* XAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisRenderer.swift; sourceTree = "<group>"; };
+		C0A7761C1F99D80C00365C2D /* CandleHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleHighlighter.swift; sourceTree = "<group>"; };
 		C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDictionary.swift; sourceTree = "<group>"; };
+		C0D1C4941F99EA750015A088 /* BarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartData.swift; sourceTree = "<group>"; };
+		C0D1C4961F99EC290015A088 /* ABarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABarDataProvider.swift; sourceTree = "<group>"; };
+		C0D1C4981F99ED780015A088 /* ABarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABarView.swift; sourceTree = "<group>"; };
+		C0D1C49A1F99EEC30015A088 /* ABarRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABarRenderer.swift; sourceTree = "<group>"; };
+		C0D1C49C1F99F2B80015A088 /* ABarDataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABarDataEntry.swift; sourceTree = "<group>"; };
+		C0D1C49E1F99F51C0015A088 /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
+		C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
+		C0D1C4A21F99FEA50015A088 /* BarHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHighlighter.swift; sourceTree = "<group>"; };
+		C0D1C4A41F9A038F0015A088 /* TransformerHorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerHorizontalBar.swift; sourceTree = "<group>"; };
 		C0E5FFD91F9902510039F301 /* CandleViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleViewBase.swift; sourceTree = "<group>"; };
 		C0E5FFDC1F9903970039F301 /* XAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxis.swift; sourceTree = "<group>"; };
 		C0E5FFDE1F9905D50039F301 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
@@ -234,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				C02A10601F98552D003224DB /* Transformer.swift */,
+				C0D1C4A41F9A038F0015A088 /* TransformerHorizontalBar.swift */,
 			);
 			name = Utils;
 			path = Aphrodite/KLineView/Utils;
@@ -247,6 +296,8 @@
 				C02A10751F98DC35003224DB /* CandleData.swift */,
 				C02A10771F98DD6F003224DB /* CandleBubbleData.swift */,
 				C0E5FFE61F990F4B0039F301 /* APieDataSet.swift */,
+				C0D1C4941F99EA750015A088 /* BarChartData.swift */,
+				C0D1C49C1F99F2B80015A088 /* ABarDataEntry.swift */,
 			);
 			path = Standard;
 			sourceTree = "<group>";
@@ -255,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				C02A107A1F990017003224DB /* CandleViewBase.swift */,
+				C0D1C4981F99ED780015A088 /* ABarView.swift */,
+				C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */,
 			);
 			path = CandleView;
 			sourceTree = "<group>";
@@ -317,6 +370,8 @@
 		C05080F71F972B60000DC13F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C08C4AD61F99AF08002F02B6 /* Jobs */,
+				C08C4AD11F99A04C002F02B6 /* Highlight */,
 				C0E5FFDB1F9903830039F301 /* Components */,
 				C02A10791F98FFB6003224DB /* CandleView */,
 				C02A105F1F985519003224DB /* Utils */,
@@ -353,6 +408,13 @@
 				C02A10691F989F47003224DB /* ALineCandleRadar.swift */,
 				C02A106D1F98AE6C003224DB /* CandleStick.swift */,
 				C0E5FFE01F9908DB0039F301 /* LegendRenderer.swift */,
+				C0A776161F99CCB400365C2D /* AxisRendererBase.swift */,
+				C0A776181F99CD3F00365C2D /* YAxisRenderer.swift */,
+				C0A7761A1F99D00B00365C2D /* XAxisRenderer.swift */,
+				C0D1C49A1F99EEC30015A088 /* ABarRenderer.swift */,
+				C09266421F9A059E007BDAD1 /* HorizontalBarRenderer.swift */,
+				C09266441F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift */,
+				C09266461F9A4BD8007BDAD1 /* XAxisRendererHorizontalBar.swift */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -368,6 +430,7 @@
 				C02A10711F98D442003224DB /* ACandleDataSet.swift */,
 				C0E5FFE21F990CD80039F301 /* AIBarDataSet.swift */,
 				C0E5FFE41F990E490039F301 /* AIPieDataSet.swift */,
+				C0D1C4961F99EC290015A088 /* ABarDataProvider.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -462,6 +525,29 @@
 			name = ExtensionArry;
 			sourceTree = "<group>";
 		};
+		C08C4AD11F99A04C002F02B6 /* Highlight */ = {
+			isa = PBXGroup;
+			children = (
+				C08C4AD21F99A05F002F02B6 /* AHighlighter.swift */,
+				C0A7761C1F99D80C00365C2D /* CandleHighlighter.swift */,
+				C0D1C49E1F99F51C0015A088 /* Range.swift */,
+				C0D1C4A21F99FEA50015A088 /* BarHighlighter.swift */,
+				C09266481F9A4F28007BDAD1 /* AHorizontalHighlighter.swift */,
+			);
+			path = Highlight;
+			sourceTree = "<group>";
+		};
+		C08C4AD61F99AF08002F02B6 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				C08C4AD71F99AF16002F02B6 /* ViewPortJob.swift */,
+				C092664A1F9A543F007BDAD1 /* ZoomViewJob.swift */,
+				C092664C1F9A5658007BDAD1 /* AnimatedViewPortJob.swift */,
+				C092664E1F9A56B1007BDAD1 /* AnimatedZoomViewJob.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
 		C0D18F201F8CC96C00C61CBB /* ExtensionDictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +561,7 @@
 			children = (
 				C0E5FFDC1F9903970039F301 /* XAxis.swift */,
 				C0E5FFDE1F9905D50039F301 /* Description.swift */,
+				C08C4AD41F99A3C1002F02B6 /* AMarker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -483,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				C0E5FFE91F9914470039F301 /* ABaseDataSet.swift */,
+				C08C4ACF1F999B81002F02B6 /* PieDataEntry.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -672,20 +760,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C092664B1F9A543F007BDAD1 /* ZoomViewJob.swift in Sources */,
 				C0E5FFE51F990E490039F301 /* AIPieDataSet.swift in Sources */,
 				C059BBCA1F97BC1B00DAE06E /* AnimationUtils.swift in Sources */,
 				C06BE40E1F63DA7100EDC7A3 /* ArrayDataSource.swift in Sources */,
 				C02A10721F98D442003224DB /* ACandleDataSet.swift in Sources */,
 				C06BE4001F63C97000EDC7A3 /* ExtensionUIView.swift in Sources */,
+				C092664D1F9A5658007BDAD1 /* AnimatedViewPortJob.swift in Sources */,
 				C05081051F973C7A000DC13F /* Highlight.swift in Sources */,
+				C0A7761B1F99D00B00365C2D /* XAxisRenderer.swift in Sources */,
+				C08C4AD81F99AF16002F02B6 /* ViewPortJob.swift in Sources */,
+				C0D1C49B1F99EEC30015A088 /* ABarRenderer.swift in Sources */,
 				C05081091F974921000DC13F /* LegendEntry.swift in Sources */,
 				C059BBCD1F98427C00DAE06E /* ALineBubble.swift in Sources */,
+				C0D1C4A51F9A038F0015A088 /* TransformerHorizontalBar.swift in Sources */,
+				C0D1C4A31F99FEA50015A088 /* BarHighlighter.swift in Sources */,
+				C09266491F9A4F28007BDAD1 /* AHorizontalHighlighter.swift in Sources */,
 				C02A10651F987775003224DB /* ADataProvider.swift in Sources */,
 				C06BE4021F63CF2400EDC7A3 /* UIViewAttribute.swift in Sources */,
 				C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */,
 				C07827CE1F96ECCE00DB3450 /* ASetRounding.swift in Sources */,
 				C02A106A1F989F47003224DB /* ALineCandleRadar.swift in Sources */,
 				C07827D51F9704C800DB3450 /* AValue.swift in Sources */,
+				C08C4AD31F99A05F002F02B6 /* AHighlighter.swift in Sources */,
 				C02A106E1F98AE6C003224DB /* CandleStick.swift in Sources */,
 				C06BE40C1F63D80B00EDC7A3 /* ExtensionText.swift in Sources */,
 				C02A10741F98D6C0003224DB /* CandleDataEntry.swift in Sources */,
@@ -695,23 +792,33 @@
 				C06BE4081F63D6DB00EDC7A3 /* Regular.swift in Sources */,
 				C0E5FFE71F990F4B0039F301 /* APieDataSet.swift in Sources */,
 				C059BBC51F97BA1700DAE06E /* DataRenderer.swift in Sources */,
+				C09266431F9A059E007BDAD1 /* HorizontalBarRenderer.swift in Sources */,
+				C08C4AD01F999B81002F02B6 /* PieDataEntry.swift in Sources */,
 				C07827D01F96EDB900DB3450 /* ADataEntry.swift in Sources */,
+				C0D1C4991F99ED780015A088 /* ABarView.swift in Sources */,
 				C0D18F221F8CC99100C61CBB /* ExtensionDictionary.swift in Sources */,
 				C059BBBF1F974C8200DAE06E /* AUtils.swift in Sources */,
 				C02A10611F98552D003224DB /* Transformer.swift in Sources */,
+				C092664F1F9A56B1007BDAD1 /* AnimatedZoomViewJob.swift in Sources */,
 				C0E5FFDD1F9903970039F301 /* XAxis.swift in Sources */,
+				C0D1C49F1F99F51C0015A088 /* Range.swift in Sources */,
 				C0E5FFE31F990CD80039F301 /* AIBarDataSet.swift in Sources */,
 				C05080FB1F972BBB000DC13F /* AxisBase.swift in Sources */,
 				C05080FF1F9730CF000DC13F /* AxisValue.swift in Sources */,
 				C06BE40A1F63D76300EDC7A3 /* Effect.swift in Sources */,
 				C05080F91F972B77000DC13F /* YAxis.swift in Sources */,
+				C0D1C4A11F99FBDE0015A088 /* HorizontalBarView.swift in Sources */,
 				C07827CC1F96683000DB3450 /* AEntryBase.swift in Sources */,
+				C0A776191F99CD3F00365C2D /* YAxisRenderer.swift in Sources */,
+				C0D1C4971F99EC290015A088 /* ABarDataProvider.swift in Sources */,
 				C06BE3FE1F63C80300EDC7A3 /* Tool.swift in Sources */,
+				C08C4AD51F99A3C1002F02B6 /* AMarker.swift in Sources */,
 				C0E5FFEA1F9914470039F301 /* ABaseDataSet.swift in Sources */,
 				C07827CA1F96642200DB3450 /* ADataSet.swift in Sources */,
 				C02A10781F98DD6F003224DB /* CandleBubbleData.swift in Sources */,
 				C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */,
 				C02A10701F98B118003224DB /* ACandleChartData.swift in Sources */,
+				C09266451F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift in Sources */,
 				C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */,
 				C05081071F974866000DC13F /* Legend.swift in Sources */,
 				C05081031F973645000DC13F /* DefaultAxisValue.swift in Sources */,
@@ -719,21 +826,26 @@
 				C0E5FFDF1F9905D50039F301 /* Description.swift in Sources */,
 				C07827C51F95DD4D00DB3450 /* AKView.swift in Sources */,
 				C07827D21F96FBDE00DB3450 /* PortHandler.swift in Sources */,
+				C0D1C49D1F99F2B80015A088 /* ABarDataEntry.swift in Sources */,
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C02A10761F98DC35003224DB /* CandleData.swift in Sources */,
 				C02A10681F988496003224DB /* DataSet.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C02A107B1F990017003224DB /* CandleViewBase.swift in Sources */,
 				C0E5FFE11F9908DB0039F301 /* LegendRenderer.swift in Sources */,
+				C09266471F9A4BD8007BDAD1 /* XAxisRendererHorizontalBar.swift in Sources */,
 				C059BBC11F975BD500DAE06E /* DefaultValue.swift in Sources */,
 				C059BBC81F97BB3C00DAE06E /* Animator.swift in Sources */,
 				C02A106C1F98A4E9003224DB /* ALineScatterDataSet.swift in Sources */,
+				C0A7761D1F99D80C00365C2D /* CandleHighlighter.swift in Sources */,
 				C059BBC31F97B9B300DAE06E /* Renderer.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
 				C02A10631F985649003224DB /* LineBubbleDataProvider.swift in Sources */,
 				C0E5FFDA1F9902510039F301 /* CandleViewBase.swift in Sources */,
+				C0A776171F99CCB400365C2D /* AxisRendererBase.swift in Sources */,
 				C0F4F8461F8F4D6F00967073 /* FExtensionRange.swift in Sources */,
 				C05080F61F97283B000DC13F /* AData.swift in Sources */,
+				C0D1C4951F99EA750015A088 /* BarChartData.swift in Sources */,
 				C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

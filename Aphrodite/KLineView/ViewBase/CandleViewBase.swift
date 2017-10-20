@@ -8,25 +8,28 @@
 
 import Foundation
 
+/// ChartViewDelegate
 @objc
-public protocol ChartViewDelegate
+public protocol CandleViewDelegate
 {
     /// Called when a value has been selected inside the chart.
     /// - parameter entry: The selected Entry.
     /// - parameter highlight: The corresponding highlight object that contains information about the highlighted position such as dataSetIndex etc.
-    @objc optional func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
+    @objc optional func chartValueSelected(_ chartView: CandleViewBase, entry: ADataEntry, highlight: Highlight)
     
     // Called when nothing has been selected or an "un-select" has been made.
-    @objc optional func chartValueNothingSelected(_ chartView: ChartViewBase)
+    @objc optional func chartValueNothingSelected(_ chartView: CandleViewBase)
     
     // Callbacks when the chart is scaled / zoomed via pinch zoom gesture.
-    @objc optional func chartScaled(_ chartView: ChartViewBase, scaleX: CGFloat, scaleY: CGFloat)
+    @objc optional func chartScaled(_ chartView: CandleViewBase, scaleX: CGFloat, scaleY: CGFloat)
     
     // Callbacks when the chart is moved / translated via drag gesture.
-    @objc optional func chartTranslated(_ chartView: ChartViewBase, dX: CGFloat, dY: CGFloat)
+    @objc optional func chartTranslated(_ chartView: CandleViewBase, dX: CGFloat, dY: CGFloat)
 }
 
-open class ChartViewBase: View, ADataProvider, AnimatorDelegate
+
+/// ChartViewBase
+open class CandleViewBase: AKView, ADataProvider, AnimatorDelegate
 {
     // MARK: - Properties
     
@@ -120,26 +123,26 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     internal var _legend: Legend!
     
     /// delegate to receive chart events
-    open weak var delegate: ChartViewDelegate?
+    open weak var delegate: CandleViewDelegate?
     
     /// text that is displayed when the chart is empty
     open var noDataText = "No chart data available."
     
     /// Font to be used for the no data text.
-    open var noDataFont: NSUIFont! = NSUIFont(name: "HelveticaNeue", size: 12.0)
+    open var noDataFont: Font! = Font(name: "HelveticaNeue", size: 12.0)
     
     /// color of the no data text
-    open var noDataTextColor: NSUIColor = NSUIColor.black
+    open var noDataTextColor: Color = Color.black
     
     internal var _legendRenderer: LegendRenderer!
     
     /// object responsible for rendering the data 负责呈现数据的对象
     open var renderer: DataRenderer?
     
-    open var highlighter: IHighlighter?
+    open var highlighter: AHighlighter?
     
     /// object that manages the bounds and drawing constraints of the chart
-    internal var _viewPortHandler: ViewPortHandler!
+    internal var _viewPortHandler: PortHandler!
     
     /// object responsible for animations
     internal var _animator: Animator!
@@ -159,7 +162,7 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     open var isDrawMarkersEnabled: Bool { return drawMarkers }
     
     /// The marker that is displayed when a value is clicked on the chart
-    open var marker: IMarker?
+    open var marker: AMarker?
     
     fileprivate var _interceptTouchEvents = false
     
@@ -206,13 +209,13 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     internal func initialize()
     {
         #if os(iOS)
-            self.backgroundColor = NSUIColor.clear
+            self.backgroundColor = Color.clear
         #endif
         
         _animator = Animator()
         _animator.delegate = self
         
-        _viewPortHandler = ViewPortHandler()
+        _viewPortHandler = PortHandler()
         _viewPortHandler.setChartDimens(width: bounds.size.width, height: bounds.size.height)
         
         chartDescription = Description()
@@ -229,7 +232,7 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     // MARK: - ChartViewBase
     
     /// The data for the chart
-    open var data: ChartData?
+    open var data: AData?
         {
         get
         {
@@ -358,8 +361,8 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
                 text: noDataText,
                 point: CGPoint(x: frame.width / 2.0, y: frame.height / 2.0),
                 attributes:
-                [NSFontAttributeName: noDataFont,
-                 NSForegroundColorAttributeName: noDataTextColor],
+                [NSAttributedStringKey.font: noDataFont,
+                 NSAttributedStringKey.foregroundColor: noDataTextColor],
                 constrainedToSize: self.bounds.size,
                 anchor: CGPoint(x: 0.5, y: 0.5),
                 angleRadians: 0.0)
@@ -807,17 +810,17 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     
     /// - returns: The ViewPortHandler of the chart that is responsible for the
     /// content area of the chart and its offsets and dimensions.
-    open var viewPortHandler: ViewPortHandler!
+    open var viewPortHandler: PortHandler!
     {
         return _viewPortHandler
     }
     
     /// - returns: The bitmap that represents the chart.
-    open func getChartImage(transparent: Bool) -> NSUIImage?
+    open func getChartImage(transparent: Bool) -> Image?
     {
-        NSUIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque || !transparent, NSUIMainScreen()?.nsuiScale ?? 1.0)
+        AGraphicsBeginImageContextWithOptions(bounds.size, isOpaque || !transparent, AMain()?.aScale ?? 1.0)
         
-        guard let context = NSUIGraphicsGetCurrentContext()
+        guard let context = AGraphicsContext()
             else { return nil }
         
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: bounds.size)
@@ -825,7 +828,7 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
         if isOpaque || !transparent
         {
             // Background color may be partially transparent, we must fill with white if we want to output an opaque image
-            context.setFillColor(NSUIColor.white.cgColor)
+            context.setFillColor(Color.white.cgColor)
             context.fill(rect)
             
             if let backgroundColor = self.backgroundColor
@@ -837,9 +840,9 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
         
         nsuiLayer?.render(in: context)
         
-        let image = NSUIGraphicsGetImageFromCurrentImageContext()
+        let image = AGraphicsImageContext()
         
-        NSUIGraphicsEndImageContext()
+        AGraphicsEndImageContext()
         
         return image
     }
@@ -869,11 +872,11 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
         switch (format)
         {
         case .png:
-            imageData = NSUIImagePNGRepresentation(image)
+            imageData = AImagePNGRepresentation(image)
             break
             
         case .jpeg:
-            imageData = NSUIImageJPEGRepresentation(image, CGFloat(compressionQuality))
+            imageData = AImageJPEGRepresentation(image, CGFloat(compressionQuality))
             break
         }
         
@@ -998,36 +1001,34 @@ open class ChartViewBase: View, ADataProvider, AnimatorDelegate
     }
     
     // MARK: - Touches
-    
-    open override func nsuiTouchesBegan(_ touches: Set<NSUITouch>, withEvent event: NSUIEvent?)
-    {
+    open override func aTouchesBegan(_ touches: Set<Touch>, withEvent event: Event?) {
         if !_interceptTouchEvents
         {
-            super.nsuiTouchesBegan(touches, withEvent: event)
+            super.aTouchesBegan(touches, withEvent: event)
         }
     }
     
-    open override func nsuiTouchesMoved(_ touches: Set<NSUITouch>, withEvent event: NSUIEvent?)
+    open override func aTouchesMoved(_ touches: Set<Touch>, withEvent event: Event?)
     {
         if !_interceptTouchEvents
         {
-            super.nsuiTouchesMoved(touches, withEvent: event)
+            super.aTouchesMoved(touches, withEvent: event)
         }
     }
     
-    open override func nsuiTouchesEnded(_ touches: Set<NSUITouch>, withEvent event: NSUIEvent?)
+    open override func aTouchesEnded(_ touches: Set<Touch>, withEvent event: Event?)
     {
         if !_interceptTouchEvents
         {
-            super.nsuiTouchesEnded(touches, withEvent: event)
+            super.aTouchesEnded(touches, withEvent: event)
         }
     }
     
-    open override func nsuiTouchesCancelled(_ touches: Set<NSUITouch>?, withEvent event: NSUIEvent?)
+    open override func aTouchesCancelled(_ touches: Set<Touch>?, withEvent event: Event?)
     {
         if !_interceptTouchEvents
         {
-            super.nsuiTouchesCancelled(touches, withEvent: event)
+            super.aTouchesCancelled(touches, withEvent: event)
         }
     }
 }
