@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /// HorizontalBarChartRenderer
 open class HorizontalBarRenderer: ABarRenderer

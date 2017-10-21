@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /// Chart that draws bars.
 /// BarChartView
