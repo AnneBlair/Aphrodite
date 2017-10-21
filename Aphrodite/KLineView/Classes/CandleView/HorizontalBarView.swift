@@ -9,7 +9,8 @@
 import Foundation
 
 /// BarChart with horizontal bar orientation. In this implementation, x- and y-axis are switched.
-open class HorizontalBarChartView: ABarView
+/// HorizontalBarChartView
+open class HorizontalBarView: ABarView
 {
     internal override func initialize()
     {

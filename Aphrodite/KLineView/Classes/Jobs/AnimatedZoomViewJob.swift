@@ -86,7 +86,7 @@ open class AnimatedZoomViewJob: AnimatedViewPortJob
     
     internal override func animationEnd()
     {
-        (view as? BarLineChartViewBase)?.calculateOffsets()
+        (view as? BarLineCandleViewBase)?.calculateOffsets()
         view?.setNeedsDisplay()
     }
 }

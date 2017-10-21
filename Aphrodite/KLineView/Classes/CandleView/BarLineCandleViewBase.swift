@@ -1,5 +1,15 @@
 //
-//  CandleViewBase.swift
+//  BarLineCandleViewBase.swift
+//  Aphrodite
+//
+//  Created by AnneBlair on 2017/10/21.
+//  Copyright © 2017年 blog.aiyinyu.com. All rights reserved.
+//
+
+import Foundation
+import CoreGraphics
+//
+//  BarLineCandleViewBase.swift
 //  Aphrodite
 //
 //  Created by AnneBlair on 2017/10/19.
@@ -10,7 +20,8 @@ import Foundation
 import CoreGraphics
 
 /// Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
-open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, GestureDelegate
+/// BarLineChartViewBase
+open class BarLineCandleViewBase: CandleViewBase, LineBubbleDataProvider, GestureDelegate
 {
     /// the maximum number of entries to which values will be drawn
     /// (entry numbers greater than this value will cause value-labels to disappear)
@@ -120,7 +131,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         _panGestureRecognizer.isEnabled = _dragEnabled
         
         #if !os(tvOS)
-            _pinchGestureRecognizer = PinchGesture(target: self, action: #selector(BarLineChartViewBase.pinchGestureRecognized(_:)))
+            _pinchGestureRecognizer = PinchGesture(target: self, action: #selector(BarLineCandleViewBase.pinchGestureRecognized(_:)))
             _pinchGestureRecognizer.delegate = self
             self.addGestureRecognizer(_pinchGestureRecognizer)
             _pinchGestureRecognizer.isEnabled = _pinchZoomEnabled || _scaleXEnabled || _scaleYEnabled
@@ -676,10 +687,10 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
             {
                 _isDragging = true
                 
-                _closestDataSetToTouch = getDataSetByTouchPoint(point: recognizer.nsuiLocationOfTouch(0, inView: self))
+                _closestDataSetToTouch = getDataSetByTouchPoint(point: recognizer.aLocationOfTouch(0, inView: self))
                 
                 let translation = recognizer.translation(in: self)
-                let didUserDrag = (self is HorizontalBarChartView) ? translation.y != 0.0 : translation.x != 0.0
+                let didUserDrag = (self is HorizontalBarView) ? translation.y != 0.0 : translation.x != 0.0
                 
                 // Check to see if user dragged at all and if so, can the chart be dragged by the given amount
                 if didUserDrag && !performPanChange(translation: translation)
@@ -746,7 +757,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
                     _decelerationLastTime = CACurrentMediaTime()
                     _decelerationVelocity = recognizer.velocity(in: self)
                     
-                    _decelerationDisplayLink = DisplayLink(target: self, selector: #selector(BarLineChartViewBase.decelerationLoop))
+                    _decelerationDisplayLink = DisplayLink(target: self, selector: #selector(BarLineCandleViewBase.decelerationLoop))
                     _decelerationDisplayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
                 }
                 
@@ -767,7 +778,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         
         if isTouchInverted()
         {
-            if self is HorizontalBarChartView
+            if self is HorizontalBarView
             {
                 translation.x = -translation.x
             }
@@ -1297,7 +1308,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easing: ChartEasingFunctionBlock?)
+        easing: AEasingFunctionBlock?)
     {
         let bounds = valueForTouchPoint(
             point: CGPoint(x: viewPortHandler.contentLeft, y: viewPortHandler.contentTop),
@@ -1332,7 +1343,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easingOption: ChartEasingOption)
+        easingOption: AEasingOption)
     {
         moveViewToAnimated(xValue: xValue, yValue: yValue, axis: axis, duration: duration, easing: easingFunctionFromOption(easingOption))
     }
@@ -1390,7 +1401,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easing: ChartEasingFunctionBlock?)
+        easing: AEasingFunctionBlock?)
     {
         let bounds = valueForTouchPoint(
             point: CGPoint(x: viewPortHandler.contentLeft, y: viewPortHandler.contentTop),
@@ -1425,7 +1436,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
         yValue: Double,
         axis: YAxis.AxisDependency,
         duration: TimeInterval,
-        easingOption: ChartEasingOption)
+        easingOption: AEasingOption)
     {
         centerViewToAnimated(xValue: xValue, yValue: yValue, axis: axis, duration: duration, easing: easingFunctionFromOption(easingOption))
     }
@@ -1489,7 +1500,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
     }
     
     /// - returns: The position (in pixels) the provided Entry has inside the chart view
-    open func getPosition(entry e: ChartDataEntry, axis: YAxis.AxisDependency) -> CGPoint
+    open func getPosition(entry e: ADataEntry, axis: YAxis.AxisDependency) -> CGPoint
     {
         var vals = CGPoint(x: CGFloat(e.x), y: CGFloat(e.y))
         
@@ -1639,7 +1650,7 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
     }
     
     /// - returns: The Entry object displayed at the touched position of the chart
-    open func getEntryByTouchPoint(point pt: CGPoint) -> ChartDataEntry!
+    open func getEntryByTouchPoint(point pt: CGPoint) -> ADataEntry!
     {
         if let h = getHighlightByTouchPoint(pt)
         {
@@ -1649,12 +1660,12 @@ open class BarLineChartViewBase: CandleViewBase, LineBubbleDataProvider, Gesture
     }
     
     /// - returns: The DataSet object displayed at the touched position of the chart
-    open func getDataSetByTouchPoint(point pt: CGPoint) -> IBarLineScatterCandleBubbleChartDataSet!
+    open func getDataSetByTouchPoint(point pt: CGPoint) -> LineBubbleDataSet!
     {
         let h = getHighlightByTouchPoint(pt)
         if h !== nil
         {
-            return _data?.getDataSetByIndex(h!.dataSetIndex) as! IBarLineScatterCandleBubbleChartDataSet!
+            return _data?.getDataSetByIndex(h!.dataSetIndex) as! LineBubbleDataSet!
         }
         return nil
     }

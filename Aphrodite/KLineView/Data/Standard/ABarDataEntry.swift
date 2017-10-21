@@ -55,7 +55,7 @@ open class ABarDataEntry: ADataEntry
     /// Constructor for stacked bar entries.
     public init(x: Double, yValues: [Double])
     {
-        super.init(x: x, y: BarChartDataEntry.calcSum(values: yValues))
+        super.init(x: x, y: ABarDataEntry.calcSum(values: yValues))
         self._yVals = yValues
         calcPosNegSum()
         calcRanges()
@@ -65,7 +65,7 @@ open class ABarDataEntry: ADataEntry
     @available(*, deprecated: 1.0, message: "Use `data` argument instead of `label`.")
     public init(x: Double, yValues: [Double], label: String)
     {
-        super.init(x: x, y: BarChartDataEntry.calcSum(values: yValues), data: label as AnyObject?)
+        super.init(x: x, y: ABarDataEntry.calcSum(values: yValues), data: label as AnyObject?)
         self._yVals = yValues
         calcPosNegSum()
         calcRanges()
@@ -74,7 +74,7 @@ open class ABarDataEntry: ADataEntry
     /// Constructor for stacked bar entries. One data object for whole stack
     public init(x: Double, yValues: [Double], data: AnyObject?)
     {
-        super.init(x: x, y: BarChartDataEntry.calcSum(values: yValues), data: data)
+        super.init(x: x, y: ABarDataEntry.calcSum(values: yValues), data: data)
         self._yVals = yValues
         calcPosNegSum()
         calcRanges()
@@ -83,7 +83,7 @@ open class ABarDataEntry: ADataEntry
     /// Constructor for stacked bar entries. One data object for whole stack
     public init(x: Double, yValues: [Double], icon: Image?, data: AnyObject?)
     {
-        super.init(x: x, y: BarChartDataEntry.calcSum(values: yValues), icon: icon, data: data)
+        super.init(x: x, y: ABarDataEntry.calcSum(values: yValues), icon: icon, data: data)
         self._yVals = yValues
         calcPosNegSum()
         calcRanges()
@@ -92,7 +92,7 @@ open class ABarDataEntry: ADataEntry
     /// Constructor for stacked bar entries. One data object for whole stack
     public init(x: Double, yValues: [Double], icon: Image?)
     {
-        super.init(x: x, y: BarChartDataEntry.calcSum(values: yValues), icon: icon)
+        super.init(x: x, y: ABarDataEntry.calcSum(values: yValues), icon: icon)
         self._yVals = yValues
         calcPosNegSum()
         calcRanges()
@@ -210,7 +210,7 @@ open class ABarDataEntry: ADataEntry
         get { return self._yVals }
         set
         {
-            self.y = BarChartDataEntry.calcSum(values: newValue)
+            self.y = ABarDataEntry.calcSum(values: newValue)
             self._yVals = newValue
             calcPosNegSum()
             calcRanges()
@@ -227,7 +227,7 @@ open class ABarDataEntry: ADataEntry
     
     open override func copyWithZone(_ zone: NSZone?) -> AnyObject
     {
-        let copy = super.copyWithZone(zone) as! BarChartDataEntry
+        let copy = super.copyWithZone(zone) as! ABarDataEntry
         copy._yVals = _yVals
         copy.y = y
         copy._negativeSum = _negativeSum

@@ -10,7 +10,7 @@ import Foundation
 
 /// Chart that draws bars.
 /// BarChartView
-open class ABarView: BarLineChartViewBase, ABarDataProvider
+open class ABarView: BarLineCandleViewBase, ABarDataProvider
 {
     /// if set to true, all values are drawn above their bars, instead of below their top
     fileprivate var _drawValueAboveBarEnabled = true
