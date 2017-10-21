@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreGraphics
 
 /// BarChart with horizontal bar orientation. In this implementation, x- and y-axis are switched.
 /// HorizontalBarChartView

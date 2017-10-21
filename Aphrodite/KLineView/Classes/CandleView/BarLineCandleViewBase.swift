@@ -8,16 +8,10 @@
 
 import Foundation
 import CoreGraphics
-//
-//  BarLineCandleViewBase.swift
-//  Aphrodite
-//
-//  Created by AnneBlair on 2017/10/19.
-//  Copyright © 2017年 blog.aiyinyu.com. All rights reserved.
-//
 
-import Foundation
-import CoreGraphics
+#if !os(OSX)
+    import UIKit
+#endif
 
 /// Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
 /// BarLineChartViewBase

@@ -90,7 +90,8 @@
 		C0A776191F99CD3F00365C2D /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A776181F99CD3F00365C2D /* YAxisRenderer.swift */; };
 		C0A7761B1F99D00B00365C2D /* XAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A7761A1F99D00B00365C2D /* XAxisRenderer.swift */; };
 		C0A7761D1F99D80C00365C2D /* CandleHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A7761C1F99D80C00365C2D /* CandleHighlighter.swift */; };
-		C0BE04B51F9B97AF006C8E7B /* BarLineCandleViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE04B41F9B97AF006C8E7B /* BarLineCandleViewBase.swift */; };
+		C0BE04B71F9BAB2F006C8E7B /* CandleViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE04B61F9BAB2F006C8E7B /* CandleViewBase.swift */; };
+		C0BE04BA1F9BAD41006C8E7B /* BarLineCandleViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE04B81F9BAB3B006C8E7B /* BarLineCandleViewBase.swift */; };
 		C0D18F221F8CC99100C61CBB /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */; };
 		C0D1C4951F99EA750015A088 /* BarChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4941F99EA750015A088 /* BarChartData.swift */; };
 		C0D1C4971F99EC290015A088 /* ABarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4961F99EC290015A088 /* ABarDataProvider.swift */; };
@@ -101,7 +102,6 @@
 		C0D1C4A11F99FBDE0015A088 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */; };
 		C0D1C4A31F99FEA50015A088 /* BarHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A21F99FEA50015A088 /* BarHighlighter.swift */; };
 		C0D1C4A51F9A038F0015A088 /* TransformerHorizontalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C4A41F9A038F0015A088 /* TransformerHorizontalBar.swift */; };
-		C0E5FFDA1F9902510039F301 /* CandleViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFD91F9902510039F301 /* CandleViewBase.swift */; };
 		C0E5FFDD1F9903970039F301 /* XAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFDC1F9903970039F301 /* XAxis.swift */; };
 		C0E5FFDF1F9905D50039F301 /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFDE1F9905D50039F301 /* Description.swift */; };
 		C0E5FFE11F9908DB0039F301 /* LegendRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E5FFE01F9908DB0039F301 /* LegendRenderer.swift */; };
@@ -218,7 +218,8 @@
 		C0A776181F99CD3F00365C2D /* YAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisRenderer.swift; sourceTree = "<group>"; };
 		C0A7761A1F99D00B00365C2D /* XAxisRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisRenderer.swift; sourceTree = "<group>"; };
 		C0A7761C1F99D80C00365C2D /* CandleHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleHighlighter.swift; sourceTree = "<group>"; };
-		C0BE04B41F9B97AF006C8E7B /* BarLineCandleViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineCandleViewBase.swift; sourceTree = "<group>"; };
+		C0BE04B61F9BAB2F006C8E7B /* CandleViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandleViewBase.swift; sourceTree = "<group>"; };
+		C0BE04B81F9BAB3B006C8E7B /* BarLineCandleViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarLineCandleViewBase.swift; sourceTree = "<group>"; };
 		C0D18F211F8CC99100C61CBB /* ExtensionDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDictionary.swift; sourceTree = "<group>"; };
 		C0D1C4941F99EA750015A088 /* BarChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartData.swift; sourceTree = "<group>"; };
 		C0D1C4961F99EC290015A088 /* ABarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABarDataProvider.swift; sourceTree = "<group>"; };
@@ -229,7 +230,6 @@
 		C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
 		C0D1C4A21F99FEA50015A088 /* BarHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHighlighter.swift; sourceTree = "<group>"; };
 		C0D1C4A41F9A038F0015A088 /* TransformerHorizontalBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerHorizontalBar.swift; sourceTree = "<group>"; };
-		C0E5FFD91F9902510039F301 /* CandleViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleViewBase.swift; sourceTree = "<group>"; };
 		C0E5FFDC1F9903970039F301 /* XAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxis.swift; sourceTree = "<group>"; };
 		C0E5FFDE1F9905D50039F301 /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
 		C0E5FFE01F9908DB0039F301 /* LegendRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendRenderer.swift; sourceTree = "<group>"; };
@@ -309,9 +309,9 @@
 		C02A10791F98FFB6003224DB /* CandleView */ = {
 			isa = PBXGroup;
 			children = (
+				C0BE04B81F9BAB3B006C8E7B /* BarLineCandleViewBase.swift */,
 				C0D1C4981F99ED780015A088 /* ABarView.swift */,
 				C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */,
-				C0BE04B41F9B97AF006C8E7B /* BarLineCandleViewBase.swift */,
 			);
 			path = CandleView;
 			sourceTree = "<group>";
@@ -489,9 +489,9 @@
 		C07827C11F95D91B00DB3450 /* ViewBase */ = {
 			isa = PBXGroup;
 			children = (
+				C0BE04B61F9BAB2F006C8E7B /* CandleViewBase.swift */,
 				C07827C41F95DD4D00DB3450 /* AKView.swift */,
 				C07827D11F96FBDE00DB3450 /* PortHandler.swift */,
-				C0E5FFD91F9902510039F301 /* CandleViewBase.swift */,
 			);
 			path = ViewBase;
 			sourceTree = "<group>";
@@ -766,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BE04BA1F9BAD41006C8E7B /* BarLineCandleViewBase.swift in Sources */,
 				C092664B1F9A543F007BDAD1 /* ZoomViewJob.swift in Sources */,
 				C0E5FFE51F990E490039F301 /* AIPieDataSet.swift in Sources */,
 				C059BBCA1F97BC1B00DAE06E /* AnimationUtils.swift in Sources */,
@@ -778,6 +779,7 @@
 				C09266531F9B06EA007BDAD1 /* AnimatedMoveViewJob.swift in Sources */,
 				C09266511F9B05A5007BDAD1 /* MoveViewJob.swift in Sources */,
 				C08C4AD81F99AF16002F02B6 /* ViewPortJob.swift in Sources */,
+				C0BE04B71F9BAB2F006C8E7B /* CandleViewBase.swift in Sources */,
 				C0D1C49B1F99EEC30015A088 /* ABarRenderer.swift in Sources */,
 				C05081091F974921000DC13F /* LegendEntry.swift in Sources */,
 				C059BBCD1F98427C00DAE06E /* ALineBubble.swift in Sources */,
@@ -794,7 +796,6 @@
 				C02A106E1F98AE6C003224DB /* CandleStick.swift in Sources */,
 				C06BE40C1F63D80B00EDC7A3 /* ExtensionText.swift in Sources */,
 				C02A10741F98D6C0003224DB /* CandleDataEntry.swift in Sources */,
-				C0BE04B51F9B97AF006C8E7B /* BarLineCandleViewBase.swift in Sources */,
 				C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */,
 				C059BBD01F98452200DAE06E /* LineBubbleDataSet.swift in Sources */,
 				C05080FD1F973013000DC13F /* ComponentBase.swift in Sources */,
@@ -849,7 +850,6 @@
 				C059BBC31F97B9B300DAE06E /* Renderer.swift in Sources */,
 				C06BE4121F63DCBB00EDC7A3 /* ActionStore.swift in Sources */,
 				C02A10631F985649003224DB /* LineBubbleDataProvider.swift in Sources */,
-				C0E5FFDA1F9902510039F301 /* CandleViewBase.swift in Sources */,
 				C0A776171F99CCB400365C2D /* AxisRendererBase.swift in Sources */,
 				C0F4F8461F8F4D6F00967073 /* FExtensionRange.swift in Sources */,
 				C05080F61F97283B000DC13F /* AData.swift in Sources */,
