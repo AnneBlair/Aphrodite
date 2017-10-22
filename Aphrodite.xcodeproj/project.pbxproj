@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C01DF1A51F9C604700E3C344 /* CandleStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A41F9C604700E3C344 /* CandleStickView.swift */; };
+		C01DF1A71F9C676B00E3C344 /* CandleDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A61F9C676B00E3C344 /* CandleDataSet.swift */; };
+		C01DF1A91F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A81F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift */; };
+		C01DF1AB1F9C699D00E3C344 /* BarLineScatterCandleBubbleDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1AA1F9C699D00E3C344 /* BarLineScatterCandleBubbleDataSet.swift */; };
 		C02211221F81DBC200AAB0F6 /* ExtensionPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02211211F81DBC200AAB0F6 /* ExtensionPredicate.swift */; };
 		C02A10611F98552D003224DB /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10601F98552D003224DB /* Transformer.swift */; };
 		C02A10631F985649003224DB /* LineBubbleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02A10621F985649003224DB /* LineBubbleDataProvider.swift */; };
@@ -130,6 +134,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C01DF1A41F9C604700E3C344 /* CandleStickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickView.swift; sourceTree = "<group>"; };
+		C01DF1A61F9C676B00E3C344 /* CandleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleDataSet.swift; sourceTree = "<group>"; };
+		C01DF1A81F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALineScatterCandleRadarDataSet.swift; sourceTree = "<group>"; };
+		C01DF1AA1F9C699D00E3C344 /* BarLineScatterCandleBubbleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLineScatterCandleBubbleDataSet.swift; sourceTree = "<group>"; };
 		C02211211F81DBC200AAB0F6 /* ExtensionPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionPredicate.swift; sourceTree = "<group>"; };
 		C02A10601F98552D003224DB /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		C02A10621F985649003224DB /* LineBubbleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBubbleDataProvider.swift; sourceTree = "<group>"; };
@@ -302,6 +310,9 @@
 				C0E5FFE61F990F4B0039F301 /* APieDataSet.swift */,
 				C0D1C4941F99EA750015A088 /* BarChartData.swift */,
 				C0D1C49C1F99F2B80015A088 /* ABarDataEntry.swift */,
+				C01DF1A61F9C676B00E3C344 /* CandleDataSet.swift */,
+				C01DF1A81F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift */,
+				C01DF1AA1F9C699D00E3C344 /* BarLineScatterCandleBubbleDataSet.swift */,
 			);
 			path = Standard;
 			sourceTree = "<group>";
@@ -312,6 +323,7 @@
 				C0BE04B81F9BAB3B006C8E7B /* BarLineCandleViewBase.swift */,
 				C0D1C4981F99ED780015A088 /* ABarView.swift */,
 				C0D1C4A01F99FBDE0015A088 /* HorizontalBarView.swift */,
+				C01DF1A41F9C604700E3C344 /* CandleStickView.swift */,
 			);
 			path = CandleView;
 			sourceTree = "<group>";
@@ -771,6 +783,7 @@
 				C0E5FFE51F990E490039F301 /* AIPieDataSet.swift in Sources */,
 				C059BBCA1F97BC1B00DAE06E /* AnimationUtils.swift in Sources */,
 				C06BE40E1F63DA7100EDC7A3 /* ArrayDataSource.swift in Sources */,
+				C01DF1A91F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift in Sources */,
 				C02A10721F98D442003224DB /* ACandleDataSet.swift in Sources */,
 				C06BE4001F63C97000EDC7A3 /* ExtensionUIView.swift in Sources */,
 				C092664D1F9A5658007BDAD1 /* AnimatedViewPortJob.swift in Sources */,
@@ -786,6 +799,7 @@
 				C0D1C4A51F9A038F0015A088 /* TransformerHorizontalBar.swift in Sources */,
 				C0D1C4A31F99FEA50015A088 /* BarHighlighter.swift in Sources */,
 				C09266491F9A4F28007BDAD1 /* AHorizontalHighlighter.swift in Sources */,
+				C01DF1A51F9C604700E3C344 /* CandleStickView.swift in Sources */,
 				C02A10651F987775003224DB /* ADataProvider.swift in Sources */,
 				C06BE4021F63CF2400EDC7A3 /* UIViewAttribute.swift in Sources */,
 				C08B599B1F61A4F600563444 /* Aphrodite.swift in Sources */,
@@ -829,6 +843,7 @@
 				C06BE4101F63DC4100EDC7A3 /* ExtensionSegue.swift in Sources */,
 				C02A10701F98B118003224DB /* ACandleChartData.swift in Sources */,
 				C09266451F9A4984007BDAD1 /* YAxisRendererHorizontalBar.swift in Sources */,
+				C01DF1AB1F9C699D00E3C344 /* BarLineScatterCandleBubbleDataSet.swift in Sources */,
 				C07B62F41F8B64C30037BFF9 /* ExtensionArray.swift in Sources */,
 				C05081071F974866000DC13F /* Legend.swift in Sources */,
 				C05081031F973645000DC13F /* DefaultAxisValue.swift in Sources */,
@@ -855,6 +870,7 @@
 				C05080F61F97283B000DC13F /* AData.swift in Sources */,
 				C0D1C4951F99EA750015A088 /* BarChartData.swift in Sources */,
 				C03680411F725C2F00594894 /* ExtensionDate.swift in Sources */,
+				C01DF1A71F9C676B00E3C344 /* CandleDataSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
