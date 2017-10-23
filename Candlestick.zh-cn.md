@@ -12,28 +12,111 @@
 **I hope that every person who uses it can harvest love. It provides you a chance to use a pure-Swift alternative in your next app.**
 
 [Wikipedia](https://en.wikipedia.org/wiki/Candlestick_chart)
-## What is a 'Candlestick'
-A candlestick is a chart that displays the high, low, opening and closing prices of a security for a specific period. The wide part of the candlestick is called the "real body" and tells investors whether the closing price was higher or lower than the opening price. Black/red indicates that the stock closed lower and white/green indicates that the stock closed higher.
+## K线（Candlestick Charts）
+**又名：蜡烛图；又称、蜡烛线、日本线、阴阳线、棒线、红黑线**
 
-![Aphrodite](http://on9ek9f89.bkt.clouddn.com/candle.jpg)
-
-The candlestick's shadows show the day's high and low and how they compare to the open and close. A candlestick's shape varies based on the relationship between the day's high, low, opening and closing prices.
-Candlesticks reflect the impact of investor sentiment on security prices and are used by technical analysts to determine when to enter and exit trades. Candlestick charting is based on a technique developed in Japan in the 1700s for tracking the price of rice. Candlesticks are a suitable technique for trading any liquid financial asset such as stocks, foreign exchange and futures.
-
-Long white/green candlesticks indicate there is strong buying pressure; this typically indicates price is bullish, however, they should be looked at in the context of the market structure as opposed to individually. For example, a long white candle is likely to have more significance if it forms at a major price support level. Long black/red candlesticks indicate there is significant selling pressure. This suggests the price is bearish. A common bullish candlestick reversal pattern, referred to as a hammer, forms when price moves substantially lower after the open, then rallies to close near the high. The equivalent bearish candlestick is known as a hanging man. These candlesticks have a similar appearance to a square lollipop, and are often used by traders attempting to pick a top or bottom in a market.
-
-**Two-Day Candlestick Trading Patterns**
-There are many short-term trading strategies based upon candlestick patterns. The engulfing pattern suggests a potential trend reversal; the first candlestick has a small body that is completely engulfed by the second candlestick. It is referred to as a bullish engulfing pattern when it appears at the end of a downtrend, and a bearish engulfing pattern at the conclusion of an uptrend. The harami is a reversal pattern where the second candlestick is entirely contained within the first candlestick and is opposite in color. A related pattern, the harami cross has a second candlestick that is a doji; when the open and close are effectively equal.
-
-**Three-Day Candlestick Trading Patters**
-An evening star is a bearish reversal pattern where the first candlestick continues the uptrend. The second candlestick gaps up and has a narrow body. The third candlestick closes below the midpoint of the first candlestick. A morning star is a bullish reversal pattern where the first candlestick is long and black/red-bodied, followed by short candlestick that has gapped lower; it is completed by a long-bodied white/green candlestick that closes above the midpoint of the first candlestick.
-
-![bullishbelthold](http://on9ek9f89.bkt.clouddn.com/bullishbelthold.png)
-
-A trend in candlestick charting that occurs during a downward movement. After a stretch of bearish candlesticks, a bullish or white candlestick forms. The opening price, which becomes the low for the day, is significantly lower then the closing price. This results in a long white candlestick with a short upper shadow and no lower shadow.
+## 什么是K线
+K线就是指将各种股票每日、每周、每月的开盘价、收盘价、最高价、最低价等涨跌变化状况，用图形的方式表现出来 K线最上方的一条细线称为上影线，中间的一条粗线为实体。下面的一条细线为下影线。当收盘价高于开盘价，也就是股价走势呈上升趋势时，我们称这种情况下的 K线为阳线，中部的实体以空白或红色表示。这时，上影线的长度表示最高价和收盘价之间的价差，实体的长短代表收盘价与开盘价之间的价差，下影线的长度则代表开盘价和最低价之间的差距。
 
 
-**BREAKING DOWN 'Bullish Belt Hold'**
-The bullish belt hold often signals a reverse in investor sentiment from bearish to bullish. Since this trend occurs frequently but is often incorrect in predicting future share prices, it is rarely perceived to be useful. As with any other candlestick charting patterns, more than just two days of trading should be considered when making predictions about trends.
+![Candlestick](http://on9ek9f89.bkt.clouddn.com/K%E7%BA%BF%E5%9B%BE.jpg)
 
+## K线起源
+K线图这种图表源处于日本德川幕府时代，被当时日本米市的商人用来记录米市的行情与价格波动，后因其细腻独到的标画方式而被引入到股市及期货市场。目前，这种图表分析法在我国以至整个东南亚地区均尤为流行。由于用这种方法绘制出来的图表形状颇似一根根蜡烛，加上这些蜡烛有黑白之分，因而也叫阴阳线图表。通过K线图，我们能够把每日或某一周期的市况表现完全记录下来，股价经过一段时间的盘档后，在图上即形成一种特殊区域或形态，不同的形态显示出不同意义。我们可以从这些形态的变化中摸索出一些有规律的东西出来。K线图形态可分为反转形态、整理形态及缺口和趋向线等。
+
+　　那么，为什么叫“K线”呢？实际上，在日本的“K”并不是写成“K”字，而是写做“罫”(日本音读kei)，K线是“罫线”的读音，K线图称为“罫线”，西方以英文第一个字母“K”直译为“K”线，由此发展而来。
+　　
+## 绘制方法
+首先我们找到该日或某一周期的最高和最低价，垂直地连成一条直线；然后再找出当日或某一周期的开市和收市价，把这二个价位连接成一条狭长的长方柱体。假如当日或某一周期的收市价较开市价为高（即低开高收），我们便以红色来表示，或是在柱体上留白，这种柱体就称之为"阳线"。如果当日或某一周期的收市价较开市价为低（即高开低收），我们则以绿色表示，又或是在住柱上涂黑色，这柱体就是"阴线"了。
+
+## 优点
+能够全面透彻地观察到市场的真正变化。我们从K线图中，既可看到股价（或大市）的趋势，也同时可以了解到每日市况的波动情形。
+
+## 缺点
+* [x] (1) 绘制方法十分繁复，是众多走势图中最难制作的一种。
+
+* [x] (2) 阴线与阳线的变化繁多，对初学者来说，在掌握分析方面会有相当的困难，不及柱线图那样简单易明。
+
+## 分析意义
+由于"阴阳线"变化繁多，"阴线"与"阳线"里包涵着许多大小不同的变化，因此其分析的意义，有特别提出一谈的必要。
+
+　　在讨论"阴阳线"的分析意义之前，先让我们知道阳线每一个部分的名称。
+
+　　我们以阳线为例，最高与收市价之间的部分称之为"上影"，开市价与收市价之间称为"实体"，开市价与最低价之间就称作"下影"。从单根K线中，我们可以得出以下一些常见情况：
+
+### 　　1．长红线或大阳线
+
+　　此种图表示最高价与收盘价相同，最低价与开盘价一样。上下没有影线。从一开盘，买方就积极进攻，中间也可能出现买方与卖方的斗争，但买方发挥最大力量，一直到收盘。买方始终占优势，使价格一路上扬，直至收盘。表示强烈的涨势，股市呈现高潮，买方疯狂涌进，不限价买进。握有股票者，因看到买气的旺盛，不愿抛售，出现供不应求的状况。
+
+### 　　2．长黑线或大阴线
+
+　　此种图表示最高价与开盘价相同，最低价与收盘价一样。上下没有影线。从一开始，卖方就占优势。股市处于低潮。握有股票者不限价疯狂抛出，造成恐慌心理。市场呈一面倒，直到收盘、价格始终下跌，表示强烈的跌势。
+
+### 　　3．先跌后涨型
+
+　　这是一种带下影线的红实体。最高价与收盘价相同，开盘后，卖气较足，价格下跌。但在低价位上得到买方的支撑，卖方受挫，价格向上推过开盘价，一路上扬，直至收盘，收在最高价上。总体来讲，出现先跌后涨型，买方力量较大，但实体部分与下影线长短不同，买方与卖方力量对比不同。
+
+　　实体部分比下影线长。价位下跌不多，即受到买方支撑，价格上推。破了开盘价之后，还大幅度推进，买方实力很大。
+
+　　实体部分与下影线相等，买卖双方交战激烈，但大体上，买方占主导地位，对买方有利。
+
+　　实体部分比下影线短。买卖双方在低价位上发生激战。遇买方支撑逐步将价位上推。但从图中可发现，上面实体部分较小，说明买方所占据的优势不太大，如卖方次日全力反攻，则买方的实体很容易被攻占。
+
+### 　　4．下跌抵抗型
+
+　　这是一种带下影线的黑实体，开盘价是最高价。一开盘卖方力量就特别大，价位一直下跌，但在低价位上遇到买方的支撑。后市可能会反弹。实体部分与下影线的长短不同也可分为三种情况：
+
+#### 　　（1）实体部分比影线长表示卖压比较大，一开盘，大幅度下压，在低点遇到买方抵抗，买方与卖方发生激战，影线部分较短，说明买方把价位上推不多，从总体上看，卖方占了比较大的优势。
+
+#### 　　（2）实体部分与影线同长表示卖方把价位下压后，买方的抵抗也在增加，但可以看出，卖方仍占优势。
+
+#### 　　（3）实体部分比影线短卖方把价位一路压低，在低价位上，遇到买方顽强抵抗并组织反击，逐渐把价位上推，最后虽以黑棒收盘，但可以看出卖方只占极少的优势。后市很可能买方会全力反攻，把小黑实体全部吃掉。
+
+### 　　5．上升阻力
+
+　　这是一种带上影线的红实体。开盘价即最低价。一开盘买方强盛，价位一路上推，但在高价位遇卖方压力，使股价上升受阻。卖方与买方交战结果为买方略胜一筹。具体情况仍应观察实体与影线的长短。
+
+　　红实体比影线长，表示买方在高价位是遇到阻力，部分多头获利回吐。但买方仍是市场的主导力量，后市继续看涨。
+
+　　实体与影线同长，买方把价位上推，但卖方压力也在增加。二者交战结果，卖方把价位压回一半，买方虽占优势。但显然不如其优势大。
+
+　　实体比影线短。在高价位遇卖方的压力、卖方全面反击，买方受到严重考验。大多短线投资者纷纷获利回吐，在当日交战结束后，卖方已收回大部分失地。买方一块小小的堡垒（实体部分）将很快被消灭，这种K线如出现在高价区，则后市看跌。
+
+### 　　6．先涨后跌型
+
+　　这是一种带上影线的黑实体。收盘价即是最低价。一开盘，买方与卖方进行交战。买方占上风，价格一路上升。但在高价位遇卖压阻力，卖方组织力量反攻，买方节节败退，最后在最低价收盘，卖方占优势，并充分发挥力量，使买方陷入"套牢"的困境。 具体情况仍有以下三种：
+
+#### 　　（1）黑实体比影线长，表示买方把价位上推不多，立即遇到卖方强有力的反击，
+
+　　把价位压破开盘价后乘胜追击，再把价位下推很大的一段。卖方力量特别强大，局势对卖方有利。
+
+#### 　　（2）黑实体与影线相等，买方把价位上推；但卖方力量更强，占据主动地位。卖方具有优势。
+
+#### 　　（3）黑实体比影线短，卖方虽将价格下压，但优势较少，明日入市，买方力量可能再次反攻，黑实体很可能被攻占。
+
+　　7．反转试探型 　　 　　这是一种上下都带影线的红实体。开盘后价位下跌，遇买方支撑，双方争斗之后，买方增强，价格一路上推，临收盘前，部分买者获利回吐，在最高价之下收盘。这是一种反转信号。如在大涨之后出现，表示高档震荡，如成交量大增，后市可能会下跌。如在大跌后出现，后市可能会反弹。这里上下影线及实体的不同又可分为多种情况：
+
+#### 　　（1）上影线长于下影线之红实体：又分为：影线部分长于红实体表示买方力量受挫折。红实体长于影线部分表示买方虽受挫折，但仍占优势。
+
+#### 　　（2）下影线长于上影线之红实体：亦可分为：红实体长于影线部分表示买方虽受挫折，仍居于主动地位。影线部分长于红实体表示买方尚需接受考验。
+
+### 　　8．弹升试探型
+
+　　这是一种上下都带影线的黑实体，在交易过程中，股价在开盘后，有时会力争上游，随着卖方力量的增加，买方不愿追逐高价，卖方渐居主动，股价逆转，在开盘价下交易，股价下跌。在低价位遇买方支撑，买气转强，不至于以最低价收盘。有时股价在上半场以低于开盘价成交，下半场买意增强，股价回至高于开盘价成交，临收盘前卖方又占优势，而以低于开盘价之价格收盘。这也是一种反转试探。如在大跌之后出现，表示低档承接，行情可能反弹。如大涨之后出现，后市可能下跌。
+
+### 　　9．十字线型
+
+　　这是一种只有上下影线，没有实体的图形。开盘价即是收盘价，表示在交易中，股价出现高于或低于开盘价成交，但收盘价与开盘价相等。买方与卖方几乎势均力敌。 其中：上影线越长，表示卖压越重。下影线越长，表示买方旺盛。上下影线看似等长的十字线，可称为转机线，在高价位或低价位，意味着出现反转。
+
+### 　　10．"┴"图形
+
+　　又称空胜线，开盘价与收盘价相同。当日交易都在开盘价以上之价位成交，并以当日最低价（即开盘价）收盘，表示买方虽强，但卖方更强，买方无力再挺升，总体看卖方稍占优势，如在高价区，行情可能会下跌。 "Ｔ"图形又称多胜线，开盘价与收盘价相同，当日交易以开盘价以下之价位成交，又以当日最高价（即开盘价）收盘。卖方虽强，但买方实力更大，局势对买方有利，如在低价区，行情将会回升。
+
+### 　　11．"一"图形
+
+　　此较形不常见，即开盘价、收盘价、最高价、最低价在同一价位。只出现于交易非常冷清，全日交易只有一档价位成交。冷门股此类情形较易发生。
+
+
+## Ｋ线图图解
+[更详细的描述](http://wiki.mbalib.com/wiki/K线理论)
 
