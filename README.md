@@ -9,7 +9,8 @@
 
 
 
-**I hope that every person who uses it can harvest love. It provides you a chance to use a pure-Swift alternative in your next app.**
+**I hope that every person who uses it can harvest love. It provides you a chance to use a pure-Swift alternative in your next app. Save time to harvest Love**
+
 
 ## Features
 * [x] Candlestick chart
@@ -20,7 +21,8 @@
  
 #### What is a 'Candlestick'
 A candlestick is a chart that displays the high, low, opening and closing prices of a security for a specific period. The wide part of the candlestick is called the "real body" and tells investors whether the closing price was higher or lower than the opening price. Black/red indicates that the stock closed lower and white/green indicates that the stock closed higher.
-[More]()
+[More](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.md) 
+[中文版](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.zh-cn.md)
 
 ## Requirements
 
