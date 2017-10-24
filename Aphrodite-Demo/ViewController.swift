@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         printDebug("Test")
         setUpPieCandleView()
-        self.CandleView.animate(yAxisDuration: 3)
+        self.CandleView.animate(yAxisDuration: 1)
         setDataCount(count: 20, range: 2000)
     }
 
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         set1.shadowWidth = 0.7
         set1.decreasingColor = Color.red
         set1.decreasingFilled = true
-        set1.increasingColor = Color.brown
+        set1.increasingColor = Color.green
         set1.increasingFilled = true
         set1.neutralColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         set1.highlightColor = Color.blue

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// ChartDataEntryBase
 open class AEntryBase: NSObject {
     
     /// the y value
