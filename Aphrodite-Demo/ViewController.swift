@@ -69,7 +69,6 @@ class ViewController: UIViewController {
                                           icon: nil))
 
         }
-        
         let data = loadingCandleChartDataSet(values: yVals1)
         CandleView.data = data
     }
