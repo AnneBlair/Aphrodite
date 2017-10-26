@@ -94,3 +94,22 @@ open class CandleDataEntry: ADataEntry {
         return copy
     }
 }
+
+//MARK:            ________________Struct________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
