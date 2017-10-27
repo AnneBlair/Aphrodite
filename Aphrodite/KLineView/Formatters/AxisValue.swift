@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// IAxisValueFormatter
 public protocol AxisValue: NSObjectProtocol {
     
     /// Called when a value from an axis is formatted before being drawn.

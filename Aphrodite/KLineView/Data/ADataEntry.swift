@@ -119,15 +119,23 @@ public func ==(lhs: ADataEntry, rhs: ADataEntry) -> Bool {
 }
 
 //MARK:            ________________DataEntry________________
+
+
 public struct DataBase {
-    public var x = Double(0.0)
-    
-    public var y = Double(0.0)
-    
+
+    public var x: Double = 0.0
+
+    public var y: Double = 0.0
+
     public init(x: Double,y: Double) {
         self.x = x
         self.y = y
     }
+
+    public var description: String {
+        return "ADataEntry, x: \(x), y \(y)"
+    }
+
 }
 
 

@@ -95,10 +95,6 @@ open class CandleDataEntry: ADataEntry {
     }
 }
 
-//MARK:            ________________Struct________________
-
-
-
 
 
 
