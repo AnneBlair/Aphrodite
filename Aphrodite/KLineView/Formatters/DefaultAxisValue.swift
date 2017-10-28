@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// DefaultAxisValueFormatter
 @objc(ADefaultAxisValue)
 open class DefaultAxisValue: NSObject, AxisValue {
     
@@ -20,8 +21,8 @@ open class DefaultAxisValue: NSObject, AxisValue {
     open var hasAutoDecimals: Bool = false
     
     fileprivate var _formatter: NumberFormatter?
-    open var formatter: NumberFormatter?
-        {
+    
+    open var formatter: NumberFormatter? {
         get { return _formatter }
         set {
             hasAutoDecimals = false
@@ -30,6 +31,7 @@ open class DefaultAxisValue: NSObject, AxisValue {
     }
     
     fileprivate var _decimals: Int?
+    
     open var decimals: Int? {
         get { return _decimals }
         set {
@@ -52,13 +54,11 @@ open class DefaultAxisValue: NSObject, AxisValue {
     
     public init(formatter: NumberFormatter) {
         super.init()
-        
         self.formatter = formatter
     }
     
     public init(decimals: Int) {
         super.init()
-        
         self.formatter = NumberFormatter()
         self.formatter?.usesGroupingSeparator = true
         self.decimals = decimals
