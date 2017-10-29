@@ -1,4 +1,4 @@
-//
+// 
 //  Legend.swift
 //  Aphrodite
 //
