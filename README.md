@@ -24,6 +24,9 @@ A candlestick is a chart that displays the high, low, opening and closing prices
 [More](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.md) 
 [中文版](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.zh-cn.md)
 
+### Schema document
+![Schema document](http://on9ek9f89.bkt.clouddn.com/15093473056265.jpg)
+
 ## Requirements
 
 - iOS 8.0+

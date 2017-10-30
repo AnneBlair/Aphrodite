@@ -15,8 +15,7 @@ import CoreGraphics
 
 /// Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
 /// BarLineChartViewBase
-open class BarLineCandleViewBase: CandleViewBase, LineBubbleDataProvider, GestureDelegate
-{
+open class BarLineCandleViewBase: CandleViewBase, LineBubbleDataProvider, GestureDelegate {
     /// the maximum number of entries to which values will be drawn
     /// (entry numbers greater than this value will cause value-labels to disappear)
     internal var _maxVisibleCount = 100

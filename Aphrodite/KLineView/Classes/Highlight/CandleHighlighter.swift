@@ -53,8 +53,8 @@ open class CandleHighlighter : NSObject, AHighlighter
         if closestValues.isEmpty
         {
             return nil
+            
         }
-        
         let leftAxisMinDist = getMinimumDistance(closestValues: closestValues, y: y, axis: YAxis.AxisDependency.left)
         let rightAxisMinDist = getMinimumDistance(closestValues: closestValues, y: y, axis: YAxis.AxisDependency.right)
         
