@@ -15,14 +15,13 @@ import Foundation
 ///   - content: 内容 Arry ["第一个"，"第二个"]
 ///   - size: 字体 Arry  [size1,size2]
 /// - Returns: 富文本
-@available(iOS 3.2, *)
-public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
-    let str = NSMutableAttributedString()
-    for i in 0..<color.count {        
-        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
-    }
-    return str
-}
+//public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
+//    let str = NSMutableAttributedString()
+//    for i in 0..<color.count {
+//        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
+//    }
+//    return str
+//}
 
 /// scientific Notation Transition Normal String
 /// 9.0006e+07  Transition   90,006,000
@@ -104,14 +103,13 @@ extension String {
     ///
     /// - Parameter size: size
     /// - Returns: CGSize
-    @available(iOS 3.2, *)
-    public func getStringSzie(size: CGFloat = 10) -> CGSize {
-        let baseFont = UIFont.systemFont(ofSize: size)
-        let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
-        let width = ceil(size.width) + 5
-        let height = ceil(size.height)
-        return CGSize(width: width, height: height)
-    }
+//    public func getStringSzie(size: CGFloat = 10) -> CGSize {
+//        let baseFont = UIFont.systemFont(ofSize: size)
+//        let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
+//        let width = ceil(size.width) + 5
+//        let height = ceil(size.height)
+//        return CGSize(width: width, height: height)
+//    }
     
     /// 字符串截取         3  6
     /// e.g let aaa = "abcdefghijklmnopqrstuvwxyz"  -> "cdef"
