@@ -367,7 +367,6 @@ open class CandleViewBase: AKView, ADataProvider, AnimatorDelegate
                 constrainedToSize: self.bounds.size,
                 anchor: CGPoint(x: 0.5, y: 0.5),
                 angleRadians: 0.0)
-            
             return
         }
         
