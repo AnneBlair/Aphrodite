@@ -38,7 +38,7 @@ Aphrodite is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Aphrodite"  , '~> 1.1.9’
+pod "Aphrodite"  , '~> 1.2.0’
 ```
 
 **e.g:**
@@ -50,7 +50,7 @@ use_frameworks!
 
 target : ’Project’ do
 
-pod 'Aphrodite', '~> 1.1.9’
+pod 'Aphrodite', '~> 1.2.0’
 
 end
 ```
