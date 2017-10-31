@@ -1,13 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "Aphrodite"
-  s.version      = "1.1.8"
+  s.version      = "1.1.9"
   s.summary      = "Aphrodite . It is a regular expression used on iOS, which implement by Swift"
 
   s.description  = <<-DESC
-                Aphrodite . It is a regular expression used on iOS, which implement by Swift
-		这是一个基于swift快捷开发的扩展类，目前的涵盖内容包括详细打印，正则表达式，会经常维护
-                这是一个基于swift快捷开发的扩展类，目前的涵盖内容包括详细打印，正则表达式，会经常维护
+                Aphrodite . It is a regular expression used on iOS, which implement by Swift.
+	        I hope that every person who uses it can harvest love. It provides you a chance to use a pure-Swift alternative in your next app.
                    DESC
 
   s.homepage     = "https://github.com/AnneBlair/Aphrodite"

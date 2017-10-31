@@ -15,11 +15,11 @@ import Foundation
 ///   - content: 内容 Arry ["第一个"，"第二个"]
 ///   - size: 字体 Arry  [size1,size2]
 /// - Returns: 富文本
+@available(iOS 3.2, *)
 public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
-    
     let str = NSMutableAttributedString()
-    for i in 0..<color.count {
-        str.append(NSAttributedString(string: content[i], attributes: [NSAttributedStringKey.foregroundColor: UIColor(hex: color[i][0]), NSAttributedStringKey.font:UIFont.systemFont(ofSize: size[i])]))
+    for i in 0..<color.count {        
+        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
     }
     return str
 }
@@ -104,6 +104,7 @@ extension String {
     ///
     /// - Parameter size: size
     /// - Returns: CGSize
+    @available(iOS 3.2, *)
     public func getStringSzie(size: CGFloat = 10) -> CGSize {
         let baseFont = UIFont.systemFont(ofSize: size)
         let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
