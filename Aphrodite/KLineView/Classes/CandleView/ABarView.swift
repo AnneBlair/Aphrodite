@@ -8,19 +8,16 @@
 
 import Foundation
 
-
 /// Chart that draws bars.
 /// BarChartView
-open class ABarView: BarLineCandleViewBase, ABarDataProvider
-{
+open class ABarView: BarLineCandleViewBase, ABarDataProvider {
     /// if set to true, all values are drawn above their bars, instead of below their top
     fileprivate var _drawValueAboveBarEnabled = true
     
     /// if set to true, a grey area is drawn behind each bar that indicates the maximum value
     fileprivate var _drawBarShadowEnabled = false
     
-    internal override func initialize()
-    {
+    internal override func initialize() {
         super.initialize()
         
         renderer = ABarRenderer(dataProvider: self, animator: _animator, viewPortHandler: _viewPortHandler)
@@ -31,19 +28,15 @@ open class ABarView: BarLineCandleViewBase, ABarDataProvider
         self.xAxis.spaceMax = 0.5
     }
     
-    internal override func calcMinMax()
-    {
+    internal override func calcMinMax() {
         guard let data = self.data as? BarChartData
             else { return }
         
-        if fitBars
-        {
+        if fitBars {
             _xAxis.calculate(
                 min: data.xMin - data.barWidth / 2.0,
                 max: data.xMax + data.barWidth / 2.0)
-        }
-        else
-        {
+        } else {
             _xAxis.calculate(min: data.xMin, max: data.xMax)
         }
         
@@ -57,10 +50,8 @@ open class ABarView: BarLineCandleViewBase, ABarDataProvider
     }
     
     /// - returns: The Highlight object (contains x-index and DataSet index) of the selected value at the given touch point inside the BarChart.
-    open override func getHighlightByTouchPoint(_ pt: CGPoint) -> Highlight?
-    {
-        if _data === nil
-        {
+    open override func getHighlightByTouchPoint(_ pt: CGPoint) -> Highlight? {
+        if _data === nil {
             Swift.print("Can't select by touch. No data set.")
             return nil
         }
@@ -81,8 +72,7 @@ open class ABarView: BarLineCandleViewBase, ABarDataProvider
     }
     
     /// - returns: The bounding box of the specified Entry in the specified DataSet. Returns null if the Entry could not be found in the charts data.
-    open func getBarBounds(entry e: ABarDataEntry) -> CGRect
-    {
+    open func getBarBounds(entry e: ABarDataEntry) -> CGRect {
         guard let
             data = _data as? BarChartData,
             let set = data.getDataSetForEntry(e) as? AIBarDataSet
@@ -112,11 +102,9 @@ open class ABarView: BarLineCandleViewBase, ABarDataProvider
     /// - parameter fromX: the starting point on the x-axis where the grouping should begin
     /// - parameter groupSpace: the space between groups of bars in values (not pixels) e.g. 0.8f for bar width 1f
     /// - parameter barSpace: the space between individual bars in values (not pixels) e.g. 0.1f for bar width 1f
-    open func groupBars(fromX: Double, groupSpace: Double, barSpace: Double)
-    {
+    open func groupBars(fromX: Double, groupSpace: Double, barSpace: Double) {
         guard let barData = self.barData
-            else
-        {
+            else {
             Swift.print("You need to set data for the chart before grouping bars.", terminator: "\n")
             return
         }
@@ -129,30 +117,25 @@ open class ABarView: BarLineCandleViewBase, ABarDataProvider
     /// - parameter x:
     /// - parameter dataSetIndex:
     /// - parameter stackIndex: the index inside the stack - only relevant for stacked entries
-    open func highlightValue(x: Double, dataSetIndex: Int, stackIndex: Int)
-    {
+    open func highlightValue(x: Double, dataSetIndex: Int, stackIndex: Int) {
         highlightValue(Highlight(x: x, dataSetIndex: dataSetIndex, stackIndex: stackIndex))
     }
     
     // MARK: Accessors
     
     /// if set to true, all values are drawn above their bars, instead of below their top
-    open var drawValueAboveBarEnabled: Bool
-        {
+    open var drawValueAboveBarEnabled: Bool {
         get { return _drawValueAboveBarEnabled }
-        set
-        {
+        set {
             _drawValueAboveBarEnabled = newValue
             setNeedsDisplay()
         }
     }
     
     /// if set to true, a grey area is drawn behind each bar that indicates the maximum value
-    open var drawBarShadowEnabled: Bool
-        {
+    open var drawBarShadowEnabled: Bool {
         get { return _drawBarShadowEnabled }
-        set
-        {
+        set {
             _drawBarShadowEnabled = newValue
             setNeedsDisplay()
         }
