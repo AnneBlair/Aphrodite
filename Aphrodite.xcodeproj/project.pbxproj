@@ -28,6 +28,7 @@
 		C03680441F736EE000594894 /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03680431F736EE000594894 /* DateTest.swift */; };
 		C04339E21F619FBE0040B32D /* Aphrodite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04339D81F619FBE0040B32D /* Aphrodite.framework */; };
 		C04339E71F619FBE0040B32D /* AphroditeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04339E61F619FBE0040B32D /* AphroditeTests.swift */; };
+		C04724651FAACBC200D4C86B /* ChainSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04724641FAACBC200D4C86B /* ChainSet.swift */; };
 		C05080F61F97283B000DC13F /* AData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080F51F97283B000DC13F /* AData.swift */; };
 		C05080F91F972B77000DC13F /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080F81F972B77000DC13F /* YAxis.swift */; };
 		C05080FB1F972BBB000DC13F /* AxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05080FA1F972BBB000DC13F /* AxisBase.swift */; };
@@ -159,6 +160,7 @@
 		C04339E11F619FBE0040B32D /* AphroditeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AphroditeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04339E61F619FBE0040B32D /* AphroditeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AphroditeTests.swift; sourceTree = "<group>"; };
 		C04339E81F619FBE0040B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C04724641FAACBC200D4C86B /* ChainSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainSet.swift; sourceTree = "<group>"; };
 		C05080F51F97283B000DC13F /* AData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AData.swift; sourceTree = "<group>"; };
 		C05080F81F972B77000DC13F /* YAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxis.swift; sourceTree = "<group>"; };
 		C05080FA1F972BBB000DC13F /* AxisBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisBase.swift; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 			path = AphroditeTests;
 			sourceTree = "<group>";
 		};
+		C04724631FAACBA400D4C86B /* ChainSet */ = {
+			isa = PBXGroup;
+			children = (
+				C04724641FAACBC200D4C86B /* ChainSet.swift */,
+			);
+			name = ChainSet;
+			sourceTree = "<group>";
+		};
 		C05080F71F972B60000DC13F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +477,7 @@
 		C06BE3FC1F63C7CA00EDC7A3 /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
+				C04724631FAACBA400D4C86B /* ChainSet */,
 				C0F4F8441F8F4D5100967073 /* ExtensionRange */,
 				C0D18F201F8CC96C00C61CBB /* ExtensionDictionary */,
 				C07B62F21F8B64980037BFF9 /* ExtensionArry */,
@@ -854,6 +865,7 @@
 				C0D1C49D1F99F2B80015A088 /* ABarDataEntry.swift in Sources */,
 				C06BE4041F63CF5800EDC7A3 /* ExtensionColor.swift in Sources */,
 				C02A10761F98DC35003224DB /* CandleData.swift in Sources */,
+				C04724651FAACBC200D4C86B /* ChainSet.swift in Sources */,
 				C02A10681F988496003224DB /* DataSet.swift in Sources */,
 				C06BE4061F63D09500EDC7A3 /* ExtensionImage.swift in Sources */,
 				C0E5FFE11F9908DB0039F301 /* LegendRenderer.swift in Sources */,

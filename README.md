@@ -19,13 +19,21 @@
 
 
  
-#### What is a 'Candlestick'
+## What is a 'Candlestick'
 A candlestick is a chart that displays the high, low, opening and closing prices of a security for a specific period. The wide part of the candlestick is called the "real body" and tells investors whether the closing price was higher or lower than the opening price. Black/red indicates that the stock closed lower and white/green indicates that the stock closed higher.
 [More](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.md) 
 [中文版](https://github.com/AnneBlair/Aphrodite/blob/master/Candlestick.zh-cn.md)
 
 ### Schema document
 ![Schema document](http://on9ek9f89.bkt.clouddn.com/15093473056265.jpg)
+
+## Swift extensions
+#### ChainSet
+* [x] CustomStringConvertible
+* [x] arable
+* [x] ection
+* [x] ExpressibleByArrayLiteral
+* [x] CustomStringConvertible
 
 ## Requirements
 
