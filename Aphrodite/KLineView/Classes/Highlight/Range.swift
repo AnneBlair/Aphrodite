@@ -9,7 +9,7 @@
 import Foundation
 
 @objc(ARange)
-open class Range: NSObject
+open class ARange: NSObject
 {
     open var from: Double
     open var to: Double

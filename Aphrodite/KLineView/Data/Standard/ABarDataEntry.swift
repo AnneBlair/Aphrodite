@@ -15,7 +15,7 @@ open class ABarDataEntry: ADataEntry
     fileprivate var _yVals: [Double]?
     
     /// the ranges for the individual stack values - automatically calculated
-    fileprivate var _ranges: [Range]?
+    fileprivate var _ranges: [ARange]?
     
     /// the sum of all negative values this entry (if stacked) contains
     fileprivate var _negativeSum: Double = 0.0
@@ -170,7 +170,7 @@ open class ABarDataEntry: ADataEntry
         
         if _ranges == nil
         {
-            _ranges = [Range]()
+            _ranges = [ARange]()
         }
         else
         {
@@ -188,12 +188,12 @@ open class ABarDataEntry: ADataEntry
             
             if value < 0
             {
-                _ranges?.append(Range(from: negRemain, to: negRemain - value))
+                _ranges?.append(ARange(from: negRemain, to: negRemain - value))
                 negRemain -= value
             }
             else
             {
-                _ranges?.append(Range(from: posRemain, to: posRemain + value))
+                _ranges?.append(ARange(from: posRemain, to: posRemain + value))
                 posRemain += value
             }
         }
@@ -218,7 +218,7 @@ open class ABarDataEntry: ADataEntry
     }
     
     /// - returns: The ranges of the individual stack-entries. Will return null if this entry is not stacked.
-    open var ranges: [Range]?
+    open var ranges: [ARange]?
     {
         return _ranges
     }

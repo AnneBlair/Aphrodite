@@ -84,3 +84,13 @@ extension List {
     }
 }
 
+extension List {
+    public subscript(bounds: Range<Index>) -> List<Element> {
+        return List(startIndex: bounds.lowerBound, endIndex: bounds.upperBound)
+    }
+}
+
+
+
+
+

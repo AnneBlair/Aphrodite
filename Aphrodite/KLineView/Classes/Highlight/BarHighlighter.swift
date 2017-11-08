@@ -96,7 +96,7 @@ open class BarHighlighter: CandleHighlighter
     /// - parameter entry:
     /// - parameter value:
     /// - returns:
-    open func getClosestStackIndex(ranges: [Range]?, value: Double) -> Int
+    open func getClosestStackIndex(ranges: [ARange]?, value: Double) -> Int
     {
         if ranges == nil
         {
