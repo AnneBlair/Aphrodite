@@ -91,6 +91,21 @@ extension List {
 }
 
 
+public struct APrefixIterator<Base: Collection>: IteratorProtocol, Sequence {
+    let base: Base
+    var offect: Base.Index
+    
+    init(_ base: Base) {
+        self.base = base
+        self.offect = base.startIndex
+    }
+    
+    mutating public func next() -> Base.SubSequence? {
+        guard offect != base.endIndex else { return nil }
+        return base.prefix(upTo: offect)
+    }
+}
+
 
 
 
