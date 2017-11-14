@@ -106,6 +106,13 @@ public struct APrefixIterator<Base: Collection>: IteratorProtocol, Sequence {
     }
 }
 
+extension List {
+    public func reversed() -> List<Element> {
+        let reversedNodes: ListNode<Element> = self.reduce(.end) { $0.cons($1) }
+        return List(startIndex: ListIndex(node: reversedNodes, tag: self.count), endIndex: ListIndex(node: .end, tag: 0))
+    }
+}
+
 
 
 
