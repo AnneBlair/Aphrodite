@@ -113,6 +113,11 @@ extension List {
     }
 }
 
+public extension BidirectionalCollection {
+    public var last: Iterator.Element? {
+        return isEmpty ? nil: self[index(before: endIndex)]
+    }
+}
 
 
 

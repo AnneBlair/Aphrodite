@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104781231FBC43E9004F27E6 /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104781221FBC43E9004F27E6 /* SetTest.swift */; };
 		C01DF1A51F9C604700E3C344 /* CandleStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A41F9C604700E3C344 /* CandleStickView.swift */; };
 		C01DF1A71F9C676B00E3C344 /* CandleDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A61F9C676B00E3C344 /* CandleDataSet.swift */; };
 		C01DF1A91F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01DF1A81F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift */; };
@@ -135,6 +136,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104781221FBC43E9004F27E6 /* SetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTest.swift; sourceTree = "<group>"; };
 		C01DF1A41F9C604700E3C344 /* CandleStickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStickView.swift; sourceTree = "<group>"; };
 		C01DF1A61F9C676B00E3C344 /* CandleDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleDataSet.swift; sourceTree = "<group>"; };
 		C01DF1A81F9C692700E3C344 /* ALineScatterCandleRadarDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALineScatterCandleRadarDataSet.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				C03680431F736EE000594894 /* DateTest.swift */,
 				C07B62F51F8BC68E0037BFF9 /* ArrayTest.swift */,
 				C06183A11F8CF262009AC93B /* DictionaryTest.swift */,
+				104781221FBC43E9004F27E6 /* SetTest.swift */,
 			);
 			path = AphroditeTests;
 			sourceTree = "<group>";
@@ -896,6 +899,7 @@
 				C08BAEAB1F6503F800590CA7 /* RegularTest.swift in Sources */,
 				C07B62F61F8BC68E0037BFF9 /* ArrayTest.swift in Sources */,
 				C06BE4141F64F6E900EDC7A3 /* ToolTest.swift in Sources */,
+				104781231FBC43E9004F27E6 /* SetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
