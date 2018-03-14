@@ -18,7 +18,7 @@ import Foundation
 public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
     let str = NSMutableAttributedString()
     for i in 0..<color.count {
-        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
+        str.append(NSAttributedString(string: content[i], attributes: [NSAttributedStringKey.foregroundColor: UIColor(hex: color[i][0]), NSAttributedStringKey.font: UIFont.systemFont(ofSize: size[i])]))
     }
     return str
 }
@@ -72,8 +72,8 @@ extension String {
     /// - Returns: 截取后的字符串
     public func stringCut(end: Int) ->String{
         guard self.startIndex < self.endIndex else { return "截取超出范围" }
-        let sInde = index(startIndex, offsetBy: end)
-        return substring(to: sInde)
+        let str = prefix(upTo: index(startIndex, offsetBy: end))
+        return String(str)
     }
     
     /// 截取人任意位置到结束
@@ -82,8 +82,8 @@ extension String {
     /// - Returns: 截取后的字符串
     public func stringCutToEnd(star: Int) -> String {
         guard self.startIndex < self.endIndex else { return "截取超出范围" }
-        let sRang = index(startIndex, offsetBy: star)..<endIndex
-        return substring(with: sRang)
+        let start = index(startIndex, offsetBy: star)
+        return String(describing: [start...])
     }
     
     /// 字符串任意位置插入
@@ -118,7 +118,7 @@ extension String {
     ///   - end: 结束位置 6
     /// - Returns: 截取后的字符串 "cdef"
     public func startToEnd(start: Int,end: Int) -> String {
-        if !(end < self.characters.count) || start > end { return "取值范围错误" }
+        if !(end < self.count) || start > end { return "取值范围错误" }
         var tempStr: String = ""
         for i in start...end {
             let temp: String = self[self.index(self.startIndex, offsetBy: i - 1)].description
