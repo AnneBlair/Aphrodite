@@ -20,23 +20,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueF-sq-fdu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ueF-sq-fdu" secondAttribute="bottom" id="Bgp-K3-sCz"/>
-                            <constraint firstAttribute="trailing" secondItem="ueF-sq-fdu" secondAttribute="trailing" id="fDx-PM-z35"/>
-                            <constraint firstItem="ueF-sq-fdu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lSC-9H-hgI"/>
-                            <constraint firstItem="ueF-sq-fdu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sgM-Yx-J4F"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="CandleView" destination="ueF-sq-fdu" id="Lsy-xC-eLQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
