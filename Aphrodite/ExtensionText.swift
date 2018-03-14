@@ -18,7 +18,7 @@ import Foundation
 public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
     let str = NSMutableAttributedString()
     for i in 0..<color.count {
-        str.append(NSAttributedString(string: content[i], attributes: [NSAttributedStringKey.foregroundColor: UIColor(hex: color[i][0]), NSAttributedStringKey.font: UIFont.systemFont(ofSize: size[i])]))
+        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
     }
     return str
 }
