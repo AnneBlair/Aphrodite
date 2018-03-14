@@ -15,13 +15,13 @@ import Foundation
 ///   - content: 内容 Arry ["第一个"，"第二个"]
 ///   - size: 字体 Arry  [size1,size2]
 /// - Returns: 富文本
-//public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
-//    let str = NSMutableAttributedString()
-//    for i in 0..<color.count {
-//        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
-//    }
-//    return str
-//}
+public func setAttribute(color: [[Int]],content:[String],size: [CGFloat])-> NSMutableAttributedString {
+    let str = NSMutableAttributedString()
+    for i in 0..<color.count {
+        str.append(NSAttributedString(string: content[i], attributes: [.foregroundColor: UIColor(hex: color[i][0]), .font:UIFont.systemFont(ofSize: size[i])]))
+    }
+    return str
+}
 
 /// scientific Notation Transition Normal String
 /// 9.0006e+07  Transition   90,006,000
@@ -70,21 +70,21 @@ extension String {
     ///
     /// - Parameter end: 结束的位值
     /// - Returns: 截取后的字符串
-//    public func stringCut(end: Int) ->String{
-//        guard self.startIndex < self.endIndex else { return "截取超出范围" }
-//        let str = prefix(upTo: index(startIndex, offsetBy: end))
-//        return String(str)
-//    }
+    public func stringCut(end: Int) ->String{
+        guard self.startIndex < self.endIndex else { return "截取超出范围" }
+        let str = prefix(upTo: index(startIndex, offsetBy: end))
+        return String(str)
+    }
     
     /// 截取人任意位置到结束
     ///
     /// - Parameter end:
     /// - Returns: 截取后的字符串
-//    public func stringCutToEnd(star: Int) -> String {
-//        guard self.startIndex < self.endIndex else { return "截取超出范围" }
-//        let start = index(startIndex, offsetBy: star)
-//        return String(describing: [start...])
-//    }
+    public func stringCutToEnd(star: Int) -> String {
+        guard self.startIndex < self.endIndex else { return "截取超出范围" }
+        let start = index(startIndex, offsetBy: star)
+        return String(describing: [start...])
+    }
     
     /// 字符串任意位置插入
     ///
@@ -103,13 +103,13 @@ extension String {
     ///
     /// - Parameter size: size
     /// - Returns: CGSize
-//    public func getStringSzie(size: CGFloat = 10) -> CGSize {
-//        let baseFont = UIFont.systemFont(ofSize: size)
-//        let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
-//        let width = ceil(size.width) + 5
-//        let height = ceil(size.height)
-//        return CGSize(width: width, height: height)
-//    }
+    public func getStringSzie(size: CGFloat = 10) -> CGSize {
+        let baseFont = UIFont.systemFont(ofSize: size)
+        let size = self.size(withAttributes: [NSAttributedStringKey.font: baseFont])
+        let width = ceil(size.width) + 5
+        let height = ceil(size.height)
+        return CGSize(width: width, height: height)
+    }
     
     /// 字符串截取         3  6
     /// e.g let aaa = "abcdefghijklmnopqrstuvwxyz"  -> "cdef"
@@ -117,15 +117,15 @@ extension String {
     ///   - start: 开始位置 3
     ///   - end: 结束位置 6
     /// - Returns: 截取后的字符串 "cdef"
-//    public func startToEnd(start: Int,end: Int) -> String {
-//        if !(end < self.count) || start > end { return "取值范围错误" }
-//        var tempStr: String = ""
-//        for i in start...end {
-//            let temp: String = self[self.index(self.startIndex, offsetBy: i - 1)].description
-//            tempStr += temp
-//        }
-//        return tempStr
-//    }
+    public func startToEnd(start: Int,end: Int) -> String {
+        if !(end < self.count) || start > end { return "取值范围错误" }
+        var tempStr: String = ""
+        for i in start...end {
+            let temp: String = self[self.index(self.startIndex, offsetBy: i - 1)].description
+            tempStr += temp
+        }
+        return tempStr
+    }
     
     /// 字符URL格式化
     ///
