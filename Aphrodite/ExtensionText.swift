@@ -70,21 +70,21 @@ extension String {
     ///
     /// - Parameter end: 结束的位值
     /// - Returns: 截取后的字符串
-    public func stringCut(end: Int) ->String{
-        guard self.startIndex < self.endIndex else { return "截取超出范围" }
-        let str = prefix(upTo: index(startIndex, offsetBy: end))
-        return String(str)
-    }
+//    public func stringCut(end: Int) ->String{
+//        guard self.startIndex < self.endIndex else { return "截取超出范围" }
+//        let str = prefix(upTo: index(startIndex, offsetBy: end))
+//        return String(str)
+//    }
     
     /// 截取人任意位置到结束
     ///
     /// - Parameter end:
     /// - Returns: 截取后的字符串
-    public func stringCutToEnd(star: Int) -> String {
-        guard self.startIndex < self.endIndex else { return "截取超出范围" }
-        let start = index(startIndex, offsetBy: star)
-        return String(describing: [start...])
-    }
+//    public func stringCutToEnd(star: Int) -> String {
+//        guard self.startIndex < self.endIndex else { return "截取超出范围" }
+//        let start = index(startIndex, offsetBy: star)
+//        return String(describing: [start...])
+//    }
     
     /// 字符串任意位置插入
     ///
