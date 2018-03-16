@@ -190,3 +190,56 @@ public extension Date {
         }
     }
 }
+
+extension Date {
+    var dateWeekZh: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE"
+            formatter.locale = Locale(identifier: "zh_CN")
+            return formatter.string(from: self)
+        }
+    }
+    
+    var dateWeek: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE"
+            return formatter.string(from: self)
+        }
+    }
+    
+    var monthDayNum: Int {
+        let calendar = NSCalendar.current
+        guard let rang = calendar.range(of: .day, in: .month, for: self) else { fatalError("calendar.range(of: .day, in: .month, for: self Error)")  }
+        return rang.count
+    }
+    
+    var yearNum: Int {
+        let calendar = NSCalendar.current
+        guard let rang = calendar.range(of: .day, in: .year, for: self) else { fatalError("calendar.range(of: .day, in: .year, for: self Error)")  }
+        return rang.count
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
